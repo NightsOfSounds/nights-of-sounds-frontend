@@ -11,6 +11,7 @@ import Imprint from './Imprint';
 import Privacy from './Privacy';
 import NotFound from './NotFound';
 import { styled } from '@mui/system';
+import Partner from './Partner';
 
 const theme = createTheme({
   palette: {
@@ -53,6 +54,7 @@ function App() {
               <Route path='/equipment' element={<Equipment/>}/>
               <Route path='/imprint' element={<Imprint/>}/>
               <Route path='/privacy' element={<Privacy/>}/>
+              <Route path='/partner' element={<Partner/>}/>
               <Route path='*' element={<NotFound/>} />
             </Routes>
             <Footer/>

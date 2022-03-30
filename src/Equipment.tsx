@@ -69,7 +69,7 @@ export default function Equipment() {
             "name": "Software",
             "content": [
                 {
-                    "name": "Cubase 12 Pro",
+                    "name": "Cubase Pro",
                     "text": "Lorem ipsum dolor sit amet.",
                     "imgUrl": IMG,
                 },{
@@ -77,11 +77,11 @@ export default function Equipment() {
                     "text": "Lorem ipsum dolor sit amet.",
                     "imgUrl": IMG,
                 },{
-                    "name": "DaVinci Resolve 12",
+                    "name": "DaVinci Resolve",
                     "text": "Lorem ipsum dolor sit amet.",
                     "imgUrl": IMG,
                 },{
-                    "name": "Blender 3.0",
+                    "name": "Blender",
                     "text": "Lorem ipsum dolor sit amet.",
                     "imgUrl": IMG,
                 },{
@@ -130,7 +130,15 @@ export default function Equipment() {
                     "name": "Accordion",
                     "text": "Lorem ipsum dolor sit amet.",
                     "imgUrl": IMG,
-                },
+                },{
+                    "name": "Violin",
+                    "text": "Lorem ipsum dolor sit amet.",
+                    "imgUrl": IMG,
+                },{
+                    "name": "E-Violin",
+                    "text": "Lorem ipsum dolor sit amet.",
+                    "imgUrl": IMG,
+                }
             ],
         }
     ]
