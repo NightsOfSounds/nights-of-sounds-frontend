@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/system";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
   
@@ -14,7 +15,10 @@ function Header() {
       },{
         "name": "Socials",
         "url": "/social",
-      },
+      },{
+        "name": "Equipment",
+        "url": "/equipment"
+      }
     ]
   
     const [scrollHeight, setScrollHeight] = useState(0);
@@ -27,37 +31,33 @@ function Header() {
       window.addEventListener("scroll", handleScroll, { passive: true })
       return () => window.removeEventListener("scroll", handleScroll)
     }, [scrollHeight]);
-  
+
     return (
-      <Box sx ={[
-        {
-          backgroundImage: "url(img/untitled2.png)",
-          backgroundPosition: `50% calc( 50% + ${scrollHeight * 0.2}px )`,
-          height: "100vh",
-          position: "relative",
-          backgroundSize: "cover",
-          backgroundColor: "rgba(0, 0, 0, 1)",
-        }, {
-          "&::before": {
-            content: '""',
-            width: "100%",
-            height: "100%",
-            backgroundColor: `rgba(0, 0, 0, ${scrollHeight / window.innerHeight})`,
-            position: "absolute"
-          }
-        }
-      ]}>
-        <Typography variant="h3" sx={{
+      <>
+      <Box sx={{
+        position: "relative",
+        marginBottom: "40px",
+        overflow: "hidden",
+        display: "flex",
+      }}>
+      <img src="img/untitled2.webp" alt="Background banner" style={{
+        width: "100%",
+        height: "100vh",
+        objectFit: "cover",
+        position: "relative",
+        objectPosition: `50% calc( 50% + ${scrollHeight * 0.3}px )`,
+        filter: `brightness(${1 - (scrollHeight / window.innerHeight)})`,
+      }}/>
+      <Typography variant="h3" sx={{
           position: "absolute",
-          width: "100%",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          top: `calc( 50% + ${scrollHeight / 2}px )`,
+          transform: "translateY(-50%)",
           fontWeight: "bold",
-          textAlign: "center"
+          width: "100%",
+          textAlign: "center",
         }}>NIGHTS OF SOUNDS</Typography>
-  
-        <Box sx={{
+      </Box>
+      <Box sx={{
           top: "0",
           left: "0",
           width: "100%",
@@ -65,13 +65,14 @@ function Header() {
           textAlign: "center",
           backgroundColor: "rgba(50, 50, 50, 0.5)",
           padding: "10px 0",
-          position: "fixed"
+          position: "fixed",
+          zIndex: "10",
         }}>
   
-          {links.map(e => <HeaderButton url={e.url}>{e.name}</HeaderButton>)}
+          {links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
   
         </Box>
-      </Box> 
+      </>
     )
 }
   
@@ -79,9 +80,19 @@ export default Header;
 
 type HeaderButtonType = {
     url: string,
-    children: any
+    children: string
 }
 function HeaderButton({url, children}:HeaderButtonType) {
+  
+  const location = useLocation();
+  const [isActive, setActive] = useState(window.location.pathname === url);
+
+  useEffect(()=>{
+    setActive(window.location.pathname === url)
+  }, [location])
+
+  
+  
     return (
       <Link to={url} >
         <Box sx={[
@@ -120,9 +131,10 @@ function HeaderButton({url, children}:HeaderButtonType) {
             borderBottom: "2px solid white",
             padding: "5px 20px",
             zIndex: 0,
+            backgroundColor: (isActive ? "rgba(0, 0, 0, 0.5)" : "transparent")
           }
         ]}>
-          <Typography variant='h6' sx={{
+          <Typography sx={{
             color: "inherit",
             zIndex: -1,
           }}>{children}</Typography>
