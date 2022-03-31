@@ -101,27 +101,40 @@ export type ImageTextBoxType = {
   name: string,
   text: string,
   imgUrl?: string,
+  url?: string,
+  experience?: string
 }
-export function ImageTextBox({name, text, imgUrl}:ImageTextBoxType) {
+export function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxType) {
 
-  return <Paper sx={{
-    padding: "20px",
-    maxWidth: "300px",
-    minWidth: "300px",
-    display: "inline-block",
-    margin: "20px",
-    verticalAlign: "top",
-  }}>
-  {imgUrl && <Box sx={{
-    overflow: "hidden",
-    display: "flex",
-    marginBottom: "10px",
-  }}>
-    <HoverImg src={imgUrl} alt="Depiction of Title"/>
-  </Box>}
-  <Typography variant="h4">{name}</Typography>
-  <Typography>{text}</Typography>
-  </Paper>
+  const LinkEl = styled("a")({
+    display: "contents"
+  })
+
+  return <ConditionalWrapper
+    condition={!!url}
+    wrapper={(children) => <LinkEl href={url}>{children}</LinkEl>}>
+    <Paper sx={{
+      padding: "20px",
+      maxWidth: "300px",
+      minWidth: "300px",
+      display: "inline-block",
+      margin: "20px",
+      verticalAlign: "top",
+    }}>
+    {imgUrl && <Box sx={{
+      overflow: "hidden",
+      display: "flex",
+      marginBottom: "10px",
+    }}>
+      <HoverImg src={imgUrl} alt="Depiction of Title"/>
+    </Box>}
+    <Typography variant="h4">{name}</Typography>
+    <Typography sx={{marginTop: "10px"}}>{text}</Typography>
+    {experience && <Typography sx={{marginTop: "10px"}}>
+      <b>Experience:</b> {experience}
+      </Typography>}
+    </Paper>
+  </ConditionalWrapper>
 }
 
 type ImageWrapperType = {

@@ -91,7 +91,7 @@
                 "text": "Main interface for the work",
                 "url": "https://www.thomann.de/de/index.html"
             },
-            "steinbergr12": {
+            "steinbergur12": {
                 "name": "Steinberg UR12",
                 "text": "Small one for small things",
                 "url": "https://www.thomann.de/de/index.html"
@@ -114,7 +114,7 @@
                 "text": "Good songs require good speakers",
                 "url": "https://www.thomann.de/de/index.html"
             },
-            "presonustemblert10": {
+            "presonustemblort10": {
                 "name": "Presonus Temblor T10",
                 "text": "What would music be without bass?",
                 "url": "https://www.thomann.de/de/index.html"
@@ -132,9 +132,9 @@
                 "text": "Perfect for small sound edits",
                 "url": "https://www.audacityteam.org/"
             },
-            "davicniresolve": {
+            "davinciresolve": {
                 "name": "DaVinci Resolve",
-                "text": "Cutting vidoes is also important for us",
+                "text": "Cutting videos is also important for us",
                 "url": "https://www.blackmagicdesign.com/de/products/davinciresolve/"
             },
             "blender": {

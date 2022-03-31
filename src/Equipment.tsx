@@ -8,137 +8,135 @@ export default function Equipment() {
 
     const content = [
         {
-            "name": "Mics",
+            "name": lang("equipment.mics.title"),
             "content": [
                 {
-                    "name": "Rode NT1-A",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.mics.rodent1a.name"),
+                    "text": lang("equipment.mics.rodent1a.text"),
+                    "url": lang("equipment.mics.rodent1a.url"),
                 },{
-                    "name": "Shure SM7B",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.mics.shuresm7b.name"),
+                    "text": lang("equipment.mics.shuresm7b.text"),
+                    "url": lang("equipment.mics.shuresm7b.url"),
                 },{
-                    "name": "the t.bone Lucan System",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.mics.tbonelucan.name"),
+                    "text": lang("equipment.mics.tbonelucan.text"),
+                    "url": lang("equipment.mics.tbonelucan.url"),
                 },{
-                    "name": "Rode M5 MP",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.mics.rodem5mp.name"),
+                    "text": lang("equipment.mics.rodem5mp.text"),
+                    "url": lang("equipment.mics.rodem5mp.url"),
                 },{
-                    "name": "the t.bone MB7 Beta",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.mics.tbonemb7beta.name"),
+                    "text": lang("equipment.mics.tbonemb7beta.text"),
+                    "url": lang("equipment.mics.tbonemb7beta.url"),
                 },
             ],
         }, {
-            "name": "Audio Interfaces",
+            "name": lang("equipment.audiointerfaces.title"),
             "content": [
                 {
-                    "name": "Presonus 16.0.2 USB",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.audiointerfaces.presonus1602usb.name"),
+                    "text": lang("equipment.audiointerfaces.presonus1602usb.text"),
+                    "url": lang("equipment.audiointerfaces.presonus1602usb.url"),
                 },{
-                    "name": "Steinberg UR12",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.audiointerfaces.steinbergur12.name"),
+                    "text": lang("equipment.audiointerfaces.steinbergur12.text"),
+                    "url": lang("equipment.audiointerfaces.steinbergur12.url"),
                 },{
-                    "name": "Steinberg UR22C",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.audiointerfaces.steinbergur22c.name"),
+                    "text": lang("equipment.audiointerfaces.steinbergur22c.text"),
+                    "url": lang("equipment.audiointerfaces.steinbergur22c.url"),
                 },{
-                    "name": "Yamaha AG03",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.audiointerfaces.yamahaag03.name"),
+                    "text": lang("equipment.audiointerfaces.yamahaag03.text"),
+                    "url": lang("equipment.audiointerfaces.yamahaag03.url"),
                 },
             ],
         }, {
-            "name": "Speakers",
+            "name": lang("equipment.speakers.title"),
             "content": [
                 {
-                    "name": "Mackie MR524",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.speakers.mackiemr524.name"),
+                    "text": lang("equipment.speakers.mackiemr524.text"),
+                    "url": lang("equipment.speakers.mackiemr524.url"),
                 },{
-                    "name": "Presonus Temblor T10",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.speakers.presonustemblort10.name"),
+                    "text": lang("equipment.speakers.presonustemblort10.text"),
+                    "url": lang("equipment.speakers.presonustemblort10.url"),
                 },
             ],
         }, {
-            "name": "Software",
+            "name": lang("equipment.software.title"),
             "content": [
                 {
-                    "name": "Cubase Pro",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.software.cubase.name"),
+                    "text": lang("equipment.software.cubase.text"),
+                    "url": lang("equipment.software.cubase.url"),
                 },{
-                    "name": "Audacity",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.software.audacity.name"),
+                    "text": lang("equipment.software.audacity.text"),
+                    "url": lang("equipment.software.audacity.url"),
                 },{
-                    "name": "DaVinci Resolve",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.software.davinciresolve.name"),
+                    "text": lang("equipment.software.davinciresolve.text"),
+                    "url": lang("equipment.software.davinciresolve.url"),
                 },{
-                    "name": "Blender",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.software.blender.name"),
+                    "text": lang("equipment.software.blender.text"),
+                    "url": lang("equipment.software.blender.url"),
                 },{
-                    "name": "Unreal Engine 5",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "text": lang("equipment.software.unrealengine5.text"),
+                    "name": lang("equipment.software.unrealengine5.name"),
+                    "url": lang("equipment.software.unrealengine5.url"),
                 },
             ],
         }, {
-            "name": "Computers",
+            "name": lang("equipment.computers.title"),
             "content": [
                 {
-                    "name": "Sound Computer",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.computers.soundpc.name"),
+                    "text": lang("equipment.computers.soundpc.text"),
                 },{
-                    "name": "Cutting Computer",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.computers.cuttingpc.name"),
+                    "text": lang("equipment.computers.cuttingpc.text"),
                 },
             ],
         }, {
-            "name": "Instruments",
+            "name": lang("equipment.instruments.title"),
             "content": [
                 {
-                    "name": "E-Piano",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.epiano.name"),
+                    "text": lang("equipment.instruments.epiano.text"),
+                    "experience": lang("equipment.instruments.epiano.experience"),
                 },{
-                    "name": "Ukulele",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.ukulele.name"),
+                    "text": lang("equipment.instruments.ukulele.text"),
+                    "experience": lang("equipment.instruments.ukulele.experience"),
                 },{
-                    "name": "A-Guitar",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.aguitar.name"),
+                    "text": lang("equipment.instruments.aguitar.text"),
+                    "experience": lang("equipment.instruments.aguitar.experience"),
                 },{
-                    "name": "E-Guitar",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.eguitar.name"),
+                    "text": lang("equipment.instruments.eguitar.text"),
+                    "experience": lang("equipment.instruments.eguitar.experience"),
                 },{
-                    "name": "E-Bass",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.ebass.name"),
+                    "text": lang("equipment.instruments.ebass.text"),
+                    "experience": lang("equipment.instruments.ebass.experience"),
                 },{
-                    "name": "Accordion",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.accordion.name"),
+                    "text": lang("equipment.instruments.accordion.text"),
+                    "experience": lang("equipment.instruments.accordion.experience"),
                 },{
-                    "name": "Violin",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.violin.name"),
+                    "text": lang("equipment.instruments.violin.text"),
+                    "experience": lang("equipment.instruments.violin.experience"),
                 },{
-                    "name": "E-Violin",
-                    "text": "Lorem ipsum dolor sit amet.",
-                    
+                    "name": lang("equipment.instruments.eviolin.name"),
+                    "text": lang("equipment.instruments.eviolin.text"),
+                    "experience": lang("equipment.instruments.eviolin.experience"),
                 }
             ],
         }
