@@ -9,6 +9,7 @@ import Patreon from "./img/patreon-logo.png"
 import Twitter from "./img/twitter-logo.png"
 import Twitch from "./img/twitch-logo.png"
 import Spotify from "./img/spotify-logo.png"
+import GitHub from "./img/github-logo.png"
 import { useLanguage } from "./Localization";
 
 function Social() {
@@ -51,6 +52,11 @@ function Social() {
             text: lang("social.spotify.text"),
             url: "https://www.spotify.com",
             imgUrl: Spotify,
+        },{
+            name: "GitHub",
+            text: lang("social.github.text"),
+            url: "https://github.com/NightsOfSounds",
+            imgUrl: GitHub
         }
     ]
 
