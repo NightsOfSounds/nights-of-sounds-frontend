@@ -54,15 +54,149 @@
         "button": "Equipment",
         "title": "Our Equipment",
         "mics": {
+            "title": "Mics",
             "rodent1a": {
                 "name": "Rode NT1-A",
-                "text": "One of your mics, it has a very cold sound",
+                "text": "Tt has a very neutral sound",
                 "url": "https://www.thomann.de/de/index.html"
             }, 
             "shuresm7b": {
                 "name": "Shure SM7B",
-                "text": "One of your mics, it has a very warm sound",
+                "text": "It has a very warm sound",
                 "url": "https://www.thomann.de/de/index.html"
+            },
+            "tbonelucan": {
+                "name": "the t.bone Lucan System",
+                "text": "Without these the instruments wouldn't work very well",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "rodem5mp": {
+                "name": "Rode M5 MP",
+                "text": "Perfect for small sounds to improve the songs",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "tbonemb7beta":{
+                "name": "the t.bone MB7 Beta",
+                "text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati error enim praesentium distinctio quasi expedita quisquam impedit hic, facilis eligendi tenetur officiis consectetur cum, ipsum eaque optio. Provident, minima quis!",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "audiointerfaces": {
+            "title": "Audio Interfaces",
+            "presonus1602usb": {
+                "name": "Presonus 16.0.2 USB",
+                "text": "Main Interface for the work",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "steinbergr12": {
+                "name": "Steinberg UR12",
+                "text": "Small one for small things",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "steinbergur22c": {
+                "name": "Steinberg UR22C",
+                "text": "And if one mic is not enough, just use this",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "yamahaag03": {
+                "name": "Yamaha AG03",
+                "text": "Some instruments require special equipment",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "speakers": {
+            "title": "Speakers",
+            "mackiemr524": {
+                "name": "Mackie MR524",
+                "text": "Good songs require good speakers",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "presonustemblert10": {
+                "name": "Presonus Temblor T10",
+                "text": "What would music be without bass?",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "software": {
+            "title": "Software (Always newest Version)",
+            "cubase": {
+                "name": "Cubase Pro",
+                "text": "Building instrumentals is everything",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "audacity": {
+                "name": "Audacity",
+                "text": "Perfect for small sound edits",
+                "url": "https://www.audacityteam.org/"
+            },
+            "davicniresolve": {
+                "name": "DaVinci Resolve",
+                "text": "Cutting vidoes is also important for us",
+                "url": "https://www.blackmagicdesign.com/de/products/davinciresolve/"
+            },
+            "blender": {
+                "name": "Blender",
+                "text": "Well, you don't knew Blender? You really missed something",
+                "url": "https://www.blender.org/"
+            },
+            "unrealengine5": {
+                "name": "Unreal Engine 5",
+                "text": "If you hoped we make also games, sorry, we only us it for realistic videos",
+                "url": "https://www.unrealengine.com/en-US/unreal-engine-5"
+            }
+        },
+        "computers": {
+            "title": "Computers",
+            "soundpc": {
+                "name": "Sound Computer",
+                "text": "MSI B550 Gaming Plus, AMD Ryzen 7 3700x, 16gb Ram, RTX 3060TI"
+            },
+            "cuttingpc": {
+                "name": "Cutting Computer",
+                "text": "MSI B550 Gaming Plus, AMD Ryzen 7 3700x, 32gb Ram, RX 5500xt"
+            }
+        }, 
+        "instruments": {
+            "title": "Instruments",
+            "epiano": {
+                "name": "E-Piano",
+                "text": "Basicly for everything",
+                "experience": "x Years"
+            },
+            "ukulele": {
+                "name": "Ukulele",
+                "text": "Will there be a Hawaii Song? I don't know",
+                "experience": "since 2019"
+            },
+            "aguitar": {
+                "name": "A-Guitar",
+                "text": "the cleanest sound is only possible with acoustic instruments",
+                "experience": "x Years"
+            },
+            "eguitar": {
+                "name": "E-Guitar",
+                "text": "The equivalent to acoustic, but more electronic",
+                "experience": "x Years"
+            },
+            "ebass": {
+                "name": "E-Bass",
+                "text": "A good baseline is everything for a good songs",
+                "experience": "x Years"
+            },
+            "accordion": {
+                "name": "Accordion",
+                "text": "A very special instrument",
+                "experience": "x Years"
+            },
+            "violin": {
+                "name": "Violin",
+                "text": "Difficult to learn, but it's worth",
+                "experience": "since 2007"
+            },
+            "eviolin": {
+                "name": "E-Violin",
+                "text": "The equivalent to acoustic, but more electronic",
+                "experience": "since 2013"
             }
         }
     },
