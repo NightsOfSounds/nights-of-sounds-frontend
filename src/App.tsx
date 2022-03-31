@@ -97,36 +97,43 @@ export function SiteTitle({children}:SiteTitleType) {
 export type ImageTextBoxType = {
   name: string,
   text: string,
-  imgUrl: string,
+  imgUrl?: string,
 }
 export function ImageTextBox({name, text, imgUrl}:ImageTextBoxType) {
 
   return <Paper sx={{
     padding: "20px",
     maxWidth: "300px",
+    minWidth: "300px",
     display: "inline-block",
     margin: "20px",
     verticalAlign: "top",
   }}>
-  <Box sx={{
+  {imgUrl && <Box sx={{
     overflow: "hidden",
     display: "flex",
     marginBottom: "10px",
   }}>
     <HoverImg src={imgUrl} alt="Depiction of Title"/>
-  </Box>
+  </Box>}
   <Typography variant="h4">{name}</Typography>
   <Typography>{text}</Typography>
   </Paper>
 }
 
 type ImageWrapperType = {
-  children?: JSX.Element | JSX.Element[]
+  children?: JSX.Element | JSX.Element[],
+  carousel?: any
+  sameHeight?: any
 }
-export function ImageTextWrapper({children}:ImageWrapperType) {
+export function ImageTextWrapper({children, carousel, sameHeight}:ImageWrapperType) {
   return <Box sx={{
-      display: "block",
+      display: ((carousel || sameHeight) ? "flex" : "block"),
       textAlign: "center",
+      overflowX: "auto",
+      margin: "auto",
+      justifyContent: sameHeight ? "center" : "",
+      flexWrap: sameHeight ? "wrap" : "",
   }}>
   {children}
   </Box>

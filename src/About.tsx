@@ -2,7 +2,6 @@ import { ContentBox, HoverImg, ImageTextBox, ImageTextBoxType, ImageTextWrapper,
 import Profile01 from './img/profile01.svg'
 import Profile02 from './img/profile02.svg'
 import { Box, Paper, Stack, Typography } from "@mui/material"
-import { experimental_sx as sx, styled } from "@mui/system"
 
 function About() {
     return <ContentBox>
@@ -22,7 +21,7 @@ interface ImageHorizontalBoxType extends ImageTextBoxType {
 function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxType) {
 
   const el1 = <Box sx={{overflow: "hidden", width: "50%", display: "flex"}}>
-                <HoverImg src={imgUrl}/>
+                <HoverImg src={imgUrl} alt="User"/>
               </Box>
 
   const el2 = <Box sx={{width: "50%", textAlign: (alignment === 0 ? "left" : "right")}}>

@@ -1,7 +1,5 @@
-import { Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from "./App";
-import IMG from './img/th.jpg'
-import { SocialWrapper } from "./Social";
 
 export default function Equipment() {
 
@@ -12,44 +10,44 @@ export default function Equipment() {
                 {
                     "name": "Rode NT1-A",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Shure SM7B",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "the t.bone Lucan System",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Rode M5 MP",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "the t.bone MB7 Beta",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },
             ],
         }, {
             "name": "Audio Interfaces",
             "content": [
                 {
-                    "name": "Presous 16.0.2 USB",
+                    "name": "Presonus 16.0.2 USB",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Steinberg UR12",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Steinberg UR22C",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Yamaha AG03",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },
             ],
         }, {
@@ -58,11 +56,11 @@ export default function Equipment() {
                 {
                     "name": "Mackie MR524",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Presonus Temblor T10",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },
             ],
         }, {
@@ -71,23 +69,23 @@ export default function Equipment() {
                 {
                     "name": "Cubase Pro",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Audacity",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "DaVinci Resolve",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Blender",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Unreal Engine 5",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },
             ],
         }, {
@@ -96,11 +94,11 @@ export default function Equipment() {
                 {
                     "name": "Sound Computer",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Cutting Computer",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },
             ],
         }, {
@@ -109,35 +107,35 @@ export default function Equipment() {
                 {
                     "name": "E-Piano",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Ukulele",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "A-Guitar",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "E-Guitar",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "E-Bass",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Accordion",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "Violin",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 },{
                     "name": "E-Violin",
                     "text": "Lorem ipsum dolor sit amet.",
-                    "imgUrl": IMG,
+                    
                 }
             ],
         }
@@ -154,7 +152,7 @@ export default function Equipment() {
 type BoxType = {
     name: string,
     text: string,
-    imgUrl: string,
+    imgUrl?: string,
 }
 type CategoryType = {
     name: string,
@@ -164,7 +162,7 @@ function Category({name, content}:CategoryType) {
 
     return <>
         <Typography variant="h3">{name}</Typography>
-        <ImageTextWrapper>
+        <ImageTextWrapper sameHeight>
             {content.map((e, i) => <ImageTextBox key={`item.${i}`} {...e} />)}
         </ImageTextWrapper>
     </>

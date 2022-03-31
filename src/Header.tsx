@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { Close, Menu } from "@mui/icons-material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -16,13 +17,21 @@ function Header() {
         "name": "Socials",
         "url": "/social",
       },{
+        "name": "Partners",
+        "url": "/partner"
+      },{
         "name": "Equipment",
         "url": "/equipment"
       }
     ]
   
     const [scrollHeight, setScrollHeight] = useState(0);
-  
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+    const [mobileDrawer, setMobileDrawer] = useState(false)
+
+    console.log(isMobile)
+
     useEffect(() => {
       const handleScroll = () => {
         const currentScrollY = window.scrollY
@@ -31,6 +40,28 @@ function Header() {
       window.addEventListener("scroll", handleScroll, { passive: true })
       return () => window.removeEventListener("scroll", handleScroll)
     }, [scrollHeight]);
+
+    const outerSX = {
+      backgroundColor: "white",
+      left: "0",
+      width: "100%",
+      height: "5px",
+      position: "absolute",
+      transition: ".3s",
+      opacity: mobileDrawer ? "0" : "1"
+    }
+
+    const maxRotate = 30
+
+    const innerSX = {
+      backgroundColor: "white",
+      top: "calc( 50% - 2.5px )",
+      left: "0",
+      width: "100%",
+      height: "5px",
+      position: "absolute",
+      transition: ".5s",
+    }
 
     return (
       <>
@@ -58,6 +89,51 @@ function Header() {
         }}>NIGHTS OF SOUNDS</Typography>
       </Box>
       <Box sx={{
+        width: "65px",
+        height: "40px",
+        position: "fixed",
+        top: "10px",
+        right: "10px",
+        zIndex: "3",
+        display: isMobile ? "block" : "none",
+      }} onClick={()=>{
+        setMobileDrawer((old)=> !old)
+      }}>
+      <Box sx={{height: "100%", width: "100%", position: "relative"}}>
+        <Box sx={{
+          ...outerSX,
+          top: "0",
+        }}></Box>
+        <Box sx={{
+          ...innerSX,
+          transform: `rotate(${mobileDrawer ? `${maxRotate}deg` : "0"})`,
+        }}></Box>
+        <Box sx={{
+          ...innerSX,
+          transform: `rotate(${mobileDrawer ? `${-maxRotate}deg` : "0"})`,
+        }}></Box>
+        <Box sx={{
+          ...outerSX,
+          bottom: "0",
+        }}></Box>
+      </Box>
+      </Box>
+      <Slide in={mobileDrawer} direction="left">
+      <Box sx={{
+        width: "100%",
+        height: "100%",
+        top: "0",
+        left: "0",
+        position: "fixed",
+        backgroundColor: theme.palette.grey[800],
+        display: "block",
+        zIndex: "2",
+        overflow: "auto",
+      }}>
+        {links.map((e, i) => <MobileButton onClick={()=>{setMobileDrawer(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
+      </Box>
+      </Slide>
+      <Box sx={{
           top: "0",
           left: "0",
           width: "100%",
@@ -67,6 +143,7 @@ function Header() {
           padding: "10px 0",
           position: "fixed",
           zIndex: "10",
+          display: isMobile ? "none" : "block",
         }}>
   
           {links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
@@ -77,6 +154,37 @@ function Header() {
 }
   
 export default Header;
+
+type MobileButtonType = {
+  url: string,
+  children: string | JSX.Element | JSX.Element[],
+  onClick: ()=>void
+}
+
+function MobileButton({url, children, onClick}:MobileButtonType) {
+  
+  return <Link to={url} style={{
+    textDecoration: "none"
+  }}>
+    <Box sx={{
+      width: "100%",
+      borderBottom: "1px solid black",
+      margin: "auto",
+      color: "text.primary",
+      display: "flex",
+      height: "100px",
+      justifyContent: "center",
+      alignItems: "center",
+    }} onClick={()=>{onClick()}}>
+      <Typography sx={{
+        fontSize: "30px",
+        textDecoration: "none",
+      }}>
+        {children}    
+      </Typography>
+    </Box>
+  </Link>
+}
 
 type HeaderButtonType = {
     url: string,

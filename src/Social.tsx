@@ -1,10 +1,14 @@
 import { Box, Grid, Paper, Stack, Typography, experimental_sx as sx } from "@mui/material"
 import { ConditionalWrapper, ContentBox, SiteTitle } from "./App"
 import { useEffect, useState } from "react";
+import { styled } from "@mui/system";
 import Discord from "./img/discord-logo.png"
 import Instagram from "./img/instagram-logo.png"
 import Youtube from "./img/youtube-logo.png"
-import { styled } from "@mui/system";
+import Patreon from "./img/patreon-logo.png"
+import Twitter from "./img/twitter-logo.png"
+import Twitch from "./img/twitch-logo.png"
+import Spotify from "./img/spotify-logo.png"
 
 function Social() {
 
@@ -24,6 +28,26 @@ function Social() {
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
             url: "https://www.instagram.com",
             imgUrl: Instagram,
+        },{
+            name: "Patreon",
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            url: "https://www.patreon.com",
+            imgUrl: Patreon,
+        },{
+            name: "Twitter",
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            url: "https://www.twitter.com",
+            imgUrl: Twitter,
+        },{
+            name: "Twitch",
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            url: "https://www.twitch.tv",
+            imgUrl: Twitch,
+        },{
+            name: "Spotify",
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            url: "https://www.spotify.com",
+            imgUrl: Spotify,
         }
     ]
 
@@ -95,13 +119,13 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
         const el1 = <Box key="e.2" sx={{
             textAlign: textAligns[0],
             marginRight: margins[1],
-            marginLeft: margins[0]
+            marginLeft: margins[0],
         }}>
             <ConditionalWrapper
                 condition={url !== null}
                 wrapper={wrapper}
             >
-                <SocialImage src={imgUrl} alt={`${name} logo`}/>
+                <SocialImage src={imgUrl} alt={`${name} logo`} className="socialImage" />
             </ConditionalWrapper>
         </Box>
 
