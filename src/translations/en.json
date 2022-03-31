@@ -57,7 +57,7 @@
             "title": "Mics",
             "rodent1a": {
                 "name": "Rode NT1-A",
-                "text": "Tt has a very neutral sound",
+                "text": "It has a very neutral sound",
                 "url": "https://www.thomann.de/de/index.html"
             }, 
             "shuresm7b": {
@@ -67,17 +67,17 @@
             },
             "tbonelucan": {
                 "name": "the t.bone Lucan System",
-                "text": "Without these the instruments wouldn't work very well",
+                "text": "Without these, the instruments wouldn't sound very good",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
-                "text": "Perfect for small sounds to improve the songs",
+                "text": "Perfect for instruments, where the Lucan System doesn't fit",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "tbonemb7beta":{
                 "name": "the t.bone MB7 Beta",
-                "text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati error enim praesentium distinctio quasi expedita quisquam impedit hic, facilis eligendi tenetur officiis consectetur cum, ipsum eaque optio. Provident, minima quis!",
+                "text":"Our old alternative for the Shure SM7B",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
@@ -85,7 +85,7 @@
             "title": "Audio Interfaces",
             "presonus1602usb": {
                 "name": "Presonus 16.0.2 USB",
-                "text": "Main Interface for the work",
+                "text": "Main interface for the work",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergr12": {
@@ -136,7 +136,7 @@
             },
             "blender": {
                 "name": "Blender",
-                "text": "Well, you don't knew Blender? You really missed something",
+                "text": "Well, you don't know about Blender? You really missed something",
                 "url": "https://www.blender.org/"
             },
             "unrealengine5": {
@@ -160,8 +160,8 @@
             "title": "Instruments",
             "epiano": {
                 "name": "E-Piano",
-                "text": "Basicly for everything",
-                "experience": "x Years"
+                "text": "Basically for everything",
+                "experience": "since 2013"
             },
             "ukulele": {
                 "name": "Ukulele",
@@ -170,23 +170,23 @@
             },
             "aguitar": {
                 "name": "A-Guitar",
-                "text": "the cleanest sound is only possible with acoustic instruments",
-                "experience": "x Years"
+                "text": "The cleanest sound is only possible with accoustic instruments",
+                "experience": "since 2020"
             },
             "eguitar": {
                 "name": "E-Guitar",
-                "text": "The equivalent to acoustic, but more electronic",
-                "experience": "x Years"
+                "text": "The equivalent to acoustic, but more electric",
+                "experience": "since 2020"
             },
             "ebass": {
                 "name": "E-Bass",
                 "text": "A good baseline is everything for a good songs",
-                "experience": "x Years"
+                "experience": "since 2021"
             },
             "accordion": {
                 "name": "Accordion",
                 "text": "A very special instrument",
-                "experience": "x Years"
+                "experience": "since 2008"
             },
             "violin": {
                 "name": "Violin",
@@ -195,7 +195,7 @@
             },
             "eviolin": {
                 "name": "E-Violin",
-                "text": "The equivalent to acoustic, but more electronic",
+                "text": "The equivalent to acoustic, but more electric",
                 "experience": "since 2013"
             }
         }
