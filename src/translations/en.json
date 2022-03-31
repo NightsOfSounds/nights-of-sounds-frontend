@@ -1,0 +1,69 @@
+{
+    "home": {
+        "button": "Home",
+        "title": "Welcome"
+    }, 
+    "about": {
+        "button": "About us",
+        "title": "About us",
+        "user01": {
+            "name": "Fil106ip",
+            "text": "Lorem ipsum"
+        },
+        "user02": {
+            "name": "Jareix",
+            "text": "Lorem ipsum"
+        }
+    },
+    "social": {
+        "button": "Socials",
+        "title": "Social media",
+        "youtube": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "discord": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "instagram": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "patreon": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "twitter": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "twitch": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "spotify": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        }
+    },
+    "partner": {
+        "button": "Partner",
+        "title": "Partner",
+        "thomann": {
+            "text": "Our main source for music equipment"
+        },
+        "amazon": {
+            "text": "Our main source of random stuff"
+        }
+    },
+    "equipment": {
+        "button": "Equipment",
+        "title": "Our Equipment"
+    },
+    "imprint": {
+        "title": "Imprint",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati error enim praesentium distinctio quasi expedita quisquam impedit hic, facilis eligendi tenetur officiis consectetur cum, ipsum eaque optio. Provident, minima quis!"
+    },
+    "privacy": {
+        "title": "Privacy",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati error enim praesentium distinctio quasi expedita quisquam impedit hic, facilis eligendi tenetur officiis consectetur cum, ipsum eaque optio. Provident, minima quis!"
+    },
+    "footer": {
+        "contact": "Contact",
+        "email": "Email"
+    }
+}

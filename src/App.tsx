@@ -12,6 +12,7 @@ import Privacy from './Privacy';
 import NotFound from './NotFound';
 import { styled } from '@mui/system';
 import Partner from './Partner';
+import { LanguageProvider } from './Localization';
 
 const theme = createTheme({
   palette: {
@@ -45,19 +46,21 @@ function App() {
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
           <CssBaseline/>
-            <ScrollTop/>
-            <Header/>
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/about' element={<About/>}/>
-              <Route path='/social' element={<Social/>}/>
-              <Route path='/equipment' element={<Equipment/>}/>
-              <Route path='/imprint' element={<Imprint/>}/>
-              <Route path='/privacy' element={<Privacy/>}/>
-              <Route path='/partner' element={<Partner/>}/>
-              <Route path='*' element={<NotFound/>} />
-            </Routes>
-            <Footer/>
+            <LanguageProvider language='en'>
+              <ScrollTop/>
+              <Header/>
+              <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/social' element={<Social/>}/>
+                <Route path='/equipment' element={<Equipment/>}/>
+                <Route path='/imprint' element={<Imprint/>}/>
+                <Route path='/privacy' element={<Privacy/>}/>
+                <Route path='/partner' element={<Partner/>}/>
+                <Route path='*' element={<NotFound/>} />
+              </Routes>
+              <Footer/>
+            </LanguageProvider>
         </StyledEngineProvider>
       </ThemeProvider>
     </BrowserRouter>

@@ -2,13 +2,14 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/system";
 import { useEffect, useState } from "react";
 import { UnderlinedLink } from "./App";
+import { useLanguage } from "./Localization";
 
 export default function Footer() {
 
     const LinkA = styled("a")(({theme}) => ({color: theme.palette.text.primary}))
 
     const [scrollHeight, setScrollHeight] = useState(0);
-
+    const lang = useLanguage()
 
     useEffect(() => {
       const handleScroll = () => {
@@ -36,17 +37,17 @@ export default function Footer() {
                 &copy; Nights of Sounds
             </Box>
             <Box>
-                Contact:&nbsp;
+                {lang("footer.contact")}&nbsp;
                 <LinkA href="mailto:nights.of.sounds@gmail.com">
-                    Email
+                    {lang("footer.email")}
                 </LinkA>
             </Box>
             <UnderlinedLink to="/imprint">
-                Imprint
+                {lang("imprint.title")}
             </UnderlinedLink>
             &nbsp;
             <UnderlinedLink to="/privacy">
-                Privacy
+                {lang("privacy.title")}
             </UnderlinedLink>
         </Box>
     </Box>

@@ -1,7 +1,10 @@
 import { Typography } from "@mui/material";
 import { ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from "./App";
+import { useLanguage } from "./Localization";
 
 export default function Equipment() {
+
+    const lang = useLanguage()
 
     const content = [
         {
@@ -142,7 +145,7 @@ export default function Equipment() {
     ]
 
     return <ContentBox>
-            <SiteTitle>Our Equipment</SiteTitle>
+            <SiteTitle>{lang("equipment.title")}</SiteTitle>
             <>
                 {content.map((e,i)=> <Category key={`category.${i}`} {...e}/>)}
             </>

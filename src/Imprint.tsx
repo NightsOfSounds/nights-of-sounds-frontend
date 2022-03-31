@@ -1,11 +1,15 @@
 import { Typography } from "@mui/material";
 import { ContentBox, SiteTitle } from "./App";
+import { useLanguage } from "./Localization";
 
 export default function Imprint() {
+
+    const lang = useLanguage()
+
     return <ContentBox>
-        <SiteTitle>Imprint</SiteTitle>
+        <SiteTitle>{lang("imprint.title")}</SiteTitle>
         <Typography>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati error enim praesentium distinctio quasi expedita quisquam impedit hic, facilis eligendi tenetur officiis consectetur cum, ipsum eaque optio. Provident, minima quis!
+            {lang("imprint.text")}
         </Typography>
     </ContentBox>
 }

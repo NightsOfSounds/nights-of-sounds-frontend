@@ -1,15 +1,27 @@
-import { ContentBox, HoverImg, ImageTextBox, ImageTextBoxType, ImageTextWrapper, SiteTitle } from "./App"
+import { ContentBox, HoverImg, ImageTextBoxType, SiteTitle } from "./App"
 import Profile01 from './img/profile01.svg'
 import Profile02 from './img/profile02.svg'
 import { Box, Paper, Stack, Typography } from "@mui/material"
+import { useLanguage } from "./Localization"
 
 function About() {
+
+    const lang = useLanguage();
+
     return <ContentBox>
-      <SiteTitle>About us</SiteTitle>
+      <SiteTitle>{lang("about.title")}</SiteTitle>
       <Stack>
         <Stack direction={{ xs: 'column', sm: 'column', md: 'row' }}  gap={4}>
-          <ImageHorizontalBox name="Fil106ip" text="Lorem Ipsum" imgUrl={Profile01} alignment={1}/>
-          <ImageHorizontalBox name="Jareix" text="Lorem Ipsum" imgUrl={Profile02} alignment={0}/>
+          <ImageHorizontalBox 
+            name={lang("about.user01.name")} 
+            text={lang("about.user01.text")}
+            imgUrl={Profile01} 
+            alignment={1}/>
+          <ImageHorizontalBox 
+            name={lang("about.user02.name")} 
+            text={lang("about.user02.text")}
+            imgUrl={Profile02} 
+            alignment={0}/>
         </Stack>
       </Stack>
     </ContentBox>

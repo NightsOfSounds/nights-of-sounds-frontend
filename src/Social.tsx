@@ -9,43 +9,46 @@ import Patreon from "./img/patreon-logo.png"
 import Twitter from "./img/twitter-logo.png"
 import Twitch from "./img/twitch-logo.png"
 import Spotify from "./img/spotify-logo.png"
+import { useLanguage } from "./Localization";
 
 function Social() {
+
+    const lang = useLanguage();
 
     const socialData = [
         {
             name: "Youtube",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.youtube.text"),
             url: "https://www.youtube.com",
             imgUrl: Youtube,
         },{
             name: "Discord",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.discord.text"),
             url: "https://www.discord.com",
             imgUrl: Discord,
         },{
             name: "Instagram",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.instagram.text"),
             url: "https://www.instagram.com",
             imgUrl: Instagram,
         },{
             name: "Patreon",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.patreon.text"),
             url: "https://www.patreon.com",
             imgUrl: Patreon,
         },{
             name: "Twitter",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.twitter.text"),
             url: "https://www.twitter.com",
             imgUrl: Twitter,
         },{
             name: "Twitch",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.twitch.text"),
             url: "https://www.twitch.tv",
             imgUrl: Twitch,
         },{
             name: "Spotify",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!",
+            text: lang("social.spotify.text"),
             url: "https://www.spotify.com",
             imgUrl: Spotify,
         }
@@ -53,7 +56,7 @@ function Social() {
 
     return (
         <ContentBox>
-            <SiteTitle>Social media</SiteTitle>
+            <SiteTitle>{lang("social.title")}</SiteTitle>
             <Stack>
                 <SocialWrapper data={socialData}/>
             </Stack>

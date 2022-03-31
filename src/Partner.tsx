@@ -1,18 +1,21 @@
 import { Paper, Typography } from '@mui/material'
 import { ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from './App'
 import IMG from './img/th.jpg'
+import { useLanguage } from './Localization'
 
 export default function Partner() {
+
+    const lang = useLanguage()
 
     const content = [
        
                 {
                     "name": "Thomann",
-                    "text": "Our main source for music equipment",
+                    "text": lang("partner.thomann.text"),
                     "imgUrl": IMG,
                 },{
                     "name": "Amazon",
-                    "text": "Our main source of random stuff",
+                    "text": lang("partner.amazon.text"),
                     "imgUrl": IMG,
                 }
         

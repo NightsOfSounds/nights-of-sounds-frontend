@@ -3,24 +3,27 @@ import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "./Localization";
 
 function Header() {
   
+    const lang = useLanguage();
+
     const links = [
       {
-        "name": "Home",
+        "name": lang("home.button"),
         "url": "/",
       },{
-        "name": "About Us",
+        "name": lang("about.button"),
         "url": "/about",
       },{
-        "name": "Socials",
+        "name": lang("social.button"),
         "url": "/social",
       },{
-        "name": "Partners",
+        "name": lang("partner.button"),
         "url": "/partner"
       },{
-        "name": "Equipment",
+        "name": lang("equipment.button"),
         "url": "/equipment"
       }
     ]
@@ -29,8 +32,6 @@ function Header() {
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
     const [mobileDrawer, setMobileDrawer] = useState(false)
-
-    console.log(isMobile)
 
     useEffect(() => {
       const handleScroll = () => {
