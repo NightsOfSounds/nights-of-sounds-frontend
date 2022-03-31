@@ -1,5 +1,4 @@
 import { Paper, Typography } from '@mui/material'
-import { type } from 'os'
 import { ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from './App'
 import IMG from './img/th.jpg'
 
@@ -12,12 +11,8 @@ export default function Partner() {
                     "text": "Our main source for music equipment",
                     "imgUrl": IMG,
                 },{
-                    "name": "Amazing",
+                    "name": "Amazon",
                     "text": "Our main source of random stuff",
-                    "imgUrl": IMG,
-                }, {
-                    "name": "Parents",
-                    "text": "Our main source of Depression",
                     "imgUrl": IMG,
                 }
         
