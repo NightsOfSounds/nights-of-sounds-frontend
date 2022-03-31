@@ -106,9 +106,13 @@ export type ImageTextBoxType = {
 }
 export function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxType) {
 
+  const LinkEl = styled("a")({
+    display: "contents"
+  })
+
   return <ConditionalWrapper
     condition={!!url}
-    wrapper={(children) => <a href={url}>{children}</a>}>
+    wrapper={(children) => <LinkEl href={url}>{children}</LinkEl>}>
     <Paper sx={{
       padding: "20px",
       maxWidth: "300px",
