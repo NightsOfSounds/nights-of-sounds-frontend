@@ -7,7 +7,7 @@
         "button": "About us",
         "title": "About us",
         "user01": {
-            "name": "Fil106ip",
+            "name": "Hyouka",
             "text": "Lorem ipsum"
         },
         "user02": {
@@ -19,22 +19,22 @@
         "button": "Socials",
         "title": "Social media",
         "youtube": {
-            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+            "text": "Here we will upload our songs, cover and more."
         },
         "discord": {
-            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+            "text": "Join our Community, be part of our vidoes, or just chill with us."
         },
         "instagram": {
-            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+            "text": "Trash content is also a part, but sometimes is YouTube not the perfect plattform for things like this."
         },
         "patreon": {
-            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+            "text": "Support our work, for every part we saw blood."
         },
         "twitter": {
             "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
         },
         "twitch": {
-            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+            "text": "See live how we do our songs, videos or just have fun with us."
         },
         "spotify": {
             "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
@@ -52,7 +52,19 @@
     },
     "equipment": {
         "button": "Equipment",
-        "title": "Our Equipment"
+        "title": "Our Equipment",
+        "mics": {
+            "rodent1a": {
+                "name": "Rode NT1-A",
+                "text": "One of your mics, it has a very cold sound",
+                "url": "https://www.thomann.de/de/index.html"
+            }, 
+            "shuresm7b": {
+                "name": "Shure SM7B",
+                "text": "One of your mics, it has a very warm sound",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        }
     },
     "imprint": {
         "title": "Imprint",
