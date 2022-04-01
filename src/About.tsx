@@ -39,7 +39,7 @@ function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxTy
                   overflow: "hidden", 
                   width: {xs: 300, md: 1/2}, 
                   maxWidth: "100%", 
-                  display: "inline",
+                  display: "flex",
                   margin: isMobile ? "auto" : "",
                   borderRadius: 1,
                   }}>
