@@ -40,6 +40,45 @@ function ScrollTop() {
   return <></>
 }
 
+export const sites = [
+  {
+    path: "/",
+    name: "home.button",
+    element: <Home/>,
+    navigation: true,
+  }, {
+    path: "/about/",
+    name: "about.button",
+    element: <About/>,
+    navigation: true,
+  }, {
+    path: "/social/",
+    name: "social.button",
+    element: <Social/>,
+    navigation: true,
+  }, {
+    path: "/partner/",
+    name: "partner.button",
+    element: <Partner/>,
+    navigation: true,
+  }, {
+    path: "/equipment/",
+    name: "equipment.button",
+    element: <Equipment/>,
+    navigation: true,
+  }, {
+    path: "/imprint/",
+    name: "",
+    element: <Imprint/>,
+    navigation: false,
+  }, {
+    path: "/privacy/",
+    name: "",
+    element: <Privacy/>,
+    navigation: false,
+  },
+]
+
 function App() {
   return (
     <BrowserRouter>
@@ -50,13 +89,7 @@ function App() {
               <ScrollTop/>
               <Header/>
               <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/about' element={<About/>}/>
-                <Route path='/social' element={<Social/>}/>
-                <Route path='/equipment' element={<Equipment/>}/>
-                <Route path='/imprint' element={<Imprint/>}/>
-                <Route path='/privacy' element={<Privacy/>}/>
-                <Route path='/partner' element={<Partner/>}/>
+                {sites.map((e,i)=><Route key={`route.${i}`} path={e.path} element={e.element}/>)}
                 <Route path='*' element={<NotFound/>} />
               </Routes>
               <Footer/>
@@ -197,6 +230,8 @@ type TextProcessorType = {
 }
 export function TextProcessor({children, sx}:TextProcessorType) {
   
+  const r = (Math.random() * 100000)
+
   let remaining = children
   let elements = [];
 
@@ -238,7 +273,7 @@ export function TextProcessor({children, sx}:TextProcessorType) {
         margin = false
       }
 
-      elements.push(<Typography key={`text.${end}`} sx={{marginBottom: margin ? 2 : 0}}>
+      elements.push(<Typography key={`text.${counter}`} sx={{marginBottom: margin ? 2 : 0}}>
         {remaining.substring(0, end)}
       </Typography>)
       remaining = remaining.substring(end +1)

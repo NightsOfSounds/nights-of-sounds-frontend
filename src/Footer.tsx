@@ -1,6 +1,5 @@
 import { Box, experimental_sx as sx } from "@mui/material";
 import { styled } from "@mui/system";
-import { useEffect, useState } from "react";
 import { UnderlinedLink } from "./App";
 import { useLanguage } from "./Localization";
 
@@ -8,17 +7,7 @@ export default function Footer() {
 
     const LinkA = styled("a")(({theme}) => ({color: theme.palette.text.primary}))
 
-    const [scrollHeight, setScrollHeight] = useState(0);
     const lang = useLanguage()
-
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY
-        setScrollHeight(currentScrollY)
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true })
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [scrollHeight]);
 
     const StyledImage = styled("img")(
         sx([{

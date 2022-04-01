@@ -84,6 +84,9 @@ function Home() {
                 frameBorder={0} 
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 title='Discord server overview'
+                style={{
+                  maxWidth: "100%"
+                }}
               ></iframe>
             </Box>
           </Stack>

@@ -4,30 +4,14 @@ import Slide from '@mui/material/Slide';
 import { styled } from "@mui/system";
 import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { sites } from "./App";
 import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "./Localization";
 
 function Header() {
   
     const lang = useLanguage()
 
-    const links = [
-      {
-        "name": lang("home.button"),
-        "url": "/",
-      },{
-        "name": lang("about.button"),
-        "url": "/about",
-      },{
-        "name": lang("social.button"),
-        "url": "/social",
-      },{
-        "name": lang("partner.button"),
-        "url": "/partner"
-      },{
-        "name": lang("equipment.button"),
-        "url": "/equipment"
-      }
-    ]
+    const links = sites.filter(e=>e.navigation).map(e=>({name: lang(e.name), url: e.path}))
   
     const [scrollHeight, setScrollHeight] = useState(0);
     const theme = useTheme()
@@ -75,7 +59,7 @@ function Header() {
         overflow: "hidden",
         display: "flex",
       }}>
-      <img src="img/untitled2.webp" alt="Background banner" style={{
+      <img src="/img/untitled2.webp" alt="Background banner" style={{
         width: "100%",
         height: "100vh",
         objectFit: "cover",
@@ -289,9 +273,6 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
       width: mobile ? "100%" : "auto",
     }}>
       <Button 
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={isOpen ? "true" : undefined}
         onClick={open}
         sx={{
           color: "text.primary",
