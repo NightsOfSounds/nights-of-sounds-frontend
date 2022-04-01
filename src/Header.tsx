@@ -51,7 +51,7 @@ function Header() {
       opacity: mobileDrawer ? "0" : "1"
     }
 
-    const maxRotate = 30
+    const maxRotate = 45
 
     const innerSX = {
       backgroundColor: "white",
@@ -60,7 +60,7 @@ function Header() {
       width: "100%",
       height: "5px",
       position: "absolute",
-      transition: ".5s",
+      transition: ".3s",
     }
 
     return (

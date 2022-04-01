@@ -2,9 +2,8 @@ import {Box, Grid, Paper, Stack, Typography, experimental_sx as sx } from '@mui/
 import { styled } from "@mui/system";
 import { useEffect, useState } from 'react'
 import { ConditionalWrapper, ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from './App'
-import IMG from './img/th.jpg'
 import Thomann from "./img/thomann-logo.png"
-import Amazon from "./img/amazon-logo.png"
+import Amazon from "./img/amazon-logo-2.png"
 import { useLanguage } from './Localization'
 import { SocialWrapper } from './Social'
 
