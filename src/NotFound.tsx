@@ -15,7 +15,7 @@ export default function NotFound() {
         <Typography>
             We are so sorry 😭
         </Typography>
-        <Typography sx={{paddingBottom: "30px"}}>
+        <Typography sx={{paddingBottom: 4}}>
             We searched everywhere, but could not find the website you requested.
             Please make sure, the url you typed in is correct.
         </Typography>

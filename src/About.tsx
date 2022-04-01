@@ -40,7 +40,8 @@ function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxTy
                   width: {xs: 300, md: 1/2}, 
                   maxWidth: "100%", 
                   display: "inline",
-                  margin: isMobile ? "auto" : ""
+                  margin: isMobile ? "auto" : "",
+                  borderRadius: 1,
                   }}>
                 <HoverImg src={imgUrl} alt="User"/>
               </Box>
@@ -52,7 +53,7 @@ function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxTy
 
   return <Paper sx={{
     width: "100%",
-    padding: "20px",
+    padding: 2,
   }}>
     <Stack direction={{xs: "column", md: "row"}} sx={{width: "100%"}} gap={2}>
       {alignment === 0 ? el1 : el2}

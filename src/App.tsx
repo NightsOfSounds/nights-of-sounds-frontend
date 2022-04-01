@@ -46,7 +46,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
           <CssBaseline/>
-            <LanguageProvider language='en'>
+            <LanguageProvider lang='en'>
               <ScrollTop/>
               <Header/>
               <Routes>
@@ -75,7 +75,7 @@ export function ContentBox({children}:ContentBoxType) {
     <Box sx={{
       width: "1200px",
       margin: "auto",
-      maxWidth: "calc( 100vw - 20px )",
+      maxWidth: "calc( 100% - 20px )",
     }}>
       {children}
     </Box>
@@ -89,7 +89,7 @@ export function SiteTitle({children}:SiteTitleType) {
   return <Typography 
       variant="h3" 
       sx={{
-        marginBottom: "30px", 
+        marginBottom: 4, 
         fontWeight: "bold",
         textTransform: "uppercase",
       }}
@@ -114,23 +114,23 @@ export function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxT
     condition={!!url}
     wrapper={(children) => <LinkEl href={url}>{children}</LinkEl>}>
     <Paper sx={{
-      padding: "20px",
-      maxWidth: "300px",
-      minWidth: "300px",
+      p: 2,
+      width: "300px",
       display: "inline-block",
-      margin: "20px",
+      m: 2,
       verticalAlign: "top",
     }}>
     {imgUrl && <Box sx={{
       overflow: "hidden",
       display: "flex",
-      marginBottom: "10px",
+      marginBottom: 2,
+      borderRadius: 1,
     }}>
       <HoverImg src={imgUrl} alt="Depiction of Title"/>
     </Box>}
     <Typography variant="h4">{name}</Typography>
-    <TextProcessor sx={{marginTop: "10px"}}>{text}</TextProcessor>
-    {experience && <Typography sx={{marginTop: "10px"}}>
+    <TextProcessor sx={{marginTop: 2}}>{text}</TextProcessor>
+    {experience && <Typography sx={{marginTop: 2}}>
       <b>Experience:</b> {experience}
       </Typography>}
     </Paper>
@@ -238,7 +238,7 @@ export function TextProcessor({children, sx}:TextProcessorType) {
         margin = false
       }
 
-      elements.push(<Typography key={`text.${end}`} sx={{marginBottom: margin ? "15px" : "0"}}>
+      elements.push(<Typography key={`text.${end}`} sx={{marginBottom: margin ? 2 : 0}}>
         {remaining.substring(0, end)}
       </Typography>)
       remaining = remaining.substring(end +1)

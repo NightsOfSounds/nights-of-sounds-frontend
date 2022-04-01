@@ -99,8 +99,8 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
         if(width < 900) textAligns = ["center", "center"]
         if(i % 2 !== 0) textAligns = textAligns.reverse();
 
-        let margins = ["0px", "20px"]
-        if(width < 900) margins = ["0", "0"]
+        let margins = [0, 4]
+        if(width < 900) margins = [0, 0]
         if( i % 2 !== 0) margins = margins.reverse()
         
         const StyledLink = styled("a")({
@@ -112,7 +112,7 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
         const SocialImage = styled("img")(
             sx([
                 {
-                    maxWidth: "100",
+                    maxWidth: "100%",
                     height: "200px",
                     transition: ".3s",
                     filter: "grayscale(0.3)",
@@ -175,10 +175,10 @@ type SplitType = {
 function Split({children}:SplitType) {
     return(
         <Paper sx={{
-            marginBottom: "20px"
+            marginBottom: 4
         }}>
     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
-        padding: "10px",
+        padding: 2,
     }}>
         {children.map((e,i)=>(<Grid key={`split.i.${i}`} item xs={6} sx={{margin: "auto"}}>{e}</Grid>))}
     </Grid>

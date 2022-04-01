@@ -68,6 +68,7 @@ export default function Equipment() {
             ],
         }, {
             "name": lang("equipment.software.title"),
+            "subtitle": lang("equipment.software.subtitle"),
             "content": [
                 {
                     "name": lang("equipment.software.cubase.name"),
@@ -157,12 +158,14 @@ type BoxType = {
 }
 type CategoryType = {
     name: string,
+    subtitle?: string,
     content: BoxType[]
 }
-function Category({name, content}:CategoryType) {
+function Category({name, subtitle, content}:CategoryType) {
 
     return <>
-        <Typography variant="h3">{name}</Typography>
+        <Typography variant="h3" sx={{display: "inline-block"}}>{name}</Typography>
+        {subtitle && <Typography sx={{display: "inline-block", marginLeft: 2}}>{subtitle}</Typography>}
         <ImageTextWrapper sameHeight>
             {content.map((e, i) => <ImageTextBox key={`item.${i}`} {...e} />)}
         </ImageTextWrapper>

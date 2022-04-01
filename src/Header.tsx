@@ -1,12 +1,16 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Language } from "@mui/icons-material";
+import { Box, Button, Menu, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx } from "@mui/material";
 import Slide from '@mui/material/Slide';
-import { useEffect, useState } from "react";
+import { styled } from "@mui/system";
+import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useLanguage } from "./Localization";
+import { useLanguage, useSetLanguage } from "./Localization";
+import DE from './img/german-flag.png';
+import EN from './img/british-flag.png';
 
 function Header() {
   
-    const lang = useLanguage();
+    const lang = useLanguage()
 
     const links = [
       {
@@ -63,11 +67,13 @@ function Header() {
       transition: ".3s",
     }
 
+    
+
     return (
       <>
       <Box sx={{
         position: "relative",
-        marginBottom: "40px",
+        marginBottom: 8,
         overflow: "hidden",
         display: "flex",
       }}>
@@ -89,13 +95,15 @@ function Header() {
         }}>NIGHTS OF SOUNDS</Typography>
       </Box>
       <Box sx={{
-        width: "65px",
-        height: "40px",
+        width: "75px",
+        height: "50px",
         position: "fixed",
-        top: "10px",
-        right: "10px",
-        zIndex: "3",
+        top: "0",
+        right: "0",
+        zIndex: "4",
         display: isMobile ? "block" : "none",
+        pointerEvents: "all",
+        padding: "10px",
       }} onClick={()=>{
         setMobileDrawer((old)=> !old)
       }}>
@@ -131,8 +139,10 @@ function Header() {
         overflow: "auto",
       }}>
         {links.map((e, i) => <MobileButton onClick={()=>{setMobileDrawer(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
+        <LanguageSwitcher mobile/>
       </Box>
       </Slide>
+      
       <Box sx={{
           top: "0",
           left: "0",
@@ -148,8 +158,9 @@ function Header() {
   
           {links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
   
+          <LanguageSwitcher/>
         </Box>
-      </>
+        </>
     )
 }
   
@@ -249,4 +260,84 @@ function HeaderButton({url, children}:HeaderButtonType) {
         </Box>
       </Link>
     )
+}
+
+type LanguageSwitcherType = {
+  mobile?: any,
+}
+function LanguageSwitcher({mobile}:LanguageSwitcherType) {
+
+  const setLanguage = useSetLanguage()
+  const [anchorEl, setAnchorEl] = useState<HTMLElement|null>(null)
+  const isOpen = !!anchorEl
+  const open = (e:React.MouseEvent<HTMLButtonElement>) => {
+    console.log(e.currentTarget)
+    setAnchorEl(e.currentTarget)
+  }
+  const close = (e:MouseEvent) => {
+    setLanguage(e.currentTarget.id)
+    setAnchorEl(null)
+  }
+
+  return (
+    <Box sx={{
+      position: mobile ? "" : "absolute",
+      right: "0",
+      top: "50%",
+      transform: mobile ? "" : "translateY(-50%)",
+      height: mobile ? "100px" : "100%",
+      m: "auto",
+      width: mobile ? "100%" : "auto",
+    }}>
+      <Button 
+        aria-controls="basic-menu"
+        aria-haspopup="true"
+        aria-expanded={isOpen ? "true" : undefined}
+        onClick={open}
+        sx={{
+          color: "text.primary",
+          margin: "auto",
+          height: "100%",
+          width: mobile ? "100%" : "auto",
+          textTransform: "none",
+        }}>
+        {mobile ? <Typography sx={{fontSize: "30px"}}>Language</Typography> : <Language/>}
+      </Button>
+
+      <Menu
+        open={isOpen}
+        anchorEl={anchorEl}
+        onClose={()=>{setAnchorEl(null)}}
+        PaperProps={{
+          style:{
+            width: mobile ? "100%" : "auto",
+          }
+        }}
+        >
+        <LanguageItem onClick={close} src={EN} short="en">English</LanguageItem>
+        <LanguageItem onClick={close} src={DE} short="de">German</LanguageItem>
+      </Menu>
+    </Box>
+  )
+}
+
+type LanguageItemType = {
+  children: string,
+  src: string,
+  onClick: MouseEventHandler,
+  short: string,
+}
+function LanguageItem({short, children, src, onClick}:LanguageItemType) {
+
+  const StyledImage = styled("img")(
+    sx({
+      height: "14px",
+      marginRight: 1
+    })
+  )
+
+  return <MenuItem onClick={onClick} id={short}>
+    <StyledImage alt="Language Flag" src={src}/>
+    {children}
+  </MenuItem>
 }

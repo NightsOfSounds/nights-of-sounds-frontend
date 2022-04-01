@@ -121,7 +121,8 @@
             }
         },
         "software": {
-            "title": "Software (Always newest Version)",
+            "title": "Software",
+            "subtitle": "(always newest version)",
             "cubase": {
                 "name": "Cubase Pro",
                 "text": "Building instrumentals is everything.",

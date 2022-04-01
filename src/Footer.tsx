@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, experimental_sx as sx } from "@mui/material";
 import { styled } from "@mui/system";
 import { useEffect, useState } from "react";
 import { UnderlinedLink } from "./App";
@@ -20,21 +20,26 @@ export default function Footer() {
       return () => window.removeEventListener("scroll", handleScroll)
     }, [scrollHeight]);
 
+    const StyledImage = styled("img")(
+        sx([{
+            position: "absolute",
+            left: 10,
+            maxHeight: "50%",
+            maxWidth: "20%"
+        }])
+    )
+
     return <Box sx={{
         backgroundColor: "black",
-        padding: "40px",
+        p: 6,
         textAlign: "center",
-        marginTop: "40px",
+        marginTop: 8,
         position: "relative",
     }}>
-        <img src="/img/moon.png" style={{
-            position: "absolute",
-            left: "10px",
-            height: "50%",
-        }} alt="Moon"/>
+        <StyledImage src="/img/moon.png" alt="Moon"/>
         <Box sx={{textAlign: "center", width: "100%", margin: "auto"}}>
             <Box>
-                &copy; Nights of Sounds
+                &copy; {new Date().getFullYear()}, Nights of Sounds
             </Box>
             <Box>
                 {lang("footer.contact")}&nbsp;

@@ -1,20 +1,31 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useState } from "react"
 
 const folder = "./translations/"
 const defaultLanguage = "en"
 
 type LanguageProviderType = {
-    language: string,
+    lang: string,
     children?: string | JSX.Element | JSX.Element[]
 }
 
-type LanguageContextType = (q:string) => string
-const LanguageContext = createContext<LanguageContextType>((q:string) => "Loading language...")
+type LanguageContextType = {
+    getData: (q:string) => string,
+    setLang: (lang:string) => void,
+}
+const LanguageContext = createContext<LanguageContextType>({getData: () => "Loading language...", setLang: () => {}})
 const defaultTranslation = require(`${folder}${defaultLanguage}.json`)
 
-export const useLanguage = () => useContext(LanguageContext)
+export const useLanguage = () => useContext(LanguageContext).getData
 
-export function LanguageProvider({children, language}:LanguageProviderType) {
+export const useSetLanguage = () => useContext(LanguageContext).setLang
+
+export function LanguageProvider({children, lang}:LanguageProviderType) {
+    
+    const [language, setLang] = useState(lang)
+
+    const setLanguage = (lang:string) => {
+        setLang(lang)
+    }
     
     let translation:any = {};
     try {
@@ -27,7 +38,7 @@ export function LanguageProvider({children, language}:LanguageProviderType) {
         return pathFromObject(q, translation) || pathFromObject(q, defaultTranslation)
     }
     
-    return <LanguageContext.Provider value={search}>
+    return <LanguageContext.Provider value={{getData: search, setLang: setLanguage}}>
         {children}
     </LanguageContext.Provider>
 }
