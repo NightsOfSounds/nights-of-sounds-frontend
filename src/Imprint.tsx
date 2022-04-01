@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import { ContentBox, SiteTitle } from "./App";
+import { ContentBox, SiteTitle, TextProcessor } from "./App";
 import { useLanguage } from "./Localization";
 
 export default function Imprint() {
@@ -8,8 +7,8 @@ export default function Imprint() {
 
     return <ContentBox>
         <SiteTitle>{lang("imprint.title")}</SiteTitle>
-        <Typography>
+        <TextProcessor>
             {lang("imprint.text")}
-        </Typography>
+        </TextProcessor>
     </ContentBox>
 }

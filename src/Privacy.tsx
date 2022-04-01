@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import { ContentBox, SiteTitle } from "./App";
+import { ContentBox, SiteTitle, TextProcessor } from "./App";
 import { useLanguage } from "./Localization";
 
 export default function Privacy() {
@@ -8,6 +7,6 @@ export default function Privacy() {
 
     return <ContentBox>
         <SiteTitle>{lang("privacy.title")}</SiteTitle>
-        <Typography>{lang("privacy.text")}</Typography>
+        <TextProcessor>{lang("privacy.text")}</TextProcessor>
     </ContentBox>
 }

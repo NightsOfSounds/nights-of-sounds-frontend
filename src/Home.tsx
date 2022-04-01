@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-import { ContentBox, SiteTitle } from './App';
+import { ContentBox, SiteTitle, TextProcessor } from './App';
 import { useLanguage } from './Localization';
 
 function Home() {
@@ -27,6 +27,9 @@ function Home() {
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
             title='Discord server overview'>
             </iframe>
+            <TextProcessor>
+              Hallo, ich bin | ein Text [1, 2,, 3]
+            </TextProcessor>
         </ContentBox>
     )
 }

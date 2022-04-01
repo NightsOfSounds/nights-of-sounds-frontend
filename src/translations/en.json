@@ -8,7 +8,7 @@
         "title": "About us",
         "user01": {
             "name": "Hyouka",
-            "text": "'The ones who accomplish true greatness, are the foolish who keep pressing onward. The ones who accomplish nothing, are the wise who know when to quit',  'Listen close, Listen well, For I have a story to tell, It begins not here, but two steps from hell'"
+            "text": "'The ones who accomplish true greatness, are the foolish who keep pressing onward. The ones who accomplish nothing, are the wise who know when to quit', | 'Listen close, Listen well, For I have a story to tell, It begins not here, but two steps from hell'"
         },
         "user02": {
             "name": "Jareix",
@@ -152,11 +152,11 @@
             "title": "Computers",
             "soundpc": {
                 "name": "Sound Computer",
-                "text": "MSI B550 Gaming Plus, AMD Ryzen 7 3700x, 16gb Ram, RTX 3060TI"
+                "text": "The computer on which all the sound you hear in our videos is made.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 16GB RAM,, NVIDIA RTX 3060TI]"
             },
             "cuttingpc": {
                 "name": "Cutting Computer",
-                "text": "MSI B550 Gaming Plus, AMD Ryzen 7 3700x, 32gb Ram, RX 5500xt"
+                "text": "The computer used for making our Videos.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
             }
         }, 
         "instruments": {

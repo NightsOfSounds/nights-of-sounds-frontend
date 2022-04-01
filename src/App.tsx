@@ -129,7 +129,7 @@ export function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxT
       <HoverImg src={imgUrl} alt="Depiction of Title"/>
     </Box>}
     <Typography variant="h4">{name}</Typography>
-    <Typography sx={{marginTop: "10px"}}>{text}</Typography>
+    <TextProcessor sx={{marginTop: "10px"}}>{text}</TextProcessor>
     {experience && <Typography sx={{marginTop: "10px"}}>
       <b>Experience:</b> {experience}
       </Typography>}
@@ -190,5 +190,63 @@ export const HoverImg = styled("img")(
     }
   }])
 )
+
+type TextProcessorType = {
+  children: string,
+  sx?: any
+}
+export function TextProcessor({children, sx}:TextProcessorType) {
+  
+  let remaining = children
+  let elements = [];
+
+  let isList = false
+  let counter = 0
+  while(remaining.length > 0  && counter < 100) {
+    let delimiter = "|"
+    if(isList) {
+
+      const StyledUl = styled("ul")({
+        textAlign: "left"
+      })
+
+      elements.push(
+        <StyledUl key={`ul.${remaining.length}`}>
+          {remaining.substring(0, remaining.indexOf("]")).split(",,").map((e,i)=>(
+            <li key={`li.${remaining.length}.${i}`}>{e}</li>
+          ))}
+        </StyledUl>
+      )
+      remaining = remaining.substring(remaining.indexOf("]") + 1)
+      isList = false
+    } else {
+      let margin = true
+      let index1 = remaining.indexOf("|")
+      if(index1 < 0) index1 = remaining.length
+
+      let index2 = remaining.indexOf("[")
+      if(index2 < 0) index2 = remaining.length
+
+      if(index1 > index2) {
+        delimiter = "["
+        isList = true
+        margin = false
+      }
+      let end = remaining.indexOf(delimiter)
+      if(remaining.indexOf(delimiter) < 0) {
+        end = remaining.length
+        margin = false
+      }
+
+      elements.push(<Typography key={`text.${end}`} sx={{marginBottom: margin ? "15px" : "0"}}>
+        {remaining.substring(0, end)}
+      </Typography>)
+      remaining = remaining.substring(end +1)
+    }
+    counter++
+  }
+  return <Box sx={sx}>{elements}</Box>
+
+}
 
 export default App;
