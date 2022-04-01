@@ -21,7 +21,7 @@ function Header() {
     useEffect(() => {
       const handleScroll = () => {
         const currentScrollY = window.scrollY
-        setScrollHeight(currentScrollY)
+        setScrollHeight(Math.min(currentScrollY, window.innerHeight))
       };
       window.addEventListener("scroll", handleScroll, { passive: true })
       return () => window.removeEventListener("scroll", handleScroll)
