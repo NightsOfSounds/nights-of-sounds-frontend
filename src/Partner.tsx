@@ -15,13 +15,15 @@ function Partner() {
     const partnerData = [
        
                 {
-                    "name": "Thomann",
-                    "text": lang("partner.thomann.text"),
-                    "imgUrl": Thomann,
+                    name: "Thomann",
+                    text: lang("partner.thomann.text"),
+                    url: "https://www.thomann.de",
+                    imgUrl: Thomann,
                 },{
-                    "name": "Amazon",
-                    "text": lang("partner.amazon.text"),
-                    "imgUrl": Amazon,
+                    name: "Amazon",
+                    text: lang("partner.amazon.text"),
+                    url: "https://www.amazon.de",
+                    imgUrl: Amazon,
                 }
         
     
