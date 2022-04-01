@@ -46,7 +46,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
           <CssBaseline/>
-            <LanguageProvider lang='en'>
+            <LanguageProvider>
               <ScrollTop/>
               <Header/>
               <Routes>

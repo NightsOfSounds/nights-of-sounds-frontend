@@ -4,10 +4,7 @@ import Slide from '@mui/material/Slide';
 import { styled } from "@mui/system";
 import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useLanguage, useSetLanguage } from "./Localization";
-import EN from './img/british-flag-2.png';
-import DE from './img/german-flag-2.png';
-import PL from './img/polish-flag-2.png';
+import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "./Localization";
 
 function Header() {
   
@@ -268,6 +265,7 @@ type LanguageSwitcherType = {
 }
 function LanguageSwitcher({mobile}:LanguageSwitcherType) {
 
+  const language = useLanguageSelected()
   const setLanguage = useSetLanguage()
   const [anchorEl, setAnchorEl] = useState<HTMLElement|null>(null)
   const isOpen = !!anchorEl
@@ -309,12 +307,13 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
         open={isOpen}
         anchorEl={anchorEl}
         role={undefined}
-        placement="bottom-start"
+        placement="bottom-end"
         disablePortal
         transition
         style={{
           width: "100%",
           position: "relative",
+          top: "0",
         }}
         >
           {({ TransitionProps, placement}) => {
@@ -327,7 +326,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
                   width: mobile ? "100%" : "auto",
                   position: "absolute",
                   right: mobile ? "" : "0",
-                  bottom: mobile ? "0" : "",
+                  bottom: mobile ? "0px" : "",
                 }}
               >
                 <Paper sx={{
@@ -337,9 +336,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
                     <MenuList
                       autoFocusItem={isOpen}
                     >
-                      <LanguageItem onClick={close} src={EN} short="en">English</LanguageItem>
-                      <LanguageItem onClick={close} src={DE} short="de">German</LanguageItem> 
-                      <LanguageItem onClick={close} src={PL} short="pl">Polish</LanguageItem> 
+                      {languages.map((e,i)=><LanguageItem key={`lang.${i}`}onClick={close} src={e.image} short={e.short} selected={e.short === language}>{e.name}</LanguageItem>)}
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>
@@ -356,8 +353,9 @@ type LanguageItemType = {
   src: string,
   onClick: MouseEventHandler,
   short: string,
+  selected: boolean,
 }
-function LanguageItem({short, children, src, onClick}:LanguageItemType) {
+function LanguageItem({short, children, src, onClick, selected}:LanguageItemType) {
 
   const StyledImage = styled("img")(
     sx({
@@ -367,7 +365,9 @@ function LanguageItem({short, children, src, onClick}:LanguageItemType) {
     })
   )
 
-  return <MenuItem onClick={onClick} id={short}>
+  return <MenuItem onClick={onClick} id={short} sx={{
+    backgroundColor: selected ? "action.hover" : ""
+  }}>
     <StyledImage alt="Language Flag" src={src}/>
     {children}
   </MenuItem>
