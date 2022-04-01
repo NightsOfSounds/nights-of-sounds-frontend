@@ -5,8 +5,9 @@ import { styled } from "@mui/system";
 import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage, useSetLanguage } from "./Localization";
-import DE from './img/german-flag.png';
-import EN from './img/british-flag.png';
+import EN from './img/british-flag-2.png';
+import DE from './img/german-flag-2.png';
+import PL from './img/polish-flag-2.png';
 
 function Header() {
   
@@ -338,6 +339,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
                     >
                       <LanguageItem onClick={close} src={EN} short="en">English</LanguageItem>
                       <LanguageItem onClick={close} src={DE} short="de">German</LanguageItem> 
+                      <LanguageItem onClick={close} src={PL} short="pl">Polish</LanguageItem> 
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>
@@ -360,6 +362,7 @@ function LanguageItem({short, children, src, onClick}:LanguageItemType) {
   const StyledImage = styled("img")(
     sx({
       height: "14px",
+      width: "25px",
       marginRight: 1
     })
   )
