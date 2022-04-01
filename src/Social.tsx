@@ -5,7 +5,7 @@ import { styled } from "@mui/system";
 import Discord from "./img/discord-logo.png"
 import Instagram from "./img/instagram-logo.png"
 import Youtube from "./img/youtube-logo.png"
-import Patreon from "./img/patreon-logo.png"
+import Patreon from "./img/patreon-logo-2.png"
 import Twitter from "./img/twitter-logo.png"
 import Twitch from "./img/twitch-logo.png"
 import Spotify from "./img/spotify-logo.png"
