@@ -1,5 +1,5 @@
 import { Language } from "@mui/icons-material";
-import { Box, Button, Menu, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx } from "@mui/material";
+import { Box, Button, Menu, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import { styled } from "@mui/system";
 import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
@@ -126,7 +126,7 @@ function Header() {
         }}></Box>
       </Box>
       </Box>
-      <Slide in={mobileDrawer} direction="left">
+      <Slide in={mobileDrawer && isMobile} direction="left">
       <Box sx={{
         width: "100%",
         height: "100%",
@@ -304,19 +304,47 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
         {mobile ? <Typography sx={{fontSize: "30px"}}>Language</Typography> : <Language/>}
       </Button>
 
-      <Menu
+      <Popper
         open={isOpen}
         anchorEl={anchorEl}
-        onClose={()=>{setAnchorEl(null)}}
-        PaperProps={{
-          style:{
-            width: mobile ? "100%" : "auto",
-          }
+        role={undefined}
+        placement="bottom-start"
+        disablePortal
+        transition
+        style={{
+          width: "100%",
+          position: "relative",
         }}
         >
-        <LanguageItem onClick={close} src={EN} short="en">English</LanguageItem>
-        <LanguageItem onClick={close} src={DE} short="de">German</LanguageItem>
-      </Menu>
+          {({ TransitionProps, placement}) => {
+            console.log(placement)
+            console.log(TransitionProps)
+            return (
+              <Grow
+                {...TransitionProps}
+                style={{
+                  width: mobile ? "100%" : "auto",
+                  position: "absolute",
+                  right: mobile ? "" : "0",
+                  bottom: mobile ? "0" : "",
+                }}
+              >
+                <Paper sx={{
+                  display: "inline-block",
+                }}>
+                  <ClickAwayListener onClickAway={()=>{setAnchorEl(null)}}>
+                    <MenuList
+                      autoFocusItem={isOpen}
+                    >
+                      <LanguageItem onClick={close} src={EN} short="en">English</LanguageItem>
+                      <LanguageItem onClick={close} src={DE} short="de">German</LanguageItem> 
+                    </MenuList>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+          )}}
+        
+      </Popper>
     </Box>
   )
 }
