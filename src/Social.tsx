@@ -10,6 +10,7 @@ import Twitter from "./img/twitter-logo.png"
 import Twitch from "./img/twitch-logo.png"
 import Spotify from "./img/spotify-logo.png"
 import GitHub from "./img/github-logo.png"
+import Reddit from "./img/reddit-logo.png"
 import { useLanguage } from "./Localization";
 
 function Social() {
@@ -52,6 +53,11 @@ function Social() {
             text: lang("social.spotify.text"),
             url: "https://www.spotify.com",
             imgUrl: Spotify,
+        },{
+            name: "Reddit",
+            text: lang("social.reddit.text"),
+            url: "https://www.reddit.com/r/nightsofsounds/",
+            imgUrl: Reddit,
         },{
             name: "GitHub",
             text: lang("social.github.text"),

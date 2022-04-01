@@ -39,6 +39,9 @@
         "spotify": {
             "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
         },
+        "reddit": {
+            "text": "Reddit, do we need to say more about this?"
+        },
         "github": {
             "text": "Because we're also programmers, you can find some projects over there."
         }
