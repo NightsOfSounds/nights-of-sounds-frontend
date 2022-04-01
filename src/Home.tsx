@@ -24,7 +24,8 @@ function Home() {
             width="350" 
             height="500"
             frameBorder={0} 
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            title='Discord server overview'>
             </iframe>
         </ContentBox>
     )

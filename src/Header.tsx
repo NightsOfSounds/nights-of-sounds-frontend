@@ -1,4 +1,3 @@
-import { Close, Menu } from "@mui/icons-material";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import { useEffect, useState } from "react";
@@ -198,7 +197,7 @@ function HeaderButton({url, children}:HeaderButtonType) {
 
   useEffect(()=>{
     setActive(window.location.pathname === url)
-  }, [location])
+  }, [location, url])
 
   
   
