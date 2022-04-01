@@ -113,7 +113,7 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
             sx([
                 {
                     maxWidth: "100",
-                    maxHeight: "200px",
+                    height: "200px",
                     transition: ".3s",
                     filter: "grayscale(0.3)",
                 },{
