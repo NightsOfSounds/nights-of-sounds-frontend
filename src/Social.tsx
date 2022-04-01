@@ -20,22 +20,22 @@ function Social() {
         {
             name: "Youtube",
             text: lang("social.youtube.text"),
-            url: "https://www.youtube.com",
+            url: "https://www.youtube.com/channel/UCn1QDZMJicrd3CutKTr5Hhg",
             imgUrl: Youtube,
         },{
             name: "Discord",
             text: lang("social.discord.text"),
-            url: "https://www.discord.com",
+            url: "https://discord.gg/rEFcPuX",
             imgUrl: Discord,
         },{
             name: "Instagram",
             text: lang("social.instagram.text"),
-            url: "https://www.instagram.com",
+            url: "https://www.instagram.com/nightsofsounds/",
             imgUrl: Instagram,
         },{
             name: "Patreon",
             text: lang("social.patreon.text"),
-            url: "https://www.patreon.com",
+            url: "https://www.patreon.com/nightsofsounds",
             imgUrl: Patreon,
         },{
             name: "Twitter",
