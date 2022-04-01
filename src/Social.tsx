@@ -1,5 +1,5 @@
 import { Box, Grid, Paper, Stack, Typography, experimental_sx as sx } from "@mui/material"
-import { ConditionalWrapper, ContentBox, SiteTitle } from "./App"
+import { ConditionalWrapper, ContentBox, SiteTitle, TextProcessor } from "./App"
 import { useEffect, useState } from "react";
 import { styled } from "@mui/system";
 import Discord from "./img/discord-logo.png"
@@ -148,7 +148,7 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
             >
                 <Box sx={{color: "text.primary"}}>
                     <Typography variant="h3">{name}</Typography>
-                    <Typography>{text}</Typography>
+                    <TextProcessor>{text}</TextProcessor>
                 </Box>
             </ConditionalWrapper>
         </Box>

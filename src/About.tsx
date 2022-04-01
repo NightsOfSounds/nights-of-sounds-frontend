@@ -1,4 +1,4 @@
-import { ContentBox, HoverImg, ImageTextBoxType, SiteTitle } from "./App"
+import { ContentBox, HoverImg, ImageTextBoxType, SiteTitle, TextProcessor } from "./App"
 import Profile01 from './img/profile01.svg'
 import Profile02 from './img/profile02.svg'
 import { Box, Paper, Stack, Typography } from "@mui/material"
@@ -38,7 +38,7 @@ function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxTy
 
   const el2 = <Box sx={{width: "50%", textAlign: (alignment === 0 ? "left" : "right")}}>
                 <Typography variant="h4">{name}</Typography>
-                <Typography>{text}</Typography>
+                <TextProcessor>{text}</TextProcessor>
               </Box>
 
   return <Paper sx={{
