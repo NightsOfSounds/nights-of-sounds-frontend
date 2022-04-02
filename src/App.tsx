@@ -1,6 +1,6 @@
 import { CssBaseline, createTheme, darkScrollbar, StyledEngineProvider, ThemeProvider, Box, Typography, Paper, experimental_sx as sx } from '@mui/material';
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import About from './About';
 import Home from './Home';
 import Header from './Header';
@@ -13,6 +13,7 @@ import NotFound from './NotFound';
 import { styled } from '@mui/system';
 import Partner from './Partner';
 import { LanguageProvider } from './Localization';
+import { EmojiPeople, Handyman, Home as House, LocalShipping, PhoneIphone, QuestionMark } from '@mui/icons-material';
 
 const theme = createTheme({
   palette: {
@@ -45,36 +46,43 @@ export const sites = [
     path: "/",
     name: "home.button",
     element: <Home/>,
+    icon: <House/>,
     navigation: true,
   }, {
     path: "/about/",
     name: "about.button",
     element: <About/>,
+    icon: <EmojiPeople/>,
     navigation: true,
   }, {
     path: "/social/",
     name: "social.button",
     element: <Social/>,
+    icon: <PhoneIphone/>,
     navigation: true,
   }, {
     path: "/partner/",
     name: "partner.button",
     element: <Partner/>,
+    icon: <LocalShipping/>,
     navigation: true,
   }, {
     path: "/equipment/",
     name: "equipment.button",
     element: <Equipment/>,
+    icon: <Handyman/>,
     navigation: true,
   }, {
     path: "/imprint/",
     name: "",
     element: <Imprint/>,
+    icon: <QuestionMark/>,
     navigation: false,
   }, {
     path: "/privacy/",
     name: "",
     element: <Privacy/>,
+    icon: <QuestionMark/>,
     navigation: false,
   },
 ]
@@ -285,6 +293,37 @@ export function TextProcessor({children, sx}:TextProcessorType) {
   }
   return <Box sx={sx}>{elements}</Box>
 
+}
+
+type ScrollIntoType = {
+  children: string | JSX.Element |JSX.Element[]
+}
+export function ScrollInto({children}:ScrollIntoType) {
+
+  const [show, setShow] = useState(false)
+  const ref = useRef<HTMLDivElement>()
+
+  useEffect(() => {
+      const handleScroll = () => {
+          if(!ref.current) return
+          if(window.innerHeight+30 >= ref.current.getBoundingClientRect().top) {
+              setShow(true)
+              window.removeEventListener("scroll", handleScroll)
+          }
+      };
+      window.addEventListener("scroll", handleScroll, { passive: true })
+      return () => window.removeEventListener("scroll", handleScroll)
+  }, [ref]);
+
+  return (
+    <Box ref={ref} sx={{
+        transform: show ? "" : "translateY(75px)",
+        opacity: show ? 1 : 0,
+        transition: ".5s",
+    }}>
+      {children}
+    </Box>
+  )
 }
 
 export default App;

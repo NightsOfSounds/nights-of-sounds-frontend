@@ -1,7 +1,7 @@
-import { ContentBox, HoverImg, ImageTextBoxType, SiteTitle, TextProcessor } from "./App"
+import { ContentBox, HoverImg, ImageTextBoxType, ScrollInto, SiteTitle, TextProcessor } from "./App"
 import Profile01 from './img/profile01.svg'
 import Profile02 from './img/profile02.svg'
-import { Box, Paper, Stack, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { Box, Grid, Paper, Stack, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { useLanguage } from "./Localization"
 
 function About() {
@@ -10,20 +10,26 @@ function About() {
 
     return <ContentBox>
       <SiteTitle>{lang("about.title")}</SiteTitle>
-      <Stack>
-        <Stack direction={{ xs: 'column', sm: 'column', md: 'row' }}  gap={4}>
+      <Grid container spacing={4} columns={{xs: 6, md: 12}}>
+        <Grid item xs={6}>
+        <ScrollInto>
           <ImageHorizontalBox 
             name={lang("about.user01.name")} 
             text={lang("about.user01.text")}
             imgUrl={Profile01} 
             alignment={1}/>
+        </ScrollInto>
+        </Grid>
+        <Grid item xs={6}>
+          <ScrollInto>
           <ImageHorizontalBox 
             name={lang("about.user02.name")} 
             text={lang("about.user02.text")}
             imgUrl={Profile02} 
             alignment={0}/>
-        </Stack>
-      </Stack>
+          </ScrollInto>
+        </Grid>
+      </Grid>
     </ContentBox>
 }
 

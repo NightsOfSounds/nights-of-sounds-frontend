@@ -13,11 +13,11 @@ export const languages = [
         short: "en",
         image: EN,
     }, {
-        name: "German",
+        name: "Deutsch",
         short: "de",
         image: DE,
     }, {
-        name: "Polish",
+        name: "Polski",
         short: "pl",
         image: PL,
     },

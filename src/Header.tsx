@@ -1,17 +1,17 @@
 import { Language } from "@mui/icons-material";
-import { Box, Button, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper } from "@mui/material";
+import { Box, Button, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper, Fade } from "@mui/material";
 import Slide from '@mui/material/Slide';
-import { styled } from "@mui/system";
-import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
+import { fontWeight, styled } from "@mui/system";
+import { createRef, MouseEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { sites } from "./App";
+import { ConditionalWrapper, sites } from "./App";
 import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "./Localization";
 
 function Header() {
   
     const lang = useLanguage()
 
-    const links = sites.filter(e=>e.navigation).map(e=>({name: lang(e.name), url: e.path}))
+    const links = sites.filter(e=>e.navigation).map(e=>({name: lang(e.name), url: e.path, icon: e.icon}))
   
     const [scrollHeight, setScrollHeight] = useState(0);
     const theme = useTheme()
@@ -27,6 +27,12 @@ function Header() {
       return () => window.removeEventListener("scroll", handleScroll)
     }, [scrollHeight]);
 
+    useEffect(() => {
+      if(!isMobile) {
+        set(false)
+      }
+    }, [isMobile])
+
     const outerSX = {
       backgroundColor: "white",
       left: "0",
@@ -35,6 +41,16 @@ function Header() {
       position: "absolute",
       transition: ".3s",
       opacity: mobileDrawer ? "0" : "1"
+    }
+
+    const toggle = ()=>{
+      set(!mobileDrawer)
+    }
+
+    const set = (b:boolean) => {
+      document.body.style.overflow = b ? "hidden" : "auto"
+      setMobileDrawer(b)
+      return b
     }
 
     const maxRotate = 45
@@ -97,7 +113,7 @@ function Header() {
         padding: "10px",
         paddingTop: "15px",
       }} onClick={()=>{
-        setMobileDrawer((old)=> !old)
+        toggle()
       }}>
       <Box sx={{height: "100%", width: "100%", position: "relative"}}>
         <Box sx={{
@@ -118,19 +134,34 @@ function Header() {
         }}></Box>
       </Box>
       </Box>
-      <Slide in={mobileDrawer && isMobile} direction="left">
+
+      <Fade in={mobileDrawer && isMobile}>
+        <Box sx={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          backdropFilter: "blur(2px)",
+          position: "fixed",
+          top: 0,
+          left: 0,
+        }} onClick={()=>{set(false)}}>
+
+        </Box>
+      </Fade>
+
+      <Slide in={mobileDrawer && isMobile} direction="right">
       <Box sx={{
-        width: "100%",
+        width: "75%",
         height: "100%",
         top: "0",
         left: "0",
         position: "fixed",
-        backgroundColor: theme.palette.grey[800],
+        backgroundColor: "#1E1E1E",
         display: "block",
         zIndex: "2",
         overflow: "auto",
       }}>
-        {links.map((e, i) => <MobileButton onClick={()=>{setMobileDrawer(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
+        {links.map((e, i) => <MobileButton underline={i==0} icon={e.icon} onClick={()=>{set(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
         <LanguageSwitcher mobile/>
       </Box>
       </Slide>
@@ -142,14 +173,13 @@ function Header() {
           margin: "auto",
           textAlign: "center",
           backgroundColor: "rgba(50, 50, 50, 0.5)",
-          padding: "10px 0",
+          padding: "0px 0",
           position: "fixed",
           zIndex: "10",
           display: isMobile ? "none" : "block",
         }}>
-  
-          {links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
-  
+          <HeaderButtonWrapper links={links}/>
+            {/*links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)*/}
           <LanguageSwitcher/>
         </Box>
         </>
@@ -159,99 +189,117 @@ function Header() {
 export default Header;
 
 type MobileButtonType = {
-  url: string,
-  children: string | JSX.Element | JSX.Element[],
-  onClick: ()=>void
+  underline?: boolean
+  url?: string,
+  children: string,
+  icon: JSX.Element,
+  onClick?: ()=>void,
 }
 
-function MobileButton({url, children, onClick}:MobileButtonType) {
+function MobileButton({underline, url, children, icon, onClick}:MobileButtonType) {
   
-  return <Link to={url} style={{
-    textDecoration: "none"
-  }}>
+  return <ConditionalWrapper 
+    condition={!!url} 
+    wrapper={(children)=><Link to={url || "/"} style={{textDecoration: "none"}}>{children}</Link>}>
     <Box sx={{
       width: "100%",
-      borderBottom: "1px solid black",
+      borderBottom: underline ? "1px solid white" : "1px solid rgba(255, 255, 255, 0.05)",
       margin: "auto",
       color: "text.primary",
       display: "flex",
-      height: "100px",
-      justifyContent: "center",
+      height: "50px",
+      justifyContent: "left",
       alignItems: "center",
-    }} onClick={()=>{onClick()}}>
-      <Typography sx={{
-        fontSize: "30px",
+      paddingLeft: 4
+    }} onClick={()=>{onClick && onClick()}}>
+      <Box sx={{
+        fontSize: "20px",
         textDecoration: "none",
+        verticalAlign: "center",
+        display: "contents"
       }}>
+        <Typography sx={{
+          marginRight: 2,
+          fontSize: "25px",
+          display: "flex",
+        }}>
+          {icon}
+        </Typography>
         {children}    
-      </Typography>
+      </Box>
     </Box>
-  </Link>
+  </ConditionalWrapper>
 }
 
 type HeaderButtonType = {
     url: string,
-    children: string
+    children: string,
+    onHover: (e:HTMLDivElement)=>void,
 }
-function HeaderButton({url, children}:HeaderButtonType) {
+function HeaderButton({url, children, onHover}:HeaderButtonType) {
   
   const location = useLocation();
   const [isActive, setActive] = useState(window.location.pathname === url);
+  const ref = useRef<HTMLDivElement>()
 
   useEffect(()=>{
     setActive(window.location.pathname === url)
   }, [location, url])
 
+  useEffect(()=>{
+    if(ref.current) onHover(ref.current)
+  }, [ref])
   
-  
-    return (
-      <Link to={url} >
-        <Box sx={[
-          {
-            "&:hover": {
-              color: "#000",
-            }
-          },
-          {
-            "&::before": {
-              width: "100%",
-              height: "100%",
-              content: '""',
-              left: 0,
-              top: 0,
-              bgcolor: "text.primary",
-              position: "absolute",
-              transform: "translateY(100%)",
-              transition: ".3s",
-              zIndex: -1,
-            }
-          },
-          {
-            "&:hover::before": {
-              transform: "translateY(0)",
-            }
-          },
-          {
-            color: "text.primary",
-            textDecoration: "none",
-            display: "inline-block",
-            margin: "0 10px",
-            transition: ".5s",
-            position: "relative",
-            overflow: "hidden",
-            borderBottom: "2px solid white",
-            padding: "5px 20px",
-            zIndex: 0,
-            backgroundColor: (isActive ? "rgba(0, 0, 0, 0.5)" : "transparent")
+  return (
+    <Link to={url} className="headerLink">
+      <Box sx={{padding: "10px 0", display: "flex"}} onMouseEnter={(e)=>{onHover(e.currentTarget)}}>
+      <Box ref={ref} sx={[
+        {
+          "&:hover": {
+            /*color: "#000",*/
           }
-        ]}>
-          <Typography sx={{
-            color: "inherit",
+        },
+        {
+          "&::before": {
+            width: "100%",
+            height: "100%",
+            content: '""',
+            left: 0,
+            top: 0,
+            bgcolor: "text.primary",
+            position: "absolute",
+            transform: "translateY(100%)",
+            transition: ".3s",
             zIndex: -1,
-          }}>{children}</Typography>
-        </Box>
-      </Link>
-    )
+          }
+        },
+        {
+          "&:hover::before": {
+            /*transform: "translateY(0)"*,*/
+          }
+        },
+        {
+          color: "text.primary",
+          textDecoration: "none",
+          display: "inline-block",
+          /*margin: "0 10px",*/
+          transition: ".5s",
+          position: "relative",
+          overflow: "hidden",
+          borderBottom: (isActive ? "2px solid gray" : "2px solid transparent" ),
+          padding: "5px 20px",
+          zIndex: 0,
+          /*backgroundColor: (isActive ? "rgba(0, 0, 0, 0.5)" : "transparent")*/
+        }
+      ]}>
+        <Typography sx={{
+          color: "inherit",
+          zIndex: -1,
+        }}>{children}</Typography>
+      </Box>
+      </Box>
+    </Link>
+  )
 }
 
 type LanguageSwitcherType = {
@@ -278,7 +326,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
       right: "0",
       top: "50%",
       transform: mobile ? "" : "translateY(-50%)",
-      height: mobile ? "100px" : "100%",
+      height: mobile ? "50px" : "100%",
       m: "auto",
       width: mobile ? "100%" : "auto",
     }}>
@@ -290,8 +338,10 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
           height: "100%",
           width: mobile ? "100%" : "auto",
           textTransform: "none",
+          padding: "0",
+          fontWeight: "normal",
         }}>
-        {mobile ? <Typography sx={{fontSize: "30px"}}>{lang("language.language")}</Typography> : <Language/>}
+        {mobile ? <MobileButton icon={<Language/>}>{lang("language.language")}</MobileButton> : <Language/>}
       </Button>
 
       <Popper
@@ -302,7 +352,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
         disablePortal
         transition
         style={{
-          width: "100%",
+          width: "calc( 100% - 2px )",
           position: "relative",
           top: "0",
         }}
@@ -314,7 +364,6 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
                 width: mobile ? "100%" : "auto",
                 position: "absolute",
                 right: mobile ? "" : "0",
-                bottom: mobile ? "0px" : "",
               }}
             >
               <Paper sx={{
@@ -359,4 +408,50 @@ function LanguageItem({short, children, src, onClick, selected}:LanguageItemType
     <StyledImage alt="Language Flag" src={src}/>
     {children}
   </MenuItem>
+}
+
+type LinkType = {
+  name: string,
+  url: string
+}
+type HeaderButtonWrapperType = {
+  links: LinkType[]
+}
+function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
+
+  const [pos, setPos] = useState(0)
+  const [width, setWidth] = useState(0)
+  const [view, setView] = useState(false)
+  const [transition, setTransition] = useState(false)
+  const ref = createRef<HTMLDivElement>()
+
+  const onHover = (i:number, e:HTMLDivElement)=>{
+    setPos(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
+    setWidth(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
+  }
+
+  return <Box sx={{
+    display: "inline-block",
+    position: "relative",
+  }} ref={ref} 
+  onMouseLeave={()=>{
+    setView(false)
+  }}
+  onMouseEnter={()=>{
+    setView(true)
+    setTransition(true)
+  }}>
+    {links.map((e, i) => <HeaderButton onHover={(e:HTMLDivElement)=>{onHover(i, e)}} key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
+    <Box sx={{
+      position: "absolute",
+      top: "10px",
+      left: `${pos}px`,
+      width: `${width}px`,
+      borderBottom: "2px solid white",
+      height: "calc( 100% - 20px )",
+      transition: transition ? "all .3s" : "opacity .3s",
+      pointerEvents: "none",
+      opacity: view ? "1" : "0"
+    }}/>
+  </Box>
 }
