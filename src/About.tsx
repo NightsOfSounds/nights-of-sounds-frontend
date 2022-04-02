@@ -36,14 +36,17 @@ function ImageHorizontalBox({name, text, imgUrl, alignment}:ImageHorizontalBoxTy
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
   const el1 = <Box sx={{
-                  overflow: "hidden", 
-                  width: {xs: 300, md: 1/2}, 
-                  maxWidth: "100%", 
-                  display: "flex",
-                  margin: isMobile ? "auto" : "",
-                  borderRadius: 1,
-                  }}>
-                <HoverImg src={imgUrl} alt="User"/>
+                width: {xs: 300, md: 1/2}, 
+                maxWidth: "100%", 
+                margin: isMobile ? "auto" : "",
+              }}>
+                <Box sx={{
+                    overflow: "hidden",
+                    display: "flex",
+                    borderRadius: 1,
+                }}>
+                  <HoverImg src={imgUrl} alt="User"/>
+                </Box>
               </Box>
 
   const el2 = <Box sx={{width: {xs: 1, md:  1/2}, textAlign: (isMobile ? "center" : (alignment === 0 ? "left" : "right"))}}>

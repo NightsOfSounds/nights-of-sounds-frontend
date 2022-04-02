@@ -9,9 +9,22 @@ function Home() {
     const lang = useLanguage()
     const StyledImg = styled("img")(
       sx([{
-        width: "300px",
-        maxWidth: "100%",
+        width: "200px",
+        maxWidth: {
+          xs: "100%",
+          md: "200px",
+        },
         borderRadius: 1,
+      }])
+    )
+
+    const SyledIframe = styled("iframe")(
+      sx([{
+        width: "350px",
+        maxWidth: {
+          xs: "100%",
+          md: "350px",
+        },
       }])
     )
 
@@ -77,17 +90,13 @@ function Home() {
               </TextProcessor>
             </Box>
             <Box sx={{textAlign: "center"}}>
-              <iframe 
+              <SyledIframe 
                 src="https://discord.com/widget?id=744705193995796522&theme=dark"
                 height="500"
                 frameBorder={0} 
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 title='Discord server overview'
-                style={{
-                  width: "350px",
-                  maxWidth: "calc( 100vw - 70px )"
-                }}
-              ></iframe>
+              ></SyledIframe>
             </Box>
           </Stack>
         </Paper>

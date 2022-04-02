@@ -121,10 +121,16 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
                     maxWidth: "100%",
                     height: "200px",
                     transition: ".3s",
-                    filter: "grayscale(0.3)",
+                    filter: {
+                        xs: "grayscale(0)",
+                        md: "grayscale(0.3)",
+                    },
                 },{
                     "&:hover": {
-                        transform: "scale(1.1)",
+                        transform: {
+                            xs: "",
+                            md: "scale(1.1)",
+                        },
                         filter: "grayscale(0)",
                     }
                 }

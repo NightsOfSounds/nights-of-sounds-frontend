@@ -219,7 +219,10 @@ export const HoverImg = styled("img")(
     transition: ".3s",
   }, {
     "&:hover": {
-      transform: "scale(1.2)",
+      transform: {
+        md: "scale(1.2)",
+        xs: "scale(1)",
+      },
     }
   }])
 )

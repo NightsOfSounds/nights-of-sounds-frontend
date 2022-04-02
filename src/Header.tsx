@@ -1,5 +1,5 @@
 import { Language } from "@mui/icons-material";
-import { Box, Button, Menu, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper } from "@mui/material";
+import { Box, Button, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import { styled } from "@mui/system";
 import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
@@ -41,7 +41,7 @@ function Header() {
 
     const innerSX = {
       backgroundColor: "white",
-      top: "calc( 50% - 2.5px )",
+      top: "calc( 50% - 2px )",
       left: "0",
       width: "100%",
       height: "5px",
@@ -78,7 +78,7 @@ function Header() {
       </Box>
       <Box sx={{
         width: "75px",
-        height: "50px",
+        height: "55px",
         position: "fixed",
         top: "0",
         right: "0",
@@ -86,6 +86,7 @@ function Header() {
         display: isMobile ? "block" : "none",
         pointerEvents: "all",
         padding: "10px",
+        paddingTop: "15px",
       }} onClick={()=>{
         setMobileDrawer((old)=> !old)
       }}>
@@ -251,10 +252,10 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
 
   const language = useLanguageSelected()
   const setLanguage = useSetLanguage()
+  const lang = useLanguage()
   const [anchorEl, setAnchorEl] = useState<HTMLElement|null>(null)
   const isOpen = !!anchorEl
   const open = (e:React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.currentTarget)
     setAnchorEl(e.currentTarget)
   }
   const close = (e:MouseEvent) => {
@@ -281,7 +282,7 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
           width: mobile ? "100%" : "auto",
           textTransform: "none",
         }}>
-        {mobile ? <Typography sx={{fontSize: "30px"}}>Language</Typography> : <Language/>}
+        {mobile ? <Typography sx={{fontSize: "30px"}}>{lang("language.language")}</Typography> : <Language/>}
       </Button>
 
       <Popper
@@ -297,32 +298,29 @@ function LanguageSwitcher({mobile}:LanguageSwitcherType) {
           top: "0",
         }}
         >
-          {({ TransitionProps, placement}) => {
-            console.log(placement)
-            console.log(TransitionProps)
-            return (
-              <Grow
-                {...TransitionProps}
-                style={{
-                  width: mobile ? "100%" : "auto",
-                  position: "absolute",
-                  right: mobile ? "" : "0",
-                  bottom: mobile ? "0px" : "",
-                }}
-              >
-                <Paper sx={{
-                  display: "inline-block",
-                }}>
-                  <ClickAwayListener onClickAway={()=>{setAnchorEl(null)}}>
-                    <MenuList
-                      autoFocusItem={isOpen}
-                    >
-                      {languages.map((e,i)=><LanguageItem key={`lang.${i}`}onClick={close} src={e.image} short={e.short} selected={e.short === language}>{e.name}</LanguageItem>)}
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-          )}}
+          {({ TransitionProps}) => (
+            <Grow
+              {...TransitionProps}
+              style={{
+                width: mobile ? "100%" : "auto",
+                position: "absolute",
+                right: mobile ? "" : "0",
+                bottom: mobile ? "0px" : "",
+              }}
+            >
+              <Paper sx={{
+                display: "inline-block",
+              }}>
+                <ClickAwayListener onClickAway={()=>{setAnchorEl(null)}}>
+                  <MenuList
+                    autoFocusItem={isOpen}
+                  >
+                    {languages.map((e,i)=><LanguageItem key={`lang.${i}`}onClick={close} src={e.image} short={e.short} selected={e.short === language}>{e.name}</LanguageItem>)}
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
         
       </Popper>
     </Box>

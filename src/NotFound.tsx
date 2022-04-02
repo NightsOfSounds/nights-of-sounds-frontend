@@ -1,7 +1,8 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { ContentBox, SiteTitle } from "./App";
+import { ContentBox, SiteTitle, TextProcessor } from "./App";
 import SORRY_CAT from './img/sorry_cat.jpg'
+import { useLanguage } from "./Localization";
 
 export default function NotFound() {
 
@@ -10,15 +11,15 @@ export default function NotFound() {
         maxWidth: "100%",
     })
 
+    const lang = useLanguage()
+
     return <ContentBox>
         <SiteTitle>404 - Not Found</SiteTitle>
-        <Typography>
-            We are so sorry 😭
-        </Typography>
-        <Typography sx={{paddingBottom: 4}}>
-            We searched everywhere, but could not find the website you requested.
-            Please make sure, the url you typed in is correct.
-        </Typography>
+        <Box sx={{paddingBottom: 4}}>
+            <TextProcessor>
+                {lang("404.text")}
+            </TextProcessor>
+        </Box>
         <StyledImage src={SORRY_CAT}/>
     </ContentBox>
 }

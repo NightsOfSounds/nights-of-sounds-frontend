@@ -218,5 +218,12 @@
     "footer": {
         "contact": "Contact",
         "email": "Email"
+    },
+    "language": {
+        "language": "Language"
+    },
+    "404": {
+        "title": "404 - Not Found",
+        "text": "We are so sorry 😭 | We searched everywhere, but could not find the website you requested. Please make sure, the url you typed in is correct."
     }
 }
