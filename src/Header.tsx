@@ -58,6 +58,15 @@ function Header() {
         marginBottom: 8,
         overflow: "hidden",
         display: "flex",
+        "&:after": {
+          position: "absolute",
+          content: '""',
+          width: "100%",
+          height: "100%",
+          top: "0",
+          left: "0",
+          boxShadow: "inset 0px -14px 31px -16px #000000",
+        }
       }}>
       <img src="/img/untitled2.webp" alt="Background banner" style={{
         width: "100%",
