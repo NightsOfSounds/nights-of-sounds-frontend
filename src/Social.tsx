@@ -169,7 +169,7 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
         if(i % 2 !== 0 && width >= 900) elements.reverse()
 
         result.push(
-        <Split e={i} key={`social.${i}`}>
+        <Split key={`social.${i}`}>
             {elements}
         </Split>
         )
@@ -183,9 +183,8 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
 
 type SplitType = {
     children: JSX.Element[],
-    e:number
 }
-function Split({children, e}:SplitType) {
+function Split({children}:SplitType) {
 
     return(
         <ScrollInto>
