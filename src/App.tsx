@@ -101,6 +101,7 @@ function App() {
                 <Route path='*' element={<NotFound/>} />
               </Routes>
               <Footer/>
+              <AnimatedLights/>
             </LanguageProvider>
         </StyledEngineProvider>
       </ThemeProvider>
@@ -324,6 +325,69 @@ export function ScrollInto({children}:ScrollIntoType) {
       {children}
     </Box>
   )
+}
+
+function AnimatedLights() {
+  
+  const lights = []
+  for(let i = 0; i<10; i++) {
+    lights.push(<AnimatedLight key={`animated.${i}`}/>)
+  }
+  return <Box sx={{
+    position: "absolute", 
+    top: 0, 
+    left: 0, 
+    height: "100%", 
+    width: "100%",
+    zIndex: 10,
+    pointerEvents: "none",
+    overflow: "hidden",
+    filter: "blur(2px)",
+  }}>{lights}</Box>
+}
+
+function AnimatedLight() {
+
+  useEffect(()=>{
+    setTransition(0.2)
+    setOpacity(0)
+    setTimeout(()=>{
+      setX(window.innerHeight + (Math.random() * (document.body.clientHeight-window.innerHeight)))
+      setTimeout(()=>{
+        setTransition(2)
+        setTimeout(()=>{
+          setOpacity(1)
+        }, 10)
+      }, 10)
+    }, 205)
+  }, [document.body.clientHeight])
+
+  useEffect(()=>{
+    const interval = ()=>{
+      setX(x => x+=(Math.random() * 20 - 10))
+      setY(y => y+=(Math.random() * 20 - 10))
+    }
+    const i = setInterval(interval, 2000)
+    return ()=>{clearInterval(i)}
+  }, [])
+
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(Math.random() * document.body.clientWidth)
+  const [transition, setTransition] = useState(0)
+  const [opacity, setOpacity] = useState(0)
+
+  return <Box sx={{
+    position: "absolute",
+    width: "5px",
+    height: "5px",
+    borderRadius: "100%",
+    backgroundColor: "#8fa8eb",
+    top: `${x}px`,
+    left: `${y}px`,
+    transition: `${transition}s linear`,
+    opacity: opacity,
+    boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3"
+  }}></Box>
 }
 
 export default App;

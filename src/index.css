@@ -16,3 +16,8 @@ code {
   display: inline-flex;
   text-decoration: none;
 }
+
+#root {
+  height: 100%;
+  position: relative;
+}
