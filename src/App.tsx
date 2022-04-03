@@ -241,8 +241,6 @@ type TextProcessorType = {
   sx?: any
 }
 export function TextProcessor({children, sx}:TextProcessorType) {
-  
-  const r = (Math.random() * 100000)
 
   let remaining = children
   let elements = [];
@@ -258,9 +256,9 @@ export function TextProcessor({children, sx}:TextProcessorType) {
       })
 
       elements.push(
-        <StyledUl key={`ul.${remaining.length}`}>
+        <StyledUl key={`ul.${counter}`}>
           {remaining.substring(0, remaining.indexOf("]")).split(",,").map((e,i)=>(
-            <li key={`li.${remaining.length}.${i}`}>{e}</li>
+            <li key={`li.${i}`}>{e}</li>
           ))}
         </StyledUl>
       )
@@ -329,8 +327,32 @@ export function ScrollInto({children}:ScrollIntoType) {
 
 function AnimatedLights() {
   
+  const [amount, setAmount] = useState(0)
+  const [transition, setTransition] = useState(0)
+  const [opacity, setOpacity] = useState(0)
+  const location = useLocation()
+
+  useEffect(()=>{
+    const resize = () =>{
+      setTransition(0.2)
+      setOpacity(0)
+      setTimeout(()=>{
+        setAmount(0)
+        setAmount(parseInt((document.body.clientHeight * 0.0025).toString()))
+        setTimeout(()=>{
+          setTransition(2)
+          setTimeout(()=>{
+            setOpacity(1)
+          }, 10)
+        }, 10)
+      }, 205)
+    }
+    resize();
+
+  }, [location])
+
   const lights = []
-  for(let i = 0; i<10; i++) {
+  for(let i = 0; i<amount; i++) {
     lights.push(<AnimatedLight key={`animated.${i}`}/>)
   }
   return <Box sx={{
@@ -343,51 +365,53 @@ function AnimatedLights() {
     pointerEvents: "none",
     overflow: "hidden",
     filter: "blur(2px)",
+  }} style={{
+    opacity: opacity,
+    transition: `${transition}s`,
   }}>{lights}</Box>
 }
 
 function AnimatedLight() {
-
-  useEffect(()=>{
-    setTransition(0.2)
-    setOpacity(0)
-    setTimeout(()=>{
-      setX(window.innerHeight + (Math.random() * (document.body.clientHeight-window.innerHeight)))
-      setTimeout(()=>{
-        setTransition(2)
-        setTimeout(()=>{
-          setOpacity(1)
-        }, 10)
-      }, 10)
-    }, 205)
-  }, [document.body.clientHeight])
+  
+  const [x, setX] = useState(Math.random() * document.body.clientWidth)
+  const [y, setY] = useState(window.innerHeight + (Math.random() * (document.body.clientHeight - window.innerHeight)))
+  const [scroll, setScroll] = useState(0)
+  const view = ((scroll <=y) && (scroll + window.innerHeight) >= y)
 
   useEffect(()=>{
     const interval = ()=>{
-      setX(x => x+=(Math.random() * 20 - 10))
-      setY(y => y+=(Math.random() * 20 - 10))
+      setX(x => Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0))
+      setY(y => Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), window.innerHeight))
     }
-    const i = setInterval(interval, 2000)
-    return ()=>{clearInterval(i)}
-  }, [])
+    if(view) {
+      interval()
+      const i = setInterval(interval, 2000)
+      return ()=>{clearInterval(i)}
+    }
+  }, [view])
+  
+  useEffect(()=>{
+    const scroll = ()=>setScroll(window.scrollY)
+    window.addEventListener("scroll", scroll, {passive: true})
+    return ()=>{window.removeEventListener("scroll", scroll)}
+  }, [scroll])
 
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(Math.random() * document.body.clientWidth)
-  const [transition, setTransition] = useState(0)
-  const [opacity, setOpacity] = useState(0)
 
-  return <Box sx={{
+
+  return <>
+  {view && <Box sx={{
     position: "absolute",
     width: "5px",
     height: "5px",
     borderRadius: "100%",
     backgroundColor: "#8fa8eb",
-    top: `${x}px`,
-    left: `${y}px`,
-    transition: `${transition}s linear`,
-    opacity: opacity,
-    boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3"
-  }}></Box>
+    boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
+    transition: "2s linear"
+  }} style={{
+    top: `${y}px`,
+    left: `${x}px`,
+  }}></Box>}
+  </>
 }
 
 export default App;
