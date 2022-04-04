@@ -35,7 +35,7 @@ function ScrollTop() {
 
   const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }, [location]);
 
   return <></>
@@ -300,19 +300,25 @@ type ScrollIntoType = {
 export function ScrollInto({children}:ScrollIntoType) {
 
   const [show, setShow] = useState(false)
+  const [armed, setArmed] = useState(false)
   const ref = useRef<HTMLDivElement>()
 
   useEffect(() => {
       const handleScroll = () => {
+        console.log(window.scrollY)
+          if(window.scrollY <= 100) {
+            setArmed(true)
+          }
           if(!ref.current) return
-          if(window.innerHeight+30 >= ref.current.getBoundingClientRect().top) {
+          if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
+
               setShow(true)
               window.removeEventListener("scroll", handleScroll)
           }
       };
       window.addEventListener("scroll", handleScroll, { passive: true })
       return () => window.removeEventListener("scroll", handleScroll)
-  }, [ref]);
+  }, [ref, armed]);
 
   return (
     <Box ref={ref} sx={{
