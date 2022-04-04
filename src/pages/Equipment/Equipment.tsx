@@ -1,7 +1,7 @@
 import ContentBox from "../../components/content/ContentBox";
 import { useLanguage } from "../../components/localization/Localization";
 import SiteTitle from "../../components/title/SiteTitle";
-import Category from "./Category";
+import Category from "../../components/wrapper/Category";
 
 export default function Equipment() {
 

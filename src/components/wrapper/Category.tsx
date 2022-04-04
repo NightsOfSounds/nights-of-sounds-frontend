@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material"
-import ImageTextBox from "../../components/datadisplay/ImageTextBox"
-import ImageTextWrapper from "../../components/datadisplay/ImageTextWrapper"
-import ScrollInto from "../../components/scroll/ScrollInto"
+import ImageTextBox from "../datadisplay/ImageTextBox"
+import ImageTextWrapper from "../datadisplay/ImageTextWrapper"
+import ScrollInto from "../scroll/ScrollInto"
 
 type BoxType = {
     name: string,
