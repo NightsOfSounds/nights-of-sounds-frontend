@@ -258,7 +258,7 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
 
   useEffect(()=>{
     if(ref.current) onHover(ref.current)
-  }, [ref, onHover])
+  }, [ref])
   
   return (
     <Link to={url} className="headerLink">
