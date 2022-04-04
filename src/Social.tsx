@@ -1,5 +1,5 @@
 import { Box, Grid, Paper, Stack, Typography, experimental_sx as sx } from "@mui/material"
-import { ConditionalWrapper, ContentBox, SiteTitle, TextProcessor } from "./App"
+import { ConditionalWrapper, ContentBox, ScrollInto, SiteTitle, TextProcessor } from "./App"
 import { useEffect, useState } from "react";
 import { styled } from "@mui/system";
 import Discord from "./img/discord-logo.png"
@@ -182,19 +182,23 @@ export function SocialWrapper({data}:SocialWrapperType):JSX.Element {
 }
 
 type SplitType = {
-    children: JSX.Element[]
+    children: JSX.Element[],
 }
 function Split({children}:SplitType) {
+
     return(
-        <Paper sx={{
-            marginBottom: 4
-        }}>
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
-        padding: 2,
-    }}>
-        {children.map((e,i)=>(<Grid key={`split.i.${i}`} item xs={6} sx={{margin: "auto"}}>{e}</Grid>))}
-    </Grid>
-    </Paper>
+        <ScrollInto>
+            <Paper sx={{
+                marginBottom: 4,
+                display: "flex"
+            }}>
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
+                    padding: 2,
+                }}>
+                    {children.map((e,i)=>(<Grid key={`split.i.${i}`} item xs={6} sx={{margin: "auto"}}>{e}</Grid>))}
+                </Grid>
+            </Paper>
+        </ScrollInto>
     )
 }
 

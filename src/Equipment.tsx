@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { ContentBox, ImageTextBox, ImageTextWrapper, SiteTitle } from "./App";
+import { ContentBox, ImageTextBox, ImageTextWrapper, ScrollInto, SiteTitle } from "./App";
 import { useLanguage } from "./Localization";
 
 export default function Equipment() {
@@ -163,11 +163,13 @@ type CategoryType = {
 }
 function Category({name, subtitle, content}:CategoryType) {
 
-    return <>
+    return <ScrollInto>
+        <>
         <Typography variant="h3" sx={{display: "inline-block"}}>{name}</Typography>
         {subtitle && <Typography sx={{display: "inline-block", marginLeft: 2}}>{subtitle}</Typography>}
         <ImageTextWrapper sameHeight>
             {content.map((e, i) => <ImageTextBox key={`item.${i}`} {...e} />)}
         </ImageTextWrapper>
-    </>
+        </>
+    </ScrollInto>
 }

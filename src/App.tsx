@@ -1,6 +1,6 @@
 import { CssBaseline, createTheme, darkScrollbar, StyledEngineProvider, ThemeProvider, Box, Typography, Paper, experimental_sx as sx } from '@mui/material';
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import About from './About';
 import Home from './Home';
 import Header from './Header';
@@ -13,6 +13,7 @@ import NotFound from './NotFound';
 import { styled } from '@mui/system';
 import Partner from './Partner';
 import { LanguageProvider } from './Localization';
+import { EmojiPeople, Handyman, Home as House, LocalShipping, PhoneIphone, QuestionMark } from '@mui/icons-material';
 
 const theme = createTheme({
   palette: {
@@ -34,7 +35,7 @@ function ScrollTop() {
 
   const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }, [location]);
 
   return <></>
@@ -45,36 +46,43 @@ export const sites = [
     path: "/",
     name: "home.button",
     element: <Home/>,
+    icon: <House/>,
     navigation: true,
   }, {
     path: "/about/",
     name: "about.button",
     element: <About/>,
+    icon: <EmojiPeople/>,
     navigation: true,
   }, {
     path: "/social/",
     name: "social.button",
     element: <Social/>,
+    icon: <PhoneIphone/>,
     navigation: true,
   }, {
     path: "/partner/",
     name: "partner.button",
     element: <Partner/>,
+    icon: <LocalShipping/>,
     navigation: true,
   }, {
     path: "/equipment/",
     name: "equipment.button",
     element: <Equipment/>,
+    icon: <Handyman/>,
     navigation: true,
   }, {
     path: "/imprint/",
     name: "",
     element: <Imprint/>,
+    icon: <QuestionMark/>,
     navigation: false,
   }, {
     path: "/privacy/",
     name: "",
     element: <Privacy/>,
+    icon: <QuestionMark/>,
     navigation: false,
   },
 ]
@@ -93,6 +101,7 @@ function App() {
                 <Route path='*' element={<NotFound/>} />
               </Routes>
               <Footer/>
+              <AnimatedLights/>
             </LanguageProvider>
         </StyledEngineProvider>
       </ThemeProvider>
@@ -232,8 +241,6 @@ type TextProcessorType = {
   sx?: any
 }
 export function TextProcessor({children, sx}:TextProcessorType) {
-  
-  const r = (Math.random() * 100000)
 
   let remaining = children
   let elements = [];
@@ -249,9 +256,9 @@ export function TextProcessor({children, sx}:TextProcessorType) {
       })
 
       elements.push(
-        <StyledUl key={`ul.${remaining.length}`}>
+        <StyledUl key={`ul.${counter}`}>
           {remaining.substring(0, remaining.indexOf("]")).split(",,").map((e,i)=>(
-            <li key={`li.${remaining.length}.${i}`}>{e}</li>
+            <li key={`li.${i}`}>{e}</li>
           ))}
         </StyledUl>
       )
@@ -285,6 +292,132 @@ export function TextProcessor({children, sx}:TextProcessorType) {
   }
   return <Box sx={sx}>{elements}</Box>
 
+}
+
+type ScrollIntoType = {
+  children: string | JSX.Element |JSX.Element[]
+}
+export function ScrollInto({children}:ScrollIntoType) {
+
+  const [show, setShow] = useState(false)
+  const [armed, setArmed] = useState(false)
+  const ref = useRef<HTMLDivElement>()
+
+  useEffect(() => {
+      const handleScroll = () => {
+        console.log(window.scrollY)
+          if(window.scrollY <= 100) {
+            setArmed(true)
+          }
+          if(!ref.current) return
+          if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
+
+              setShow(true)
+              window.removeEventListener("scroll", handleScroll)
+          }
+      };
+      window.addEventListener("scroll", handleScroll, { passive: true })
+      return () => window.removeEventListener("scroll", handleScroll)
+  }, [ref, armed]);
+
+  return (
+    <Box ref={ref} sx={{
+        transform: show ? "" : "translateY(75px)",
+        opacity: show ? 1 : 0,
+        transition: ".5s",
+    }}>
+      {children}
+    </Box>
+  )
+}
+
+function AnimatedLights() {
+  
+  const [amount, setAmount] = useState(0)
+  const [transition, setTransition] = useState(0)
+  const [opacity, setOpacity] = useState(0)
+  const location = useLocation()
+
+  useEffect(()=>{
+    const resize = () =>{
+      setTransition(0.2)
+      setOpacity(0)
+      setTimeout(()=>{
+        setAmount(0)
+        setAmount(parseInt((document.body.clientHeight * 0.005).toString()))
+        setTimeout(()=>{
+          setTransition(2)
+          setTimeout(()=>{
+            setOpacity(1)
+          }, 10)
+        }, 10)
+      }, 205)
+    }
+    resize();
+
+  }, [location])
+
+  const lights = []
+  for(let i = 0; i<amount; i++) {
+    lights.push(<AnimatedLight key={`animated.${i}`}/>)
+  }
+  return <Box sx={{
+    position: "absolute", 
+    top: 0, 
+    left: 0, 
+    height: "100%", 
+    width: "100%",
+    zIndex: 10,
+    pointerEvents: "none",
+    overflow: "hidden",
+    filter: "blur(2px)",
+  }} style={{
+    opacity: opacity,
+    transition: `${transition}s`,
+  }}>{lights}</Box>
+}
+
+function AnimatedLight() {
+  
+  const [x, setX] = useState(Math.random() * document.body.clientWidth)
+  const [y, setY] = useState(window.innerHeight + (Math.random() * (document.body.clientHeight - window.innerHeight)))
+  const [scroll, setScroll] = useState(0)
+  const view = ((scroll <=y) && (scroll + window.innerHeight) >= y)
+
+  useEffect(()=>{
+    const interval = ()=>{
+      setX(x => Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0))
+      setY(y => Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), window.innerHeight))
+    }
+    if(view) {
+      interval()
+      const i = setInterval(interval, 2000)
+      return ()=>{clearInterval(i)}
+    }
+  }, [view])
+  
+  useEffect(()=>{
+    const scroll = ()=>setScroll(window.scrollY)
+    window.addEventListener("scroll", scroll, {passive: true})
+    return ()=>{window.removeEventListener("scroll", scroll)}
+  }, [scroll])
+
+
+
+  return <>
+  {view && <Box sx={{
+    position: "absolute",
+    width: "5px",
+    height: "5px",
+    borderRadius: "100%",
+    backgroundColor: "#8fa8eb",
+    boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
+    transition: "2s linear"
+  }} style={{
+    top: `${y}px`,
+    left: `${x}px`,
+  }}></Box>}
+  </>
 }
 
 export default App;
