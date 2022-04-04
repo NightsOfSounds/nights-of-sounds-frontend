@@ -4,8 +4,9 @@ import Slide from '@mui/material/Slide';
 import { styled } from "@mui/system";
 import { createRef, MouseEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ConditionalWrapper, sites } from "./App";
-import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "./Localization";
+import { sites } from "../../utils/sites";
+import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "../../components/localization/Localization";
+import ConditionalWrapper from "../../components/wrapper/ConditionalWrapper";
 
 const useScrollHandler = (handler: ()=>void) => {
   useEffect(() => {

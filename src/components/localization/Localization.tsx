@@ -1,10 +1,9 @@
 import { createContext, useContext, useState } from "react"
-import EN from './img/british-flag-2.png';
-import DE from './img/german-flag-2.png';
-import PL from './img/polish-flag-2.png';
+import EN from '../../img/british-flag-2.png';
+import DE from '../../img/german-flag-2.png';
+import PL from '../../img/polish-flag-2.png';
+import { importLanguage } from "../../languageImporter";
 
-
-const folder = "./translations/"
 const defaultLanguage = "en"
 
 export const languages = [
@@ -33,7 +32,7 @@ type LanguageContextType = {
     lang: string,
 }
 const LanguageContext = createContext<LanguageContextType>({getData: () => "Loading language...", setLang: () => {}, lang: "en"})
-const defaultTranslation = require(`${folder}${defaultLanguage}.json`)
+const defaultTranslation = importLanguage(defaultLanguage)
 
 export const useLanguage = () => useContext(LanguageContext).getData
 
@@ -54,7 +53,7 @@ export function LanguageProvider({children}:LanguageProviderType) {
     
     let translation:any = {};
     try {
-        translation = require(`${folder}${language}.json`)
+        translation = importLanguage(language)
     } catch(e) {
         translation = defaultTranslation
     }

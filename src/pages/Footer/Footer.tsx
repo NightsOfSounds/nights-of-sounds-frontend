@@ -1,8 +1,7 @@
 import { Box, experimental_sx as sx } from "@mui/material";
 import { styled } from "@mui/system";
-import { useState } from "react";
-import { UnderlinedLink } from "./App";
-import { useLanguage } from "./Localization";
+import UnderlinedLink from "../../components/link/UnderlinedLink";
+import { useLanguage } from "../../components/localization/Localization";
 
 export default function Footer() {
 
