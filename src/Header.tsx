@@ -7,25 +7,40 @@ import { Link, useLocation } from "react-router-dom";
 import { ConditionalWrapper, sites } from "./App";
 import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "./Localization";
 
+const useScrollHandler = (handler: ()=>void) => {
+  useEffect(() => {
+    window.addEventListener('scroll', handler)
+    return () => {
+      window.removeEventListener('scroll', handler)
+    }
+  }, [])
+}
+
 function Header() {
   
     const lang = useLanguage()
+    const imgRef = useRef<any>();
+    const textRef = useRef<any>();
 
     const links = sites.filter(e=>e.navigation).map(e=>({name: lang(e.name), url: e.path, icon: e.icon}))
   
-    const [scrollHeight, setScrollHeight] = useState(0);
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
     const [mobileDrawer, setMobileDrawer] = useState(false)
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY
-        setScrollHeight(Math.min(currentScrollY, window.innerHeight))
-      };
-      window.addEventListener("scroll", handleScroll, { passive: true })
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [scrollHeight]);
+    const handler = ()=>{
+      if(imgRef.current) {
+        imgRef.current.style.objectPosition = `50% calc( 50% + ${window.scrollY * 0.3}px )`
+        imgRef.current.style.filter = `brightness(${1 - (window.scrollY / window.innerHeight)})`
+      }
+      if(textRef.current) {
+        textRef.current.style.top = `calc( 50% + ${window.scrollY / 2}px )`
+      }
+      //const currentScrollY = window.scrollY
+      //setScrollHeight(Math.min(currentScrollY, window.innerHeight))
+    }
+
+    useScrollHandler(handler)
 
     useEffect(() => {
       if(!isMobile) {
@@ -89,17 +104,15 @@ function Header() {
         height: "100vh",
         objectFit: "cover",
         position: "relative",
-        objectPosition: `50% calc( 50% + ${scrollHeight * 0.3}px )`,
-        filter: `brightness(${1 - (scrollHeight / window.innerHeight)})`,
-      }}/>
+      }} ref={imgRef}/>
       <Typography variant="h3" sx={{
           position: "absolute",
-          top: `calc( 50% + ${scrollHeight / 2}px )`,
           transform: "translateY(-50%)",
           fontWeight: "bold",
           width: "100%",
           textAlign: "center",
-        }}>NIGHTS OF SOUNDS</Typography>
+          top: "50%",
+        }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
       </Box>
       <Box sx={{
         width: "75px",
