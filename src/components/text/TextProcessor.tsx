@@ -4,7 +4,7 @@ type TextProcessorType = {
     children: string,
     sx?: any
 }
- export function TextProcessor({children, sx}:TextProcessorType) {
+function TextProcessor({children, sx}:TextProcessorType) {
   
     let remaining = children
     let elements = [];

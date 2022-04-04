@@ -13,7 +13,7 @@ type SocialDataType = {
     url?: string,
     imgUrl: string
 }
-export function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
+function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
     const result = []
 
     const [width, setWidth] = useState(window.innerWidth);
