@@ -305,7 +305,6 @@ export function ScrollInto({children}:ScrollIntoType) {
 
   useEffect(() => {
       const handleScroll = () => {
-        console.log(window.scrollY)
           if(window.scrollY <= 100) {
             setArmed(true)
           }
@@ -344,7 +343,7 @@ function AnimatedLights() {
       setOpacity(0)
       setTimeout(()=>{
         setAmount(0)
-        setAmount(parseInt((document.body.clientHeight * 0.005).toString()))
+        setAmount(parseInt((document.body.clientHeight * 0.05).toString()))
         setTimeout(()=>{
           setTransition(2)
           setTimeout(()=>{
@@ -384,17 +383,27 @@ function AnimatedLight() {
   const [scroll, setScroll] = useState(0)
   const view = ((scroll <=y) && (scroll + window.innerHeight) >= y)
 
+  const ref = useRef<HTMLDivElement>()
+
   useEffect(()=>{
     const interval = ()=>{
-      setX(x => Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0))
-      setY(y => Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), window.innerHeight))
+      setX(x => {
+        const newX = Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0)
+        if (ref.current) ref.current.style.left = `${newX}px`
+        return newX
+      })
+      setY(y => {
+        const newY = Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), window.innerHeight)
+        if(ref.current) ref.current.style.top = `${newY}px`
+        return newY
+      })
     }
     if(view) {
       interval()
       const i = setInterval(interval, 2000)
       return ()=>{clearInterval(i)}
     }
-  }, [view])
+  }, [view, ref])
   
   useEffect(()=>{
     const scroll = ()=>setScroll(window.scrollY)
@@ -413,10 +422,7 @@ function AnimatedLight() {
     backgroundColor: "#8fa8eb",
     boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
     transition: "2s linear"
-  }} style={{
-    top: `${y}px`,
-    left: `${x}px`,
-  }}></Box>}
+  }} ref={ref}></Box>}
   </>
 }
 
