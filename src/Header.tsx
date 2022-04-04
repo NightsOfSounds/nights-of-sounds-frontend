@@ -1,7 +1,7 @@
 import { Language } from "@mui/icons-material";
 import { Box, Button, MenuItem, Typography, useMediaQuery, useTheme, experimental_sx as sx, Popper, Grow, ClickAwayListener, MenuList, Paper, Fade } from "@mui/material";
 import Slide from '@mui/material/Slide';
-import { fontWeight, styled } from "@mui/system";
+import { styled } from "@mui/system";
 import { createRef, MouseEvent, MouseEventHandler, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ConditionalWrapper, sites } from "./App";
@@ -13,7 +13,7 @@ const useScrollHandler = (handler: ()=>void) => {
     return () => {
       window.removeEventListener('scroll', handler)
     }
-  }, [])
+  }, [handler])
 }
 
 function Header() {
@@ -36,8 +36,6 @@ function Header() {
       if(textRef.current) {
         textRef.current.style.top = `calc( 50% + ${window.scrollY / 2}px )`
       }
-      //const currentScrollY = window.scrollY
-      //setScrollHeight(Math.min(currentScrollY, window.innerHeight))
     }
 
     useScrollHandler(handler)
@@ -174,7 +172,7 @@ function Header() {
         zIndex: "2",
         overflow: "auto",
       }}>
-        {links.map((e, i) => <MobileButton underline={i==0} icon={e.icon} onClick={()=>{set(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
+        {links.map((e, i) => <MobileButton underline={i===0} icon={e.icon} onClick={()=>{set(false)}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
         <LanguageSwitcher mobile/>
       </Box>
       </Slide>
@@ -192,7 +190,6 @@ function Header() {
           display: isMobile ? "none" : "block",
         }}>
           <HeaderButtonWrapper links={links}/>
-            {/*links.map((e, i) => <HeaderButton key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)*/}
           <LanguageSwitcher/>
         </Box>
         </>
@@ -261,17 +258,12 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
 
   useEffect(()=>{
     if(ref.current) onHover(ref.current)
-  }, [ref])
+  }, [ref, onHover])
   
   return (
     <Link to={url} className="headerLink">
       <Box sx={{padding: "10px 0", display: "flex"}} onMouseEnter={(e)=>{onHover(e.currentTarget)}}>
       <Box ref={ref} sx={[
-        {
-          "&:hover": {
-            /*color: "#000",*/
-          }
-        },
         {
           "&::before": {
             width: "100%",
@@ -287,22 +279,15 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
           }
         },
         {
-          "&:hover::before": {
-            /*transform: "translateY(0)"*,*/
-          }
-        },
-        {
           color: "text.primary",
           textDecoration: "none",
           display: "inline-block",
-          /*margin: "0 10px",*/
           transition: ".5s",
           position: "relative",
           overflow: "hidden",
           borderBottom: (isActive ? "2px solid gray" : "2px solid transparent" ),
           padding: "5px 20px",
           zIndex: 0,
-          /*backgroundColor: (isActive ? "rgba(0, 0, 0, 0.5)" : "transparent")*/
         }
       ]}>
         <Typography sx={{
