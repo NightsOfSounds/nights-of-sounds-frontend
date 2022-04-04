@@ -64,7 +64,7 @@ function Home() {
             </Stack>
           </Paper>
         </ScrollInto>
-        <ScrollInto>
+        {/*<ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
             <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
             <Stack direction={{xs: "column", md: "row"}}  gap={2}>
@@ -83,19 +83,19 @@ function Home() {
               </Box>
             </Stack>
           </Paper>
-        </ScrollInto>
+    </ScrollInto>*/}
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p: 2}}>
             <Typography variant="h5" sx={{marginBottom: 2}}>Get in contact</Typography>
             <Stack direction={{xs: "column", md: "row"}}  gap={2}>
               <Box>
                 <TextProcessor>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab! |
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab! |
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab! |
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab! |
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab! |
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil odit, illum assumenda explicabo quos culpa repudiandae corrupti asperiores consequatur magni quaerat commodi cupiditate sed excepturi? Minima impedit ex corporis ab!
+                  If you want to get in contact with us, please go to our "Social Media Page" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and no guarantee that we will read it.|
+                  If we will need help on our projects, we will do an announcement on discord. If you able to use programs like "Unreal Engine 5", "Blender", "Krita" or similar, do not hesitate to write to us. This is the best support to improve our content.| &nbsp; | &nbsp; |
+                  
+                  And now because we can, here the Lorem ipsum: "
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                  " |
                 </TextProcessor>
               </Box>
               <Box sx={{textAlign: "center"}}>
