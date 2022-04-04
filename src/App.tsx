@@ -343,7 +343,7 @@ function AnimatedLights() {
       setOpacity(0)
       setTimeout(()=>{
         setAmount(0)
-        setAmount(parseInt((document.body.clientHeight * 0.05).toString()))
+        setAmount(parseInt((document.body.clientHeight * document.body.clientWidth * .000039).toString()))
         setTimeout(()=>{
           setTransition(2)
           setTimeout(()=>{
