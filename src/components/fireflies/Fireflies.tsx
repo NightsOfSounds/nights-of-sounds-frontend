@@ -3,12 +3,37 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Firefly from "./Firefly"
 
+type SizeStateType = {
+    width?: number,
+    height?: number,
+}
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState<SizeStateType>({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+}
+
 function Fireflies() {
   
     const [amount, setAmount] = useState(0)
     const [transition, setTransition] = useState(0)
     const [opacity, setOpacity] = useState(0)
     const location = useLocation()
+    const windowSize = useWindowSize()
   
     useEffect(()=>{
         const resize = () =>{
@@ -27,7 +52,7 @@ function Fireflies() {
         }
         resize();
   
-    }, [location])
+    }, [location, windowSize])
   
     const lights = []
     for(let i = 0; i<amount; i++) {
