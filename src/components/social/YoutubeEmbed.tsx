@@ -24,7 +24,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
                 const id = link.substr(link.indexOf("=") + 1);
                 ref.current.setAttribute("src", `https://youtube.com/embed/${id}?controls=${controls ? 1 : 0}&autoplay=${autoplay ? 1 : 0}`);
             })
-    }, [ref, reqURL, ytChannelId, index])
+    }, [ref, reqURL, ytChannelId, index, controls, autoplay])
 
     return (
         <iframe
