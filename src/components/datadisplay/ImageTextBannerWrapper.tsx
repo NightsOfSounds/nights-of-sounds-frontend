@@ -26,44 +26,45 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
         return ()=>{window.removeEventListener("resize", listener)}
     }, []);
 
-    for(var i = 0; i<data.length; i++) {
+    const StyledLink = styled("a")({
+        textDecoration: "none",
+    })
 
+    const SocialImage = styled("img")(
+        sx([
+            {
+                maxWidth: "100%",
+                height: "200px",
+                transition: ".3s",
+                filter: {
+                    xs: "grayscale(0)",
+                    md: "grayscale(0.3)",
+                },
+            },{
+                "&:hover": {
+                    transform: {
+                        xs: "",
+                        md: "scale(1.1)",
+                    },
+                    filter: "grayscale(0)",
+                }
+            }
+        ])
+    )
+
+    const wrapper = (url?:string) => (children:JSX.Element) => <StyledLink href={url} target="_blank" rel="noreferrer" className="noUnderline">{children}</StyledLink>
+    
+    for(var i = 0; i<data.length; i++) {
+        
         const {name, text, url, imgUrl} = data[i];
         let textAligns = ["right", "left"]
         if(width < 900) textAligns = ["center", "center"]
         if(i % 2 !== 0) textAligns = textAligns.reverse();
-
+        
         let margins = [0, 4]
         if(width < 900) margins = [0, 0]
         if( i % 2 !== 0) margins = margins.reverse()
         
-        const StyledLink = styled("a")({
-            textDecoration: "none",
-        })
-
-        const wrapper = (children:JSX.Element) => <StyledLink href={url} target="_blank" rel="noreferrer" className="noUnderline">{children}</StyledLink>
-
-        const SocialImage = styled("img")(
-            sx([
-                {
-                    maxWidth: "100%",
-                    height: "200px",
-                    transition: ".3s",
-                    filter: {
-                        xs: "grayscale(0)",
-                        md: "grayscale(0.3)",
-                    },
-                },{
-                    "&:hover": {
-                        transform: {
-                            xs: "",
-                            md: "scale(1.1)",
-                        },
-                        filter: "grayscale(0)",
-                    }
-                }
-            ])
-        )
 
         const el1 = <Box key="e.2" sx={{
             textAlign: textAligns[0],
@@ -72,7 +73,7 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
         }}>
             <ConditionalWrapper
                 condition={url !== null}
-                wrapper={wrapper}
+                wrapper={wrapper(url)}
             >
                 <SocialImage src={imgUrl} alt={`${name} logo`} className="socialImage" />
             </ConditionalWrapper>
@@ -84,7 +85,7 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
         }}>
             <ConditionalWrapper
                 condition={url !== null}
-                wrapper={wrapper}
+                wrapper={wrapper(url)}
             >
                 <Box sx={{color: "text.primary"}}>
                     <Typography variant="h3">{name}</Typography>
