@@ -1,3 +1,4 @@
+import { Paper } from "@mui/material";
 import ContentBox from "../../components/content/ContentBox";
 import { useLanguage } from "../../components/localization/Localization";
 import TextProcessor from "../../components/text/TextProcessor";
@@ -9,8 +10,10 @@ export default function Imprint() {
 
     return <ContentBox>
         <SiteTitle>{lang("imprint.title")}</SiteTitle>
-        <TextProcessor>
-            {lang("imprint.text")}
-        </TextProcessor>
+        <Paper sx={{textAlign: "left", p:2}}>
+            <TextProcessor>
+                {lang("imprint.text")}
+            </TextProcessor>
+        </Paper>
     </ContentBox>
 }

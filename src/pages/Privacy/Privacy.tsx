@@ -1,3 +1,4 @@
+import { Paper } from "@mui/material";
 import ContentBox from "../../components/content/ContentBox";
 import { useLanguage } from "../../components/localization/Localization";
 import TextProcessor from "../../components/text/TextProcessor";
@@ -9,6 +10,10 @@ export default function Privacy() {
 
     return <ContentBox>
         <SiteTitle>{lang("privacy.title")}</SiteTitle>
-        <TextProcessor>{lang("privacy.text")}</TextProcessor>
+        <Paper sx={{textAlign: "left", p:2}}>
+            <TextProcessor>
+                {lang("privacy.text")}
+            </TextProcessor>
+        </Paper>
     </ContentBox>
 }
