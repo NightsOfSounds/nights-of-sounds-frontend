@@ -17,12 +17,13 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
     const [transition, setTransition] = useState(false)
     const ref = createRef<HTMLDivElement>()
 
-    const onHover = (i:number, e:HTMLDivElement)=>{
+    const onHover = (e:HTMLDivElement)=>{
         setPos(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
         setWidth(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
     }
 
-    return <Box sx={{
+    return (
+        <Box sx={{
             display: "inline-block",
             position: "relative",
         }} 
@@ -34,19 +35,20 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
             setView(true)
             setTransition(true)
         }}>
-            {links.map((e, i) => <HeaderButton onHover={(e:HTMLDivElement)=>{onHover(i, e)}} key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
+            {links.map((e, i) => <HeaderButton onHover={onHover} key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
             <Box sx={{
-            position: "absolute",
-            top: "10px",
-            left: `${pos}px`,
-            width: `${width}px`,
-            borderBottom: "2px solid white",
-            height: "calc( 100% - 20px )",
-            transition: transition ? "all .3s" : "opacity .3s",
-            pointerEvents: "none",
-            opacity: view ? "1" : "0"
+                position: "absolute",
+                top: "10px",
+                left: `${pos}px`,
+                width: `${width}px`,
+                borderBottom: "2px solid white",
+                height: "calc( 100% - 20px )",
+                transition: transition ? "all .3s" : "opacity .3s",
+                pointerEvents: "none",
+                opacity: view ? "1" : "0"
             }}/>
-    </Box>
+        </Box>
+    )
 }
 
 export default HeaderButtonWrapper
