@@ -18,11 +18,11 @@ function Fireflies() {
                 setAmount(0)
                 setAmount(parseInt((document.body.clientHeight * document.body.clientWidth * .000039).toString()))
                 setTimeout(()=>{
-                    setTransition(2)
+                    setTransition(5)
                     setTimeout(()=>{
                         setOpacity(1)
                     }, 10)
-                }, 10)
+                }, 200)
             }, 205)
         }
         resize();

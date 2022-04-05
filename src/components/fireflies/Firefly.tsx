@@ -11,8 +11,8 @@ function Firefly() {
         let y = Math.random() * document.body.clientHeight
 
         const interval = ()=>{
-            x = Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0)
-            y = Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), 0)
+            x = Math.max(Math.min(x+(Math.random() * 40 - 20), document.body.clientWidth), 0)
+            y = Math.max(Math.min(y+(Math.random() * 40 - 20), document.body.clientHeight), 0)
 
             if(ref.current) {
                 ref.current.style.left = `${x}px`
@@ -20,7 +20,7 @@ function Firefly() {
             }
         }
         interval()
-        const i = setInterval(()=>interval(), 2000)
+        const i = setInterval(()=>interval(), 5000)
         return ()=>{clearInterval(i)}
     }, [ref])
   
@@ -33,7 +33,7 @@ function Firefly() {
         borderRadius: "100%",
         backgroundColor: "#8fa8eb",
         boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
-        transition: "2s linear",
+        transition: "5s linear",
         willChange: "top, left"
     }} ref={ref}></Box>
 }
