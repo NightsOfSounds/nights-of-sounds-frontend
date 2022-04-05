@@ -1,14 +1,6 @@
 import { Box, Typography } from '@mui/material'
-import { useEffect, useRef } from 'react'
-
-const useScrollHandler = (handler: ()=>void) => {
-    useEffect(() => {
-        window.addEventListener('scroll', handler)
-        return () => {
-            window.removeEventListener('scroll', handler)
-        }
-    }, [handler])
-}
+import { useRef } from 'react'
+import { useScrollHandler } from '../scroll/scrollHandler';
 
 type TitleImageType = {
   height?: number
@@ -60,6 +52,7 @@ function TitleImage({height = 1}:TitleImageType) {
               width: "100%",
               textAlign: "center",
               top: "50%",
+              willChange: "top",
             }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
         </Box>
     )

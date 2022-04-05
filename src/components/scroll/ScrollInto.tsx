@@ -1,35 +1,33 @@
 import { Box } from "@mui/material"
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
+import { useScrollHandler } from "./scrollHandler"
 
 type ScrollIntoType = {
     children: string | JSX.Element |JSX.Element[]
 }
 export function ScrollInto({children}:ScrollIntoType) {
-  
-    const [show, setShow] = useState(false)
-    const [armed, setArmed] = useState(false)
+    let armed = false
+
     const ref = useRef<HTMLDivElement>()
   
-    useEffect(() => {
-        const handleScroll = () => {
-            if(window.scrollY <= 100) {
-                setArmed(true)
-            }
-            if(!ref.current) return
-            if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
+    const handleScroll = () => {
+        if(window.scrollY <= 100) {
+            armed = true;
+        }
+        if(!ref.current) return
+        if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
 
-                setShow(true)
-                window.removeEventListener("scroll", handleScroll)
-            }
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true })
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [ref, armed]);
+            ref.current.style.opacity = "1"
+            ref.current.style.transform = "translateY(0)"
+        }
+    };
+
+    useScrollHandler(handleScroll)
   
     return (
         <Box ref={ref} sx={{
-            transform: show ? "" : "translateY(75px)",
-            opacity: show ? 1 : 0,
+            transform: "translateY(75px)",
+            opacity: 0,
             transition: ".5s",
         }}>
             {children}
