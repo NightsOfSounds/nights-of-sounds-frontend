@@ -81,12 +81,8 @@ function Home() {
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
             <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
-            <Stack direction={{xs: "column", md: "row"}}  gap={2}>
-              <Box>
-                <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
-                <YoutubEmbed controls/>
-              </Box>
-            </Stack>
+            <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
+            <YoutubEmbed controls/>
           </Paper>
         </ScrollInto>
         <ScrollInto>
