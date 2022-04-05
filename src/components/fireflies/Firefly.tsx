@@ -20,6 +20,7 @@ function Firefly() {
             }
         }
         interval()
+        interval()
         const i = setInterval(()=>interval(), 5000)
         return ()=>{clearInterval(i)}
     }, [ref])
