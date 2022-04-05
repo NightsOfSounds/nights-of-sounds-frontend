@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useScrollHandler } from "./scrollHandler"
 
 type ScrollIntoType = {
@@ -21,6 +21,10 @@ export function ScrollInto({children}:ScrollIntoType) {
             ref.current.style.transform = "translateY(0)"
         }
     };
+
+    useEffect(()=>{
+        handleScroll()
+    }, [ref])
 
     useScrollHandler(handleScroll)
   
