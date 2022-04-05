@@ -39,7 +39,7 @@ function Fireflies() {
         left: 0, 
         height: "100%", 
         width: "100%",
-        zIndex: 10,
+        zIndex: 1,
         pointerEvents: "none",
         overflow: "hidden",
         filter: "blur(2px)",

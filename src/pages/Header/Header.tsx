@@ -6,6 +6,7 @@ import MobileOpenButton from "../../components/button/MobileOpenButton";
 import TitleImage from "../../components/title/TitleImage";
 import DesktopNavigation from "../../components/navigation/DesktopNavigation";
 import MobileNavigation from "../../components/navigation/MobileNavigation";
+import { useLocation } from "react-router-dom";
 
 export type LinkType = {
   name: string,
@@ -22,6 +23,7 @@ function Header() {
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
     const [mobileDrawer, setMobileDrawer] = useState(false)
+    const location = useLocation()
 
     useEffect(() => {
       if(!isMobile) {
@@ -41,7 +43,7 @@ function Header() {
 
     return (
       <>
-        <TitleImage/>
+        <TitleImage height={location.pathname === "/" ? 1 : 1/2}/>
         <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>
         <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={()=>{set(false)}}/>
         <DesktopNavigation links={links} isMobile={isMobile}/>

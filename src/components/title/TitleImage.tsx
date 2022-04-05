@@ -10,7 +10,10 @@ const useScrollHandler = (handler: ()=>void) => {
     }, [handler])
 }
 
-function TitleImage() {
+type TitleImageType = {
+  height?: number
+}
+function TitleImage({height = 1}:TitleImageType) {
 
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
@@ -18,7 +21,7 @@ function TitleImage() {
     const handler = ()=>{
         if(imgRef.current) {
           imgRef.current.style.objectPosition = `50% calc( 50% + ${window.scrollY * 0.3}px )`
-          imgRef.current.style.filter = `brightness(${1 - (window.scrollY / window.innerHeight)})`
+          imgRef.current.style.filter = `brightness(${1 - (window.scrollY / (window.innerHeight * height))})`
         }
         if(textRef.current) {
           textRef.current.style.top = `calc( 50% + ${window.scrollY / 2}px )`
@@ -33,6 +36,7 @@ function TitleImage() {
             marginBottom: 8,
             overflow: "hidden",
             display: "flex",
+            zIndex: 2,
             "&:after": {
               position: "absolute",
               content: '""',
@@ -45,7 +49,7 @@ function TitleImage() {
           }}>
           <img src="/img/untitled2.webp" alt="Background banner" style={{
             width: "100%",
-            height: "100vh",
+            height: `${height * 100}vh`,
             objectFit: "cover",
             position: "relative",
           }} ref={imgRef}/>

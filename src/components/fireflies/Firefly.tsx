@@ -8,11 +8,11 @@ function Firefly() {
     useEffect(()=>{
 
         let x = Math.random() * document.body.clientWidth
-        let y = window.innerHeight + (Math.random() * (document.body.clientHeight - window.innerHeight))
+        let y = Math.random() * document.body.clientHeight
 
         const interval = ()=>{
             x = Math.max(Math.min(x+(Math.random() * 20 - 10), document.body.clientWidth), 0)
-            y = Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), window.innerHeight)
+            y = Math.max(Math.min(y+(Math.random() * 20 - 10), document.body.clientHeight), 0)
 
             if(ref.current) {
                 ref.current.style.left = `${x}px`
