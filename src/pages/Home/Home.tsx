@@ -3,6 +3,7 @@ import { Box, styled } from '@mui/system';
 import ContentBox from '../../components/content/ContentBox';
 import { useLanguage } from '../../components/localization/Localization';
 import ScrollInto from '../../components/scroll/ScrollInto';
+import YoutubEmbed from '../../components/social/YoutubeEmbed';
 import TextProcessor from '../../components/text/TextProcessor';
 import SiteTitle from '../../components/title/SiteTitle';
 import NOS from '../../img/nos-logo.png'
@@ -76,17 +77,18 @@ function Home() {
               </Box>
             </Stack>
           </Paper>
-        </ScrollInto>
+    </ScrollInto>*/}
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
             <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
             <Stack direction={{xs: "column", md: "row"}}  gap={2}>
               <Box>
                 <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
+                <YoutubEmbed controls/>
               </Box>
             </Stack>
           </Paper>
-    </ScrollInto>*/}
+        </ScrollInto>
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p: 2}}>
             <Typography variant="h5" sx={{marginBottom: 2}}>Get in contact</Typography>
