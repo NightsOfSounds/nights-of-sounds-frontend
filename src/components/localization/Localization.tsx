@@ -80,7 +80,7 @@ function pathFromObject(path: string, source:any):string {
 }
 
 function getCookieOrDefault(key:string, standard:string):string {
-    var cookie = document.cookie.split("; ").map(e=>e.split("=")).find(e=>e[0]==key)
+    var cookie = document.cookie.split("; ").map(e=>e.split("=")).find(e=>e[0]===key)
     if(cookie) return cookie[1]
     return standard
 }

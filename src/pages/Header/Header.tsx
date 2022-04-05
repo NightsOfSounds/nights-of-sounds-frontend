@@ -4,8 +4,8 @@ import { sites } from "../../utils/sites";
 import { useLanguage } from "../../components/localization/Localization";
 import MobileOpenButton from "../../components/button/MobileOpenButton";
 import TitleImage from "../../components/title/TitleImage";
-import DesktopNavigation from "../../navigation/DesktopNavigation";
-import MobileNavigation from "../../navigation/MobileNavigation";
+import DesktopNavigation from "../../components/navigation/DesktopNavigation";
+import MobileNavigation from "../../components/navigation/MobileNavigation";
 
 export type LinkType = {
   name: string,

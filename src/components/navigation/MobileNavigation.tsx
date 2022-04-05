@@ -1,7 +1,7 @@
 import { Box, Fade, Slide } from "@mui/material"
-import LanguageButton from "../components/button/LanguageButton"
-import MobileButton from "../components/button/MobileButton"
-import { LinkType } from "../pages/Header/Header"
+import LanguageButton from "../button/LanguageButton"
+import MobileButton from "../button/MobileButton"
+import { LinkType } from "../../pages/Header/Header"
 
 type MobileNavigationType = {
     links: LinkType[],

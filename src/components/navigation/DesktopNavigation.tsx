@@ -1,7 +1,7 @@
 import { Box } from "@mui/system"
-import HeaderButtonWrapper from "../components/button/HeaderButtonWrapper"
-import LanguageButton from "../components/button/LanguageButton"
-import { LinkType } from "../pages/Header/Header"
+import HeaderButtonWrapper from "../button/HeaderButtonWrapper"
+import LanguageButton from "../button/LanguageButton"
+import { LinkType } from "../../pages/Header/Header"
 
 type DesktopNavigationType = {
     isMobile: boolean,
