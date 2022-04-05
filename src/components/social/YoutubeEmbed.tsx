@@ -1,3 +1,5 @@
+import { styled } from "@mui/material";
+import { maxWidth } from "@mui/system";
 import { useEffect, useRef } from "react";
 
 type YoutubeEmbedType = {
@@ -26,12 +28,16 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
             })
     }, [ref, reqURL, ytChannelId, index, controls, autoplay])
 
+    const StyledIframe = styled("iframe")({
+        width: "600px",
+        maxWidth: "100%",
+        aspectRatio: "16 / 9"
+    })
+
     return (
-        <iframe
+        <StyledIframe
             title="Latest YouTube video"
             ref={ref}
-            width="600" 
-            height="340" 
             frameBorder={0}
             allowFullScreen={true}/>
     )
