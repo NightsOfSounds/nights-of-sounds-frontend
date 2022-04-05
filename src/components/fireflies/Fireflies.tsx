@@ -16,13 +16,13 @@ function Fireflies() {
             setOpacity(0)
             setTimeout(()=>{
                 setAmount(0)
-                setAmount(parseInt((document.body.clientHeight * document.body.clientWidth * .000039).toString()))
+                setAmount(parseInt((document.body.clientHeight * document.body.clientWidth * .00002).toString()))
                 setTimeout(()=>{
-                    setTransition(5)
+                    setTransition(3)
                     setTimeout(()=>{
                         setOpacity(1)
                     }, 10)
-                }, 200)
+                }, 100)
             }, 205)
         }
         resize();
