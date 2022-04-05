@@ -1,8 +1,11 @@
 import { Paper, Stack, Typography, experimental_sx as sx } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { ContentBox, ScrollInto, SiteTitle, TextProcessor } from './App';
-import { useLanguage } from './Localization';
-import NOS from './img/nos-logo.png'
+import ContentBox from '../../components/content/ContentBox';
+import { useLanguage } from '../../components/localization/Localization';
+import ScrollInto from '../../components/scroll/ScrollInto';
+import TextProcessor from '../../components/text/TextProcessor';
+import SiteTitle from '../../components/title/SiteTitle';
+import NOS from '../../img/nos-logo.png'
 
 function Home() {
 
