@@ -19,30 +19,39 @@
         "button": "Socials",
         "title": "Social media",
         "youtube": {
+            "name": "YouTube",
             "text": "Here we will upload our songs, covers and more."
         },
         "discord": {
+            "name": "Discord",
             "text": "Join our community, be part of our vidoes, or just chill with us."
         },
         "instagram": {
+            "name": "Instagram",
             "text": "We also do trash content here, sometimes YouTube is just not the perfect plattform for things like this."
         },
         "patreon": {
+            "name": "Patreon",
             "text": "Support our work, for every part we saw blood."
         },
         "twitter": {
+            "name": "Twitter",
             "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
         },
         "twitch": {
+            "name": "Twitch",
             "text": "See live how we make our songs, videos, or just have fun with us."
         },
         "spotify": {
+            "name": "Spotify",
             "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
         },
         "reddit": {
+            "name": "Reddit",
             "text": "Reddit, do we need to say more about this?"
         },
         "github": {
+            "name": "GitHub",
             "text": "Because we're also programmers, you can find some projects over there."
         }
     },
@@ -50,15 +59,18 @@
         "button": "Partner",
         "title": "Partner",
         "thomann": {
+            "name": "Thomann",
             "text": "Our main source of music equipment."
         },
         "amazon": {
+            "name": "Amazon",
             "text": "Our main source of random stuff."
         }
     },
     "equipment": {
         "button": "Equipment",
         "title": "Our Equipment",
+        "experience": "Experience",
         "mics": {
             "title": "Mics",
             "rodent1a": {

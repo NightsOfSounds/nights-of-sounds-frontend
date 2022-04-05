@@ -12,12 +12,12 @@ function Partner() {
 
     const partnerData = [
         {
-            name: "Thomann",
+            name: lang("partner.thomann.name"),
             text: lang("partner.thomann.text"),
             url: "https://www.thomann.de",
             imgUrl: Thomann,
         },{
-            name: "Amazon",
+            name: lang("partner.amazon.name"),
             text: lang("partner.amazon.text"),
             url: "https://www.amazon.de",
             imgUrl: Amazon,

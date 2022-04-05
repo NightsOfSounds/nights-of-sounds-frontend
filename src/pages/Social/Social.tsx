@@ -19,22 +19,22 @@ function Social() {
 
     const socialData = [
         {
-            name: "Youtube",
+            name: lang("social.youtube.name"),
             text: lang("social.youtube.text"),
             url: "https://www.youtube.com/channel/UCn1QDZMJicrd3CutKTr5Hhg",
             imgUrl: Youtube,
         },{
-            name: "Discord",
+            name: lang("social.discord.name"),
             text: lang("social.discord.text"),
             url: "https://discord.gg/rEFcPuX",
             imgUrl: Discord,
         },{
-            name: "Instagram",
+            name: lang("social.instagram.name"),
             text: lang("social.instagram.text"),
             url: "https://www.instagram.com/nightsofsounds/",
             imgUrl: Instagram,
         },{
-            name: "Patreon",
+            name: lang("social.patreon.name"),
             text: lang("social.patreon.text"),
             url: "https://www.patreon.com/nightsofsounds",
             imgUrl: Patreon,
@@ -44,22 +44,22 @@ function Social() {
             url: "https://www.twitter.com",
             imgUrl: Twitter,
         },{
-            name: "Twitch",
+            name: lang("social.twitch.name"),
             text: lang("social.twitch.text"),
             url: "https://www.twitch.tv",
             imgUrl: Twitch,
         },{
-            name: "Spotify",
+            name: lang("social.spotify.name"),
             text: lang("social.spotify.text"),
             url: "https://www.spotify.com",
             imgUrl: Spotify,
         },{
-            name: "Reddit",
+            name: lang("social.reddit.name"),
             text: lang("social.reddit.text"),
             url: "https://www.reddit.com/r/nightsofsounds/",
             imgUrl: Reddit,
         },{
-            name: "GitHub",
+            name: lang("social.github.name"),
             text: lang("social.github.text"),
             url: "https://github.com/NightsOfSounds",
             imgUrl: GitHub

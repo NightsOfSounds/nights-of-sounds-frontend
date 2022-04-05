@@ -1,5 +1,6 @@
 import { Box, Paper, styled, Typography } from "@mui/material"
 import HoverImage from "../image/HoverImage"
+import { useLanguage } from "../localization/Localization"
 import TextProcessor from "../text/TextProcessor"
 import ConditionalWrapper from "../wrapper/ConditionalWrapper"
 
@@ -15,6 +16,7 @@ function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxType) {
     const LinkEl = styled("a")({
         display: "contents"
     })
+    const lang = useLanguage()
     
     return (
         <ConditionalWrapper
@@ -38,7 +40,7 @@ function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxType) {
                 <Typography variant="h4">{name}</Typography>
                 <TextProcessor sx={{marginTop: 2}}>{text}</TextProcessor>
                 {experience && <Typography sx={{marginTop: 2}}>
-                    <b>Experience:</b> {experience}
+                    <b>{lang("equipment.experience")}:</b> {experience}
                 </Typography>}
             </Paper>
         </ConditionalWrapper>

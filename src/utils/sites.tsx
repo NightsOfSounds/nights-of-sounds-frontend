@@ -1,4 +1,4 @@
-import { EmojiPeople, Handyman, Home as House, LocalShipping, PhoneIphone, QuestionMark } from "@mui/icons-material";
+import { EmojiPeople, Handyman, Home as House, LocalShipping, PhoneIphone } from "@mui/icons-material";
 import About from "../pages/About/About";
 import Equipment from "../pages/Equipment/Equipment";
 import Home from "../pages/Home/Home";
@@ -42,13 +42,13 @@ export const sites = [
       path: "/imprint/",
       name: "",
       element: <Imprint/>,
-      icon: <QuestionMark/>,
+      icon: <></>,
       navigation: false,
     }, {
       path: "/privacy/",
       name: "",
       element: <Privacy/>,
-      icon: <QuestionMark/>,
+      icon: <></>,
       navigation: false,
     },
   ]

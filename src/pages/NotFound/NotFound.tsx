@@ -16,7 +16,7 @@ export default function NotFound() {
     const lang = useLanguage()
 
     return <ContentBox>
-        <SiteTitle>404 - Not Found</SiteTitle>
+        <SiteTitle>{lang("404.title")}</SiteTitle>
         <Box sx={{paddingBottom: 4}}>
             <TextProcessor>
                 {lang("404.text")}
