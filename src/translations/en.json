@@ -180,42 +180,42 @@
             "epiano": {
                 "name": "E-Piano",
                 "text": "Basically for everything.",
-                "experience": "since 2013"
+                "experience": "Since 2013"
             },
             "ukulele": {
                 "name": "Ukulele",
                 "text": "Will there be a Hawaii Song? We don't know.",
-                "experience": "since 2019"
+                "experience": "Since 2019"
             },
             "aguitar": {
                 "name": "A-Guitar",
                 "text": "The cleanest sound is only possible with accoustic instruments.",
-                "experience": "since 2020"
+                "experience": "Since 2020"
             },
             "eguitar": {
                 "name": "E-Guitar",
                 "text": "The equivalent to acoustic, but more electric.",
-                "experience": "since 2020"
+                "experience": "Since 2020"
             },
             "ebass": {
                 "name": "E-Bass",
                 "text": "A good baseline is everything for a good songs.",
-                "experience": "since 2021"
+                "experience": "Since 2021"
             },
             "accordion": {
                 "name": "Accordion",
                 "text": "A very special instrument.",
-                "experience": "since 2008"
+                "experience": "Since 2008"
             },
             "violin": {
                 "name": "Violin",
                 "text": "Difficult to learn, but it's worth.",
-                "experience": "since 2007"
+                "experience": "Since 2007"
             },
             "eviolin": {
                 "name": "E-Violin",
                 "text": "The equivalent to acoustic, but more electric.",
-                "experience": "since 2013"
+                "experience": "Since 2013"
             }
         }
     },
