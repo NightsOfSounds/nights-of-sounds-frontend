@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material'
+import { Box, ThemeProvider, Typography } from '@mui/material'
 import { useRef } from 'react'
+import { headerTheme } from '../../utils/theme';
 import { useScrollHandler } from '../scroll/scrollHandler';
 
 type TitleImageType = {
@@ -23,6 +24,7 @@ function TitleImage({height = 1}:TitleImageType) {
       useScrollHandler(handler)
 
     return (
+      <ThemeProvider theme={headerTheme}>
         <Box sx={{
             position: "relative",
             marginBottom: 8,
@@ -55,6 +57,7 @@ function TitleImage({height = 1}:TitleImageType) {
               willChange: "top",
             }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
         </Box>
+      </ThemeProvider>
     )
 }
 

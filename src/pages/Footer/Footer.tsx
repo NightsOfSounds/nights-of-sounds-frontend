@@ -40,15 +40,13 @@ export default function Footer() {
                     </LinkA>
                 </Typography>
             </Box>
-            <Typography>
-                <UnderlinedLink to="/imprint">
-                    {lang("imprint.title")}
-                </UnderlinedLink>
-                &nbsp;
-                <UnderlinedLink to="/privacy">
-                    {lang("privacy.title")}
-                </UnderlinedLink>
-            </Typography>
+            <UnderlinedLink to="/imprint">
+                {lang("imprint.title")}
+            </UnderlinedLink>
+            &nbsp;
+            <UnderlinedLink to="/privacy">
+                {lang("privacy.title")}
+            </UnderlinedLink>
         </Box>
     </Box>
 }
