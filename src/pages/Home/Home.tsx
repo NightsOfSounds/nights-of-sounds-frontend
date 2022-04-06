@@ -80,8 +80,10 @@ function Home() {
     </ScrollInto>*/}
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
-            <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
-            <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
+            <Typography variant="h5" sx={{marginBottom: 2}}>Newest Upload</Typography>
+            <TextProcessor>
+              Here you have our newest Upload on Youtube, if you want to help and support us for the next video, check out our Discord Server. | &nbsp;|
+              </TextProcessor>
             <YoutubEmbed controls/>
           </Paper>
         </ScrollInto>
@@ -92,7 +94,7 @@ function Home() {
               <Box>
                 <TextProcessor>
                   If you want to get in contact with us, please go to our "Social Media Page" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. |
-                  Typically we answer to contact requests in under one week. |
+                  Typically we answer to contact requests in under one week. | &nbsp;|
                   If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like "Unreal Engine 5", "Blender", "Krita" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a patreon. |
                 </TextProcessor>
               </Box>

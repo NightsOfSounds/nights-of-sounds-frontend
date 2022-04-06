@@ -46,7 +46,7 @@ function Social() {
         },*/{
             name: lang("social.twitch.name"),
             text: lang("social.twitch.text"),
-            url: "https://www.twitch.tv",
+            url: "https://www.twitch.tv/nightsofsounds",
             imgUrl: Twitch,
         },/*{
             name: lang("social.spotify.name"),
