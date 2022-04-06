@@ -21,6 +21,7 @@ function MobileNavigation({links, isMobile, mobileDrawer, close}:MobileNavigatio
           position: "fixed",
           top: 0,
           left: 0,
+          zIndex: 2,
         }} onClick={()=>{close()}}>
 
         </Box>
