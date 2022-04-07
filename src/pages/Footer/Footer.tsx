@@ -16,7 +16,40 @@ export default function Footer() {
             maxHeight: "50%",
             maxWidth: "20%",
             borderRadius: "50%",
-            filter: "drop-shadow(0 0 10px white)"
+            animation: "rotate linear 100s infinite",
+            "@keyframes rotate": {
+                "0%": {
+                    filter: "drop-shadow(0 0 10px white)",
+                    transform: "rotate(0deg)",
+                },
+                "7%": {
+                    filter: "drop-shadow(0 0 15px white)",
+                },
+                "16%": {
+                    filter: "drop-shadow(0 0 13px white)",
+                },
+                "31%": {
+                    filter: "drop-shadow(0 0 20px white)",
+                },
+                "53%": {
+                    filter: "drop-shadow(0 0 15px white)",
+                },
+                "62%": {
+                    filter: "drop-shadow(0 0 6px gray)",
+                },
+                "75%": {
+                    filter: "drop-shadow(0 0 11px white)",
+                },
+                "84%": {
+                    filter: "drop-shadow(0 0 17px white)",
+                },
+                "96%": {
+                    filter: "drop-shadow(0 0 12px white)",
+                },
+                "100%": {
+                    transform: "rotate(360deg)",
+                },
+            }
         }])
     )
 
