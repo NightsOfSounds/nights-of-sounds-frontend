@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 🚀 Deploy website
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    tags: 
+      - '*'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: 🪖 Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm i
+        npm run build
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        local-dir: ./build/
+        protocol: ftps
+        server: ftp.example.com
+        port: 990
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
