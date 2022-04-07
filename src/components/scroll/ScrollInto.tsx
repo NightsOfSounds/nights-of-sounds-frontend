@@ -24,6 +24,7 @@ export function ScrollInto({children}:ScrollIntoType) {
 
     useEffect(()=>{
         handleScroll()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ref])
 
     useScrollHandler(handleScroll)

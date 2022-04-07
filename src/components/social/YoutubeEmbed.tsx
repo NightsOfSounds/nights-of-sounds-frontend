@@ -1,5 +1,4 @@
 import { styled } from "@mui/material";
-import { maxWidth } from "@mui/system";
 import { useEffect, useRef } from "react";
 
 type YoutubeEmbedType = {
