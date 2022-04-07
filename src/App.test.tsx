@@ -1,9 +1,16 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
+window.scrollTo = jest.fn();
+
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const app = render(<App />);
+  expect(app.baseElement.childNodes.length).toBeGreaterThan(0)
+});
+
+afterEach(() => {
+  jest.resetAllMocks();
+});
+afterAll(() => {
+  jest.clearAllMocks();
 });

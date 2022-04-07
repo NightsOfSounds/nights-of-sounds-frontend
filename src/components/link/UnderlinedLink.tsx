@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 
 type UnderlinedLinkType = {
@@ -7,13 +7,11 @@ type UnderlinedLinkType = {
 }
 function UnderlinedLink({children, to}:UnderlinedLinkType) {
      return <Link to={to}>
-       <Box sx={{
-         textDecoration: "underline", 
-         color: "text.primary",
-         display: "inline-block",
-        }}>
-            <Typography>{children}</Typography>
-        </Box>
+        <Typography sx={{
+            textDecoration: "underline", 
+            color: "text.primary",
+            display: "inline-block",
+        }}>{children}</Typography>
     </Link>
 }
 
