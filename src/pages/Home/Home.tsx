@@ -37,63 +37,45 @@ function Home() {
         <SiteTitle>{lang("home.title")}</SiteTitle>
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
-          <Typography variant="h5" sx={{marginBottom: 2}}>We are Nights of Sounds, who are you?</Typography>
+          <Typography variant="h5" sx={{marginBottom: 2}}>{lang("home.01.title")}</Typography>
             <Stack direction={{xs: "column", md: "row"}} gap={2}>
               <Box>
                 <StyledImg alt="Profile image" src={NOS}/>
               </Box>
               <Box>
                 <TextProcessor>
-                  We are two guys from the southwest of Germany, we can't live without music and it's everything for us, 
-                  and because we have done random stuff together, and our most random idea was to start with Youtube. 
-                  We met for the first time on a Minecraft Role Play server at the beginning of the corona pandemic in 2020. |
-                  </TextProcessor>
+                  {lang("home.01.text")}
+                </TextProcessor>
               </Box>
             </Stack>
           </Paper>
         </ScrollInto>
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
-            <Typography variant="h5" sx={{marginBottom: 2}}>(Musical) Background</Typography>
+            <Typography variant="h5" sx={{marginBottom: 2}}>{lang("home.02.title")}</Typography>
             <Stack direction={{xs: "column", md: "row"}}  gap={2}>
               <Box>
                 <TextProcessor>
-                At the age of about 7 we came into contact with music by learning accordeon and violin, 
-                these instruments are our main instruments, later we taught ourselves instruments like piano, 
-                guitar or bass. We were also a member of the school choir for a while, later we also came into 
-                contact with video and music production and were allowed to try synchronization as Voice Actors 
-                for various school projects.
-                  </TextProcessor>
+                {lang("home.02.text")}
+                </TextProcessor>
               </Box>
             </Stack>
           </Paper>
         </ScrollInto>
-        {/*<ScrollInto>
-          <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
-            <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
-            <Stack direction={{xs: "column", md: "row"}}  gap={2}>
-              <Box>
-                <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
-              </Box>
-            </Stack>
-          </Paper>
-    </ScrollInto>*/}
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p:2}}>
-            <Typography variant="h5" sx={{marginBottom: 2}}>Lorem Ipsum</Typography>
-            <TextProcessor>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat error illum quae assumenda incidunt neque omnis officiis? Ullam odit, iure veritatis nulla magnam reprehenderit accusantium repudiandae minus est, tenetur dolor.</TextProcessor>
+            <Typography variant="h5" sx={{marginBottom: 2}}>{lang("home.03.title")}</Typography>
+            <TextProcessor>{lang("home.03.text")}</TextProcessor>
             <YoutubEmbed controls/>
           </Paper>
         </ScrollInto>
         <ScrollInto>
           <Paper sx={{textAlign: "center", marginBottom: 4, p: 2}}>
-            <Typography variant="h5" sx={{marginBottom: 2}}>Get in contact</Typography>
+            <Typography variant="h5" sx={{marginBottom: 2}}>{lang("home.04.title")}</Typography>
             <Stack direction={{xs: "column", md: "row"}}  gap={2}>
               <Box>
                 <TextProcessor>
-                  If you want to get in contact with us, please go to our "Social Media Page" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. |
-                  Typically we answer to contact requests in under one week. |
-                  If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like "Unreal Engine 5", "Blender", "Krita" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a patreon. |
+                  {lang("home.04.text")}
                 </TextProcessor>
               </Box>
               <Box sx={{textAlign: "center"}}>
