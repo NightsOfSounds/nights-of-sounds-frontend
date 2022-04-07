@@ -17,7 +17,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
         if(!ref.current) return
 
         fetch(reqURL + ytChannelId)
-            .then(response=>response.json())
+            .then(response => response.json())
             .then(data=>{
                 if(!ref.current) return
                 const i = index >= 0 ? index : (data.items.length + index + 1)
@@ -25,6 +25,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
                 const id = link.substr(link.indexOf("=") + 1);
                 ref.current.setAttribute("src", `https://youtube.com/embed/${id}?controls=${controls ? 1 : 0}&autoplay=${autoplay ? 1 : 0}`);
             })
+            .catch(()=>{})
     }, [ref, reqURL, ytChannelId, index, controls, autoplay])
 
     const StyledIframe = styled("iframe")({
@@ -36,6 +37,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
     return (
         <StyledIframe
             title="Latest YouTube video"
+            role="Latest YouTube video"
             ref={ref}
             frameBorder={0}
             allowFullScreen={true}/>

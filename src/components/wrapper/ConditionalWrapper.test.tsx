@@ -6,7 +6,7 @@ describe("renders ConditionalWrapper", ()=>{
 
         const conditionalWrapper = render(<ConditionalWrapper condition={false} wrapper={(c)=><div>{c}</div>}><a>Content</a></ConditionalWrapper>)
         
-        expect(conditionalWrapper.baseElement.childNodes[0].nodeName === "A")
+        expect(conditionalWrapper.container.childNodes[0].nodeName).toBe("A")
 
     })
 
@@ -14,7 +14,7 @@ describe("renders ConditionalWrapper", ()=>{
 
         const conditionalWrapper = render(<ConditionalWrapper condition={true} wrapper={(c)=><div>{c}</div>}><a>Content</a></ConditionalWrapper>)
         
-        expect(conditionalWrapper.baseElement.childNodes[0].nodeName === "DIV")
+        expect(conditionalWrapper.container.childNodes[0].nodeName).toBe("DIV")
 
     })
 })
