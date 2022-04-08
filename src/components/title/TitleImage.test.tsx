@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react"
 import TitleImage from "./TitleImage"
 
-describe("renders TitleImage", ()=>{
+describe("renders TitleImage", () => {
 
-    test("renders correct image", ()=>{
+    test("renders correct image", () => {
         render(<TitleImage/>)
         
         const img = screen.getByRole("img")
@@ -12,7 +12,7 @@ describe("renders TitleImage", ()=>{
         expect(img.style.width).toBe("100%")
     })
 
-    test("renders correct title", ()=>{
+    test("renders correct title", () => {
         render(<TitleImage/>)
     
         const headerTitle = screen.getByText("NIGHTS OF SOUNDS")

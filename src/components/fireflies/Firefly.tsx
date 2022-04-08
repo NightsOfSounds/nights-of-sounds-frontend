@@ -5,12 +5,12 @@ function Firefly() {
 
     const ref = useRef<HTMLDivElement>()
   
-    useEffect(()=>{
+    useEffect(() => {
 
         let x = Math.random() * document.body.clientWidth
         let y = Math.random() * document.body.clientHeight
 
-        const interval = ()=>{
+        const interval = () => {
             x = Math.max(Math.min(x+(Math.random() * 40 - 20), document.body.clientWidth), 0)
             y = Math.max(Math.min(y+(Math.random() * 40 - 20), document.body.clientHeight), 0)
 
@@ -22,7 +22,7 @@ function Firefly() {
         interval()
         interval()
         const i = setInterval(()=>interval(), 5000)
-        return ()=>{clearInterval(i)}
+        return () => {clearInterval(i)}
     }, [ref])
   
   

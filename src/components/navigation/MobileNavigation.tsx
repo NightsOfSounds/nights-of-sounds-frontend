@@ -22,7 +22,7 @@ function MobileNavigation({links, isMobile, mobileDrawer, close}:MobileNavigatio
           top: 0,
           left: 0,
           zIndex: 2,
-        }} onClick={()=>{close()}}>
+        }} onClick={() => {close()}}>
 
         </Box>
       </Fade>
@@ -39,7 +39,7 @@ function MobileNavigation({links, isMobile, mobileDrawer, close}:MobileNavigatio
         zIndex: "2",
         overflow: "auto",
       }}>
-        {links.map((e, i) => <MobileButton underline={i===0} icon={e.icon} onClick={()=>{close()}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
+        {links.map((e, i) => <MobileButton underline={i===0} icon={e.icon} onClick={() => {close()}} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}
         <LanguageButton mobile/>
       </Box>
       </Slide>

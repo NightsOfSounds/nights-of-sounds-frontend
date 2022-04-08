@@ -41,7 +41,7 @@ function MobileOpenButton({mobileDrawer, isMobile, onClick}:MobileOpenType) {
             pointerEvents: "all",
             padding: "10px",
             paddingTop: "15px",
-          }} onClick={()=>{
+          }} onClick={() => {
             onClick()
           }}>
           <Box sx={{height: "100%", width: "100%", position: "relative"}}>

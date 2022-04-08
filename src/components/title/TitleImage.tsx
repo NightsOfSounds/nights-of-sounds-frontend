@@ -11,7 +11,7 @@ function TitleImage({height = 1}:TitleImageType) {
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
 
-    const handler = ()=>{
+    const handler = () => {
         if(imgRef.current) {
           imgRef.current.style.objectPosition = `50% calc( 50% + ${window.scrollY * 0.3}px )`
           imgRef.current.style.filter = `brightness(${1 - (window.scrollY / (window.innerHeight * height))})`

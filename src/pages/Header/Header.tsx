@@ -31,7 +31,7 @@ function Header() {
       }
     }, [isMobile])
 
-    const toggle = ()=>{
+    const toggle = () => {
       set(!mobileDrawer)
     }
 
@@ -45,7 +45,7 @@ function Header() {
       <>
         <TitleImage height={location.pathname === "/" ? 1 : 1/2}/>
         <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>
-        <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={()=>{set(false)}}/>
+        <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => {set(false)}}/>
         <DesktopNavigation links={links} isMobile={isMobile}/>
       </>
     )

@@ -13,8 +13,8 @@ const categoryContent = {
     }]
 }
 
-describe("renders Category", ()=>{
-    test("check headline", ()=>{
+describe("renders Category", () => {
+    test("check headline", () => {
         const category = render(<Category {...categoryContent}/>)
 
         const nameEl = screen.getByText(categoryContent.name);

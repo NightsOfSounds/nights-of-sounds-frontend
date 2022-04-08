@@ -28,10 +28,10 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
             position: "relative",
         }} 
         ref={ref} 
-        onMouseLeave={()=>{
+        onMouseLeave={() => {
             setView(false)
         }}
-        onMouseEnter={()=>{
+        onMouseEnter={() => {
             setView(true)
             setTransition(true)
         }}>

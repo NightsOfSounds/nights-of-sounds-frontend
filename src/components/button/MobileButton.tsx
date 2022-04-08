@@ -26,7 +26,7 @@ function MobileButton({underline, url, children, icon, onClick}:MobileButtonType
                 justifyContent: "left",
                 alignItems: "center",
                 paddingLeft: 4
-            }} onClick={()=>{onClick && onClick()}}>
+            }} onClick={() => {onClick && onClick()}}>
                 <Box sx={{
                     fontSize: "20px",
                     textDecoration: "none",

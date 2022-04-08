@@ -35,16 +35,17 @@ function Fireflies() {
     const location = useLocation()
     const windowSize = useWindowSize()
   
-    useEffect(()=>{
+    useEffect(() => {
         const resize = () =>{
             setTransition(0.2)
             setOpacity(0)
-            setTimeout(()=>{
+            setTimeout(() => {
                 setAmount(0)
                 setAmount(parseInt((document.body.clientHeight * document.body.clientWidth * .00002).toString()))
-                setTimeout(()=>{
+                
+                setTimeout(() => {
                     setTransition(3)
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         setOpacity(1)
                     }, 10)
                 }, 100)

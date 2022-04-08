@@ -13,7 +13,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
     const ytChannelId = "UCn1QDZMJicrd3CutKTr5Hhg"
     const reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
 
-    useEffect(()=>{
+    useEffect(() => {
         if(!ref.current) return
 
         fetch(reqURL + ytChannelId)
@@ -25,7 +25,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
                 const id = link.substr(link.indexOf("=") + 1);
                 ref.current.setAttribute("src", `https://youtube.com/embed/${id}?controls=${controls ? 1 : 0}&autoplay=${autoplay ? 1 : 0}`);
             })
-            .catch(()=>{})
+            .catch(() => {})
     }, [ref, reqURL, ytChannelId, index, controls, autoplay])
 
     const StyledIframe = styled("iframe")({

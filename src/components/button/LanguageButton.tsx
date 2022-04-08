@@ -72,7 +72,7 @@ function LanguageButton({mobile}:LanguageButtonType) {
                     <Paper sx={{
                         display: "inline-block",
                     }}>
-                        <ClickAwayListener onClickAway={()=>{setAnchorEl(null)}}>
+                        <ClickAwayListener onClickAway={() => {setAnchorEl(null)}}>
                             <MenuList
                                 autoFocusItem={isOpen}
                             >

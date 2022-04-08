@@ -13,11 +13,11 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
     const [isActive, setActive] = useState(window.location.pathname === url);
     const ref = useRef<HTMLDivElement>()
 
-    useEffect(()=>{
+    useEffect(() => {
         setActive(window.location.pathname === url)
     }, [location, url])
 
-    useEffect(()=>{
+    useEffect(() => {
         if(ref.current && isActive) onHover(ref.current)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ref])

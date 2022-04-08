@@ -3,8 +3,8 @@ import exp from "constants"
 import { BrowserRouter } from "react-router-dom"
 import UnderlinedLink from "./UnderlinedLink"
 
-describe("renders underlined link", ()=>{
-    test("link has correct display", ()=>{
+describe("renders underlined link", () => {
+    test("link has correct display", () => {
         render(<BrowserRouter><UnderlinedLink to="/test">Test</UnderlinedLink></BrowserRouter>)
     
         const element = screen.getByText("Test")
@@ -13,7 +13,7 @@ describe("renders underlined link", ()=>{
         expect(element.textContent).toBe("Test")
     })
 
-    test("link has correct link", ()=>{
+    test("link has correct link", () => {
         render(<BrowserRouter><UnderlinedLink to="/test">Test</UnderlinedLink></BrowserRouter>)
     
         const element = screen.getByText("Test")

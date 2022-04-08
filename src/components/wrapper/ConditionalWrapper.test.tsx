@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
 import ConditionalWrapper from './ConditionalWrapper'
 
-describe("renders ConditionalWrapper", ()=>{
-    test("renders ConditionalWrapper with false condition", ()=>{
+describe("renders ConditionalWrapper", () => {
+    test("renders ConditionalWrapper with false condition", () => {
 
         const conditionalWrapper = render(<ConditionalWrapper condition={false} wrapper={(c)=><div>{c}</div>}><a>Content</a></ConditionalWrapper>)
         
@@ -10,7 +10,7 @@ describe("renders ConditionalWrapper", ()=>{
 
     })
 
-    test("renders ConditionalWrapper with true condition", ()=>{
+    test("renders ConditionalWrapper with true condition", () => {
 
         const conditionalWrapper = render(<ConditionalWrapper condition={true} wrapper={(c)=><div>{c}</div>}><a>Content</a></ConditionalWrapper>)
         

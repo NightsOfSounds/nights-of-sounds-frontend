@@ -3,7 +3,7 @@ import App from './App';
 
 window.scrollTo = jest.fn();
 
-beforeEach(()=>{
+beforeEach(() => {
   fetchMock.mockReject(new Error("Not mocking for App"))
 })
 

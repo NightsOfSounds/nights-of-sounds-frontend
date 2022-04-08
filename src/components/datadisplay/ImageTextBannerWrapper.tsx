@@ -19,11 +19,11 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const listener = ()=>{
+        const listener = () => {
             setWidth(window.innerWidth)
         }
         window.addEventListener("resize", listener);
-        return ()=>{window.removeEventListener("resize", listener)}
+        return () => {window.removeEventListener("resize", listener)}
     }, []);
 
     const StyledLink = styled("a")({
