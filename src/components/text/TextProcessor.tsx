@@ -6,56 +6,41 @@ type TextProcessorType = {
 }
 function TextProcessor({children, sx}:TextProcessorType) {
   
-    let remaining = children
-    let elements = [];
-  
-    let isList = false
-    let counter = 0
-    while(remaining.length > 0  && counter < 100) {
-        let delimiter = "|"
-        if(isList) {
-  
-        const StyledUl = styled("ul")({
-            textAlign: "left"
-        })
-  
-        elements.push(
-          <StyledUl key={`ul.${counter}`}>
-            {remaining.substring(0, remaining.indexOf("]")).split(",,").map((e,i)=>(
-              <li key={`li.${i}`}>{e}</li>
-            ))}
-          </StyledUl>
-        )
-        remaining = remaining.substring(remaining.indexOf("]") + 1)
-        isList = false
-    } else {
-        let margin = true
-        let index1 = remaining.indexOf("|")
-        if(index1 < 0) index1 = remaining.length
-  
-        let index2 = remaining.indexOf("[")
-        if(index2 < 0) index2 = remaining.length
-  
-        if(index1 > index2) {
-          delimiter = "["
-          isList = true
-          margin = false
-        }
-        let end = remaining.indexOf(delimiter)
-        if(remaining.indexOf(delimiter) < 0) {
-            end = remaining.length
-            margin = false
-        }
-  
-        elements.push(<Typography key={`text.${counter}`} sx={{marginBottom: margin ? 2 : 0}}>
-            {remaining.substring(0, end)}
-        </Typography>)
-        remaining = remaining.substring(end +1)
+    let lines = children.split("|")
+
+    lines = lines.flatMap(e => {
+      if(e.includes("[") && e.includes("]")) {
+        const pos1 = e.indexOf("[")
+        const pos2 = e.indexOf("]")+1
+
+        return [
+          e.substring(0, pos1),
+          e.substring(pos1, pos2),
+          e.substring(pos2, e.length)
+        ]
+      } else {
+        return [e]
       }
-      counter++
+    }).filter( e => e.trim().length > 0)
+
+    const elements:JSX.Element[] = []
+
+    const StyledUl = styled("ul")({
+      textAlign: "left"
+    })
+
+    for(let i = 0; i<lines.length; i++) {
+      const line = lines[i]
+      if(line.startsWith("[")) {
+        elements.push(<StyledUl key={`ul.${i}`}>
+          {line.substring(1, line.length - 1).split(",,").map((e, i2) => <li key={`li.${i}.${i2}`}>{e}</li>)}
+        </StyledUl>)
+      } else {
+        elements.push(<Typography key={`text.${i}`} sx={{marginBottom: (i !== lines.length - 1) ? 2 : 0}}>{line}</Typography>)
+      }
     }
-    return <Box sx={sx}>{elements}</Box>
-  
+
+    return <Box sx={sx}>{elements}</Box>  
 }
 
 export default TextProcessor

@@ -16,7 +16,7 @@ const tests = [
         "listnodes": 1,
     }, {
         "text": "Hallo, ich bin ein | [[a,,b]",
-        "textnodes": 2,
+        "textnodes": 1,
         "listnodes": 1,
     }, {
         "text": "Hallo, ich bin ein [[a,,b]",
