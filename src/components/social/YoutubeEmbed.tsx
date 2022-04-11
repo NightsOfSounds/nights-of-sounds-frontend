@@ -14,18 +14,19 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
     const reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
 
     useEffect(() => {
-        if(!ref.current) return
-
-        fetch(reqURL + ytChannelId)
-            .then(response => response.json())
-            .then(data=>{
-                if(!ref.current) return
-                const i = index >= 0 ? index : (data.items.length + index + 1)
-                const link = data.items[i].link;
-                const id = link.substr(link.indexOf("=") + 1);
-                ref.current.setAttribute("src", `https://youtube.com/embed/${id}?controls=${controls ? 1 : 0}&autoplay=${autoplay ? 1 : 0}`);
-            })
-            .catch(() => {})
+        if(!ref) return
+        const worker = new Worker("./workers/youtubeWorker.js")
+        worker.postMessage(
+            {
+                index,
+                ytChannelId,
+                reqURL,
+            }
+        )
+        worker.onmessage = (event: MessageEvent) => {
+            const { data } = event
+            ref.current?.setAttribute("src", `https://youtube.com/embed/${data}?controls=${controls ? 1 : 0}&autoplay=${autoplay ? 1 : 0}`)
+        }
     }, [ref, reqURL, ytChannelId, index, controls, autoplay])
 
     const StyledIframe = styled("iframe")({
@@ -38,6 +39,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
         <StyledIframe
             title="Latest YouTube video"
             role="Latest YouTube video"
+            loading="lazy"
             ref={ref}
             frameBorder={0}
             allowFullScreen={true}/>
