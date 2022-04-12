@@ -2,6 +2,7 @@ import { Box, experimental_sx as sx, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import UnderlinedLink from "../../components/link/UnderlinedLink";
 import { useLanguage } from "../../components/localization/Localization";
+import Moon from "../../img/moon.webp"
 
 export default function Footer() {
 
@@ -60,7 +61,7 @@ export default function Footer() {
         marginTop: 8,
         position: "relative",
     }}>
-        <StyledImage src="/img/moon.png" alt="Moon"/>
+        <StyledImage src={Moon} alt="Moon"/>
         <Box sx={{textAlign: "center", width: "100%", margin: "auto"}}>
             <Box>
                 <Typography>&copy; {new Date().getFullYear()}, Nights of Sounds</Typography>

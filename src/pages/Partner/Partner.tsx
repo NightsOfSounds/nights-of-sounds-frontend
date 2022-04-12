@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material'
 import Thomann from "../../img/thomann-logo.png"
-import Amazon from "../../img/amazon-logo-2.png"
+import Amazon from "../../img/amazon-logo.png"
 import { useLanguage } from '../../components/localization/Localization'
 import ContentBox from '../../components/content/ContentBox'
 import SiteTitle from '../../components/title/SiteTitle'

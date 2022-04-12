@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react"
-import EN from '../../img/british-flag-2.png';
-import DE from '../../img/german-flag-2.png';
-import PL from '../../img/polish-flag-2.png';
+import EN from '../../img/british-flag.png';
+import DE from '../../img/german-flag.png';
+import PL from '../../img/polish-flag.png';
 import { importLanguage } from "../../languageImporter";
 
 const defaultLanguage = "en"

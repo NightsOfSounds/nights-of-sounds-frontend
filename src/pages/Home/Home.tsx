@@ -6,7 +6,7 @@ import ScrollInto from '../../components/scroll/ScrollInto';
 import YoutubEmbed from '../../components/social/YoutubeEmbed';
 import TextProcessor from '../../components/text/TextProcessor';
 import SiteTitle from '../../components/title/SiteTitle';
-import NOS from '../../img/nos-logo.png'
+import NOS from '../../img/nos-logo.webp'
 
 function Home() {
 
