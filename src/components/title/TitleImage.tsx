@@ -3,6 +3,22 @@ import { useRef } from 'react'
 import { headerTheme } from '../../utils/theme';
 import { useScrollHandler } from '../scroll/scrollHandler';
 
+const sizes = [
+  {
+    height: 270,
+    width: 480,
+  }, {
+    height: 405,
+    width: 720,
+  }, {
+    height: 1080,
+    width: 1920,
+  }, {
+    height: 1440,
+    width: 2560,
+  },
+]
+
 type TitleImageType = {
   height?: number
 }
@@ -10,6 +26,11 @@ function TitleImage({height = 1}:TitleImageType) {
 
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
+
+    const imageWidth = window.innerWidth
+    const imageVersion = sizes.filter(e => e.width >= imageWidth)[0]
+    const url = `/img/banner/banner-${imageVersion.width}-${imageVersion.height}.webp`
+    
 
     const handler = () => {
         if(imgRef.current) {
@@ -41,7 +62,7 @@ function TitleImage({height = 1}:TitleImageType) {
               boxShadow: "inset 0px -14px 31px -16px #000000",
             }
           }}>
-          <img src="/img/untitled2.webp" alt="Background banner" style={{
+          <img src={url} alt="Background banner" style={{
             width: "100%",
             height: `${height * 100}vh`,
             objectFit: "cover",

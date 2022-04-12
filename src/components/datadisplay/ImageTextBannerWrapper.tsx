@@ -75,7 +75,7 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
                 condition={url !== null}
                 wrapper={wrapper(url)}
             >
-                <SocialImage src={imgUrl} alt={`${name} logo`} className="socialImage" />
+                <SocialImage height="200" src={imgUrl} alt={`${name} logo`} className="socialImage" />
             </ConditionalWrapper>
         </Box>
 
