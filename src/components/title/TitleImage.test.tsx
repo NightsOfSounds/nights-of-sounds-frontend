@@ -8,7 +8,7 @@ describe("renders TitleImage", () => {
         
         const img = screen.getByRole("img")
         expect(img).toBeInTheDocument()
-        expect(img.getAttribute("src")).toBe("/img/untitled2.webp")
+        expect(img.getAttribute("src")).toBe("/img/banner/1920-1080.webp")
         expect(img.style.width).toBe("100%")
     })
 
