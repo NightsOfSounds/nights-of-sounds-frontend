@@ -38,7 +38,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
     return (
         <StyledIframe
             title="Latest YouTube video"
-            role="Latest YouTube video"
+            role="presentation"
             loading="lazy"
             ref={ref}
             frameBorder={0}

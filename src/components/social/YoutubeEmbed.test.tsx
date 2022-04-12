@@ -30,7 +30,7 @@ describe("test youtubeEmbed", () => {
 
         await wait()
 
-        const embed = screen.getByRole("Latest")
+        const embed = screen.getByRole("presentation")
         expect(embed.getAttribute("src")).toBe(embedUrl(false, false))
     })
 
@@ -39,7 +39,7 @@ describe("test youtubeEmbed", () => {
 
         await wait()
 
-        const embed = screen.getByRole("Latest")
+        const embed = screen.getByRole("presentation")
         expect(embed.getAttribute("src")).toBe(embedUrl(false, true))
     })
 
@@ -48,7 +48,7 @@ describe("test youtubeEmbed", () => {
 
         await wait()
 
-        const embed = screen.getByRole("Latest")
+        const embed = screen.getByRole("presentation")
         expect(embed.getAttribute("src")).toBe(embedUrl(true, false))
     })
 
@@ -57,7 +57,7 @@ describe("test youtubeEmbed", () => {
 
         await wait()
 
-        const embed = screen.getByRole("Latest")
+        const embed = screen.getByRole("presentation")
         expect(embed.getAttribute("src")).toBe(embedUrl(true, true))
     })
 
