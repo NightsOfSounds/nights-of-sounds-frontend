@@ -1,0 +1,257 @@
+{
+    "home": {
+        "button": "Home",
+        "title": "Witamy",
+        "01": {
+            "title": "Jesteśmy Nights of Sounds, kim jesteś?",
+            "text": "Jesteśmy dwoma gośćmi z południowo-zachodnich Niemiec, nie możemy żyć bez muzyki i to dla nas wszystko, a ponieważ robiliśmy razem losowe rzeczy, a naszym najbardziej przypadkowym pomysłem było zacząć od Youtube. Po raz pierwszy spotkaliśmy się na serwerze Minecraft Role Play na początku pandemii korony w 2020 roku."
+        },
+        "02": {
+            "title": "(muzyczna) przeszłość",
+            "text": "Mając około 7 lat zetknęliśmy się z muzyką ucząc się akordeonu i skrzypiec, te instrumenty są naszymi głównymi instrumentami, później sami uczyliśmy się takich instrumentów jak fortepian, gitara czy bas. Byliśmy też przez jakiś czas członkiem szkolnego chóru, później również zetknąłem się z produkcją wideo i muzyczną i pozwolono nam spróbować synchronizacji jako aktorzy głosowi w różnych szkolnych projektach."
+        },
+        "03": {
+            "title": "Najnowszy Upload",
+            "text": "Tutaj masz nasze najnowsze przesyłanie na Youtube, jeśli chcesz pomóc i wesprzeć nas w następnym filmie, sprawdź nasz serwer Discord."
+        },
+        "04": {
+            "title": "Skontaktuj się",
+            "text": "Jeśli chcesz się z nami skontaktować, przejdź do naszej \"Strony w mediach społecznościowych\" i wybierz jedną platformę. Pamiętaj, że jeśli napiszesz do nas maila, aktywowane są filtry antyspamowe i nie możemy zagwarantować, że je przeczytamy. | Zazwyczaj odpowiadamy na prośby o kontakt w ciągu tygodnia. | Jeśli będziemy potrzebować pomocy w naszych projektach, opublikujemy ogłoszenie na Discordzie. Jeśli możesz korzystać z programów takich jak \"Unreal Engine 5\", \"Blender\", \"Krita\" lub podobnych, nie wahaj się z nami skontaktować. To najlepsze wsparcie, aby ulepszać nasze treści i wspierać nas w naszej pracy, poza zostaniem patreonem."
+        }
+    }, 
+    "about": {
+        "button": "About us",
+        "title": "O nas",
+        "user01": {
+            "name": "Hyouka",
+            "text": "'The ones who accomplish true greatness, are the foolish who keep pressing onward. The ones who accomplish nothing, are the wise who know when to quit' || 'Listen close, Listen well, For I have a story to tell, It begins not here, but two steps from hell'"
+        },
+        "user02": {
+            "name": "Jareix",
+            "text": "'Anything that can go wrong will go wrong.' | 'Spread that love' | 'My high hopes are getting low But I know I'll never be alone It's alright, we'll survive 'Cause parents ain't always right' | 'I'm trapped outside, inside my mind'"
+        }
+    },
+    "social": {
+        "button": "Socials",
+        "title": "Social media",
+        "youtube": {
+            "name": "YouTube",
+            "text": "Tutaj będziemy przesyłać nasze piosenki, covery i nie tylko."
+        },
+        "discord": {
+            "name": "Discord",
+            "text": "Dołącz do naszej społeczności, bądź częścią naszych filmów lub po prostu zrelaksuj się z nami."
+        },
+        "instagram": {
+            "name": "Instagram",
+            "text": "Treści, które nie trafiają do YouTube, trafiają tutaj. | #nightsofsounds."
+        },
+        "patreon": {
+            "name": "Patreon",
+            "text": "Wesprzyj naszą pracę, za każdą część, którą widzieliśmy krew."
+        },
+        "twitter": {
+            "name": "Twitter",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "twitch": {
+            "name": "Twitch",
+            "text": "Zobacz na żywo, jak tworzymy nasze piosenki, filmy lub po prostu baw się z nami."
+        },
+        "spotify": {
+            "name": "Spotify",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur fugit sunt quae aspernatur nemo obcaecati. Blanditiis facere totam exercitationem incidunt cupiditate, culpa inventore adipisci, provident dicta dolorum amet nihil!"
+        },
+        "reddit": {
+            "name": "Reddit",
+            "text": "Reddit, czy musimy o tym więcej mówić?"
+        },
+        "github": {
+            "name": "GitHub",
+            "text": "Ponieważ jesteśmy również programistami, możesz tam znaleźć kilka projektów."
+        }
+    },
+    "partner": {
+        "button": "Partner",
+        "title": "Partner",
+        "thomann": {
+            "name": "Thomann",
+            "text": "Nasze główne źródło sprzętu muzycznego."
+        },
+        "amazon": {
+            "name": "Amazon",
+            "text": "Nasze główne źródło innych rzeczy."
+        }
+    },
+    "equipment": {
+        "button": "Equipment",
+        "title": "Our Equipment",
+        "experience": "Experience",
+        "mics": {
+            "title": "Mics",
+            "rodent1a": {
+                "name": "Rode NT1-A",
+                "text": "It has a very neutral sound.",
+                "url": "https://www.thomann.de/de/index.html"
+            }, 
+            "shuresm7b": {
+                "name": "Shure SM7B",
+                "text": "It has a very warm sound.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "tbonelucan": {
+                "name": "the t.bone Lucan System",
+                "text": "Without these, the instruments wouldn't sound very good.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "rodem5mp": {
+                "name": "Rode M5 MP",
+                "text": "Perfect for instruments, where the Lucan System doesn't fit.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "tbonemb7beta":{
+                "name": "the t.bone MB7 Beta",
+                "text":"Our old alternative for the Shure SM7B.",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "audiointerfaces": {
+            "title": "Audio Interfaces",
+            "presonus1602usb": {
+                "name": "Presonus 16.0.2 USB",
+                "text": "Main interface for the work.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "steinbergur12": {
+                "name": "Steinberg UR12",
+                "text": "Small one for small things.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "steinbergur22c": {
+                "name": "Steinberg UR22C",
+                "text": "And if one mic is not enough, just use this.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "yamahaag03": {
+                "name": "Yamaha AG03",
+                "text": "Some instruments require special equipment.",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "speakers": {
+            "title": "Speakers",
+            "mackiemr524": {
+                "name": "Mackie MR524",
+                "text": "Good songs require good speakers.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "presonustemblort10": {
+                "name": "Presonus Temblor T10",
+                "text": "What would be music without bass?",
+                "url": "https://www.thomann.de/de/index.html"
+            }
+        },
+        "software": {
+            "title": "Software",
+            "subtitle": "(always newest version)",
+            "cubase": {
+                "name": "Cubase Pro",
+                "text": "Budowanie instrumentów jest wszystkim.",
+                "url": "https://www.thomann.de/de/index.html"
+            },
+            "audacity": {
+                "name": "Audacity",
+                "text": "Idealny do małych edycji dźwięku.",
+                "url": "https://www.audacityteam.org/"
+            },
+            "davinciresolve": {
+                "name": "DaVinci Resolve",
+                "text": "Przycinanie filmów jest dla nas również ważne.",
+                "url": "https://www.blackmagicdesign.com/de/products/davinciresolve/"
+            },
+            "blender": {
+                "name": "Blender",
+                "text": "Cóż, nie wiesz o Blender? Naprawdę coś przegapiłeś.",
+                "url": "https://www.blender.org/"
+            },
+            "unrealengine5": {
+                "name": "Unreal Engine 5",
+                "text": "Jeśli masz nadzieję, że my również tworzymy gry, przepraszam, używamy go tylko do realistycznych filmów.",
+                "url": "https://www.unrealengine.com/en-US/unreal-engine-5"
+            }
+        },
+        "computers": {
+            "title": "Computers",
+            "soundpc": {
+                "name": "Sound Computer",
+                "text": "Komputer, na którym powstaje cały dźwięk, który słyszysz w naszych filmach.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 16GB RAM,, NVIDIA RTX 3060TI]"
+            },
+            "cuttingpc": {
+                "name": "Cutting Computer",
+                "text": "Komputer używany do tworzenia naszych filmów.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
+            }
+        }, 
+        "instruments": {
+            "title": "Instruments",
+            "epiano": {
+                "name": "E-Piano",
+                "text": "W zasadzie do wszystkiego.",
+                "experience": "Od 2013"
+            },
+            "ukulele": {
+                "name": "Ukulele",
+                "text": "Czy będzie piosenka hawajska? Nie wiemy. Ale raczej nie.",
+                "experience": "Od 2019"
+            },
+            "aguitar": {
+                "name": "A-Guitar",
+                "text": "Najczystszy dźwięk jest możliwy tylko z instrumentami akustycznymi.",
+                "experience": "Od 2020"
+            },
+            "eguitar": {
+                "name": "E-Guitar",
+                "text": "Odpowiednik akustycznego, ale bardziej elektrycznego.",
+                "experience": "Od 2020"
+            },
+            "ebass": {
+                "name": "E-Bass",
+                "text": "Dobra baza to wszystko dla dobrych piosenek.",
+                "experience": "Od 2021"
+            },
+            "accordion": {
+                "name": "Accordion",
+                "text": "Bardzo wyjątkowy instrument.",
+                "experience": "Od 2008"
+            },
+            "violin": {
+                "name": "Violin",
+                "text": "Trudne do nauczenia, ale warto.",
+                "experience": "Od 2007"
+            },
+            "eviolin": {
+                "name": "E-Violin",
+                "text": "Odpowiednik akustycznego, ale bardziej elektrycznego.",
+                "experience": "Od 2013"
+            }
+        }
+    },
+    "imprint": {
+        "title": "Odcisk",
+        "text": "Zgodnie z §5 TMG: | Nights Of Sounds | Bambusstraße 77 | Toasthausen 76476 | DE / Germany |"
+    },
+    "privacy": {
+        "title": "Prywatność",
+        "text": "Nie gromadzimy żadnych danych osobowych, wszystkie linki używane na stronie są linkami partnerskimi, prowadzą do dostawców zewnętrznych, nie otrzymujemy od nich również żadnych danych osobowych i nie ponosimy odpowiedzialności za niewłaściwe wykorzystanie danych.| Ta strona służy wyłącznie do przekazywania informacji o nas i naszej pracy.|Nasze strony internetowe i ich zawartość podlegają niemieckiemu prawu autorskiemu. O ile nie jest to wyraźnie dozwolone przez prawo, każda forma wykorzystywania, powielania lub przetwarzania utworów objętych ochroną praw autorskich na naszych stronach internetowych wymaga uprzedniej zgody odpowiedniego właściciela praw. Poszczególne reprodukcje dzieła są dozwolone wyłącznie do użytku prywatnego. Materiały z tych stron są chronione prawem autorskim, a każde nieautoryzowane użycie może naruszać prawa autorskie."
+    },
+    "footer": {
+        "contact": "Kontakt",
+        "email": "Email"
+    },
+    "language": {
+        "language": "Język"
+    },
+    "404": {
+        "title": "404 - Not Found",
+        "text": "We are so sorry 😭 | We searched everywhere, but could not find the website you requested. Please make sure, the url you typed in is correct."
+    }
+}
