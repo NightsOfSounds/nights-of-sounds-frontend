@@ -8,7 +8,7 @@
         },
         "02": {
             "title": "(Musikalischer) Hintergrund",
-            "text": "Im Alter von circa 7 Jahren, hatten wir unseren ersten Kontak mit der Musik und lernten Accordeon und Geige/Violine, dies sind auch unsere Hauptinstrumente, später haben wir uns noch viele weitere Instrumente beigebracht wie Klavier, Gitarre oder Bass. Wir waren auch Mitglieder im Schulchor für eine Weile, später kamen wir auch in Kontakt mit Video- und Musikproduktion und durften uns auch als Synchronsprecher für verschiedene Schulprojekte versuchen."
+            "text": "Im Alter von circa 7 Jahren, hatten wir unseren ersten Kontak mit der Musik und lernten Akkordeon und Geige/Violine, dies sind auch unsere Hauptinstrumente, später haben wir uns noch viele weitere Instrumente, wie Klavier, Gitarre oder Bass beigebracht. Wir waren auch für eine Weile Mitglieder im Schulchor, später kamen wir auch in Kontakt mit Video- und Musikproduktion und durften uns auch als Synchronsprecher für verschiedene Schulprojekte versuchen."
         },
         "03": {
             "title": "Neuster Upload",
@@ -16,7 +16,7 @@
         },
         "04": {
             "title": "In Kontakt kommen",
-            "text": "Wenn du mit uns in Kontakt treten willst, besuche doch bitte unsere \"Social Media Page\" und wähle eine Plattform, die dir eine einfache Kommunikation ermöglicht. Bitte beachte, dass wenn du uns eine Mail schreibt, möglicherweiße die Spamfilter reagieren und können dadurch nicht garantieren, dass wir die mail lesen. | In der Regel beantworten wir Anfragen innerhalb einer Woche. | Wenn wir Hilfe bei unseren Projekten benötigen, werden wir über Discord fragen. Wenn du programme wie \"Unreal Engine 5\", \"Blender\", \"Krita\" oder ähnliche verwenden kannst, zögert nicht uns zu schreiben. Das is die beste Weg uns bei der Arbeit zu unterstützen und unsere Inhalte zu verbessern, abgesehen davon ein Patreon zu werden."
+            "text": "Wenn du mit uns in Kontakt treten willst, besuche doch bitte unsere \"Social Media Page\" und wähle eine Plattform, die dir eine einfache Kommunikation ermöglicht. Bitte beachte, dass wenn du uns eine Mail schreibst, möglicherweiße die Spamfilter reagieren und können dadurch nicht garantieren, dass wir die Mail lesen. | In der Regel beantworten wir Anfragen innerhalb einer Woche. | Wenn wir Hilfe bei unseren Projekten benötigen, werden wir über Discord fragen. Wenn du Programme wie \"Unreal Engine 5\", \"Blender\", \"Krita\" oder ähnliche verwenden kannst, zögere nicht, uns zu schreiben. Das ist der beste Weg, uns bei der Arbeit zu unterstützen und unsere Inhalte zu verbessern, abgesehen davon ein Patreon zu werden."
         }
     }, 
     "about": {
@@ -40,15 +40,15 @@
         },
         "discord": {
             "name": "Discord",
-            "text": "Werde teil unserer Community, sei ein Teil der Videos oder entspanne mit uns."
+            "text": "Werde Teil unserer Community, sei ein Teil der Videos oder entspanne mit uns."
         },
         "instagram": {
             "name": "Instagram",
-            "text": "Content der nicht auf YouTube landet, wird hier hochgeladen. | #nightsofsounds"
+            "text": "Content, der nicht auf YouTube landet, wird hier hochgeladen. | #nightsofsounds"
         },
         "patreon": {
             "name": "Patreon",
-            "text": "Unterstützt unsere Arbeit, damit uns das Blut spucken leichter fällt."
+            "text": "Unterstützt unsere Arbeit, damit uns das Blut und Wasser schwitzen leichter fällt."
         },
         "twitter": {
             "name": "Twitter",
@@ -56,7 +56,7 @@
         },
         "twitch": {
             "name": "Twitch",
-            "text": "Begleite uns aktiv, bei der entstehung unserer Songs und Videos und hab Spaß mit uns."
+            "text": "Begleite uns aktiv, bei der Entstehung unserer Songs und Videos und habe Spaß mit uns."
         },
         "spotify": {
             "name": "Spotify",
