@@ -4,6 +4,16 @@ import UnderlinedLink from "../../components/link/UnderlinedLink";
 import { useLanguage } from "../../components/localization/Localization";
 import Moon from "../../img/moon.webp"
 
+const StyledFooter = styled("footer")(
+    sx({
+        backgroundColor: "black",
+        p: 6,
+        textAlign: "center",
+        marginTop: 8,
+        position: "relative",
+    })
+)
+
 export default function Footer() {
 
     const LinkA = styled("a")(({theme}) => ({color: theme.palette.text.primary}))
@@ -54,13 +64,7 @@ export default function Footer() {
         }])
     )
 
-    return <Box sx={{
-        backgroundColor: "black",
-        p: 6,
-        textAlign: "center",
-        marginTop: 8,
-        position: "relative",
-    }}>
+    return <StyledFooter>
         <StyledImage src={Moon} alt="Moon"/>
         <Box sx={{textAlign: "center", width: "100%", margin: "auto"}}>
             <Box>
@@ -82,5 +86,5 @@ export default function Footer() {
                 {lang("privacy.title")}
             </UnderlinedLink>
         </Box>
-    </Box>
+    </StyledFooter>
 }

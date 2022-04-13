@@ -62,13 +62,13 @@ function TitleImage({height = 1}:TitleImageType) {
               boxShadow: "inset 0px -14px 31px -16px #000000",
             }
           }}>
-          <img src={url} alt="Background banner" style={{
+          <img src={url} alt="" style={{
             width: "100%",
             height: `${height * 100}vh`,
             objectFit: "cover",
             position: "relative",
           }} ref={imgRef}/>
-          <Typography variant="h3" sx={{
+          <Typography sx={{
               position: "absolute",
               transform: "translateY(-50%)",
               fontWeight: "bold",
@@ -76,6 +76,7 @@ function TitleImage({height = 1}:TitleImageType) {
               textAlign: "center",
               top: "50%",
               willChange: "top",
+              fontSize: "3rem",
             }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
         </Box>
       </ThemeProvider>

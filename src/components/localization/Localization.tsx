@@ -43,6 +43,7 @@ export const useLanguageSelected = () => useContext(LanguageContext).lang
 export function LanguageProvider({children}:LanguageProviderType) {
     
     const lang = getCookieOrDefault("lang", defaultLanguage)
+    document.documentElement.setAttribute("lang", lang)
 
     const [language, setLang] = useState(lang)
 

@@ -42,12 +42,12 @@ function Header() {
     }
 
     return (
-      <>
+      <header>
         <TitleImage height={location.pathname === "/" ? 1 : 1/2}/>
-        <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>
-        <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => {set(false)}}/>
-        <DesktopNavigation links={links} isMobile={isMobile}/>
-      </>
+        {isMobile && <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>}
+        {isMobile && <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => {set(false)}}/>}
+        {!isMobile && <DesktopNavigation links={links} isMobile={isMobile}/>}
+      </header>
     )
 }
   

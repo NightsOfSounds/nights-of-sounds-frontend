@@ -18,10 +18,12 @@ function App() {
             <LanguageProvider>
               <ScrollTop/>
               <Header/>
-              <Routes>
-                {sites.map((e,i)=><Route key={`route.${i}`} path={e.path} element={e.element}/>)}
-                <Route path='*' element={<NotFound/>} />
-              </Routes>
+              <main>
+                <Routes>
+                  {sites.map((e,i)=><Route key={`route.${i}`} path={e.path} element={e.element}/>)}
+                  <Route path='*' element={<NotFound/>} />
+                </Routes>
+              </main>
               <Footer/>
               <Fireflies/>
             </LanguageProvider>

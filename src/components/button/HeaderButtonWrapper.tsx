@@ -1,6 +1,11 @@
-import { Box } from "@mui/material"
+import { Box, styled } from "@mui/material"
 import { createRef, useState } from "react"
 import HeaderButton from "./HeaderButton"
+
+const StyledNav = styled("nav")({
+    display: "inline-block",
+    position: "relative",
+})
 
 type LinkType = {
     name: string,
@@ -23,10 +28,7 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
     }
 
     return (
-        <Box sx={{
-            display: "inline-block",
-            position: "relative",
-        }} 
+        <StyledNav
         ref={ref} 
         onMouseLeave={() => {
             setView(false)
@@ -47,7 +49,7 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
                 pointerEvents: "none",
                 opacity: view ? "1" : "0"
             }}/>
-        </Box>
+        </StyledNav>
     )
 }
 

@@ -28,14 +28,14 @@ function MobileButton({underline, url, children, icon, onClick}:MobileButtonType
                 paddingLeft: 4
             }} onClick={() => {onClick && onClick()}}>
                 <Box sx={{
-                    fontSize: "20px",
+                    fontSize: "1.25em",
                     textDecoration: "none",
                     verticalAlign: "center",
                     display: "contents"
                 }}>
                     <Typography sx={{
                         marginRight: 2,
-                        fontSize: "25px",
+                        fontSize: "1.5625em",
                         display: "flex",
                     }}>
                         {icon}
