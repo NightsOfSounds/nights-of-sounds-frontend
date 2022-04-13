@@ -15,6 +15,7 @@ function YoutubEmbed({index = 0, controls = false, autoplay = false}:YoutubeEmbe
 
     useEffect(() => {
         if(!ref) return
+        if((typeof Worker) === "undefined") return
         const worker = new Worker("./workers/youtubeWorker.js")
         worker.postMessage(
             {

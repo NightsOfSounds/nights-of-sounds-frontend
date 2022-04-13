@@ -8,7 +8,7 @@ describe("renders TitleImage", () => {
         
         const img = screen.getByRole("img")
         expect(img).toBeInTheDocument()
-        expect(img.getAttribute("src")).toBe("/img/banner/1920-1080.webp")
+        expect(img.getAttribute("src")).toBe("/img/banner/banner-1920-1080.webp")
         expect(img.style.width).toBe("100%")
     })
 
@@ -17,7 +17,7 @@ describe("renders TitleImage", () => {
     
         const headerTitle = screen.getByText("NIGHTS OF SOUNDS")
         expect(headerTitle).toBeInTheDocument()
-        expect(headerTitle.nodeName).toBe("H3")
+        expect(headerTitle.nodeName).toBe("P")
     })
 
 })
