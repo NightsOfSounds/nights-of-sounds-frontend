@@ -8,7 +8,7 @@ export const theme = createTheme({
     mode: "dark",
   },
   typography: {
-    fontFamily: '"Nunito"',
+    fontFamily: '"Nunito", Helvetica, Arial, Sans-Serif',
   },
   components: {
     MuiCssBaseline: {
@@ -22,6 +22,6 @@ export const theme = createTheme({
 export const headerTheme = createTheme({
   ...theme,
   typography: {
-    fontFamily: "'Baloo 2'"
+    fontFamily: '"Baloo 2", Helvetica, Arial, Sans-Serif'
   }
 })
