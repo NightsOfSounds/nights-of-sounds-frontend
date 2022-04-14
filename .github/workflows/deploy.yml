@@ -37,7 +37,7 @@ jobs:
       with:
         local-dir: ./build/
         protocol: ftps
-        server: ftp.example.com
+        server: ${{ secrets.ftp_host }}
         port: 990
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
