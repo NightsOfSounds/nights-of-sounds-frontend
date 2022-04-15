@@ -36,8 +36,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         local-dir: ./build/
-        protocol: ftps
+        protocol: ftp
         server: ${{ secrets.ftp_host }}
-        port: 990
+        port: 21
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
