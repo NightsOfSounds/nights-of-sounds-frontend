@@ -7,6 +7,7 @@ import TitleImage from "../../components/title/TitleImage";
 import DesktopNavigation from "../../components/navigation/DesktopNavigation";
 import MobileNavigation from "../../components/navigation/MobileNavigation";
 import { useLocation } from "react-router-dom";
+import ProgressBar from "../../components/scroll/ProgressBar"
 
 export type LinkType = {
   name: string,
@@ -43,6 +44,7 @@ function Header() {
 
     return (
       <header>
+        <ProgressBar/>
         <TitleImage height={location.pathname === "/" ? 1 : 1/2}/>
         {isMobile && <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>}
         {isMobile && <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => {set(false)}}/>}
