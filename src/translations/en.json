@@ -4,7 +4,7 @@
         "title": "Welcome",
         "01": {
             "title": "We are Nights of Sounds, who are you?",
-            "text": "We are two guys from the southwest of Germany, we can't live without music and it's everything for us, and because we have done random stuff together, and our most random idea was to start with Youtube. We met for the first time on a Minecraft roleplay server at the beginning of the corona pandemic in 2020."
+            "text": "We are two guys from the southwest of Germany, we can't live without music and it's everything for us. We have done random stuff together, and our most random idea was to start with Youtube. We met for the first time on a Minecraft roleplay server at the beginning of the corona pandemic in 2020."
         },
         "02": {
             "title": "(Musical) Background",
@@ -16,7 +16,7 @@
         },
         "04": {
             "title": "Get in contact",
-            "text": "If you want to get in contact with us, please go to our \"Social Media Page\" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. | Typically we answer to contact requests in under one week. | If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like \"Unreal Engine 5\", \"Blender\", \"Krita\" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a patreon."
+            "text": "If you want to get in contact with us, please go to our \"Social Media Page\" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. | Typically we answer to contact requests in under one week. | If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like \"Unreal Engine 5\", \"Blender\", \"Krita\" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a Patreon."
         }
     }, 
     "about": {
@@ -44,7 +44,7 @@
         },
         "instagram": {
             "name": "Instagram",
-            "text": "We also do trash content here, sometimes YouTube is just not the perfect plattform for things like this."
+            "text": "We also do trash content here, sometimes YouTube is just not the perfect plattform for things like this. |#nightsofsounds"
         },
         "patreon": {
             "name": "Patreon",

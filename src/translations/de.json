@@ -4,7 +4,7 @@
         "title": "Willkommen",
         "01": {
             "title": "Wir sind Nights of Sounds, wer seid ihr?",
-            "text": "Wir sind zwei Personen aus dem schönen südwesten Deutschlands, Musik begleitet uns durch den Alltag, und weil wir verschiedene verrückte Dinge unternehmen, haben wir uns entschieden mit YouTube anzufangen. Wir haben uns auf einem Minecraft Roleplay Server am Anfang der Corona Pandemie im Jahr 2020 kennengelernt."
+            "text": "Wir sind zwei Personen aus dem schönen südwesten Deutschlands, Musik begleitet uns durch den Alltag und weil wir verschiedene verrückte Dinge unternehmen, haben wir uns entschieden mit YouTube anzufangen. Wir haben uns auf einem Minecraft Roleplay Server am Anfang der Corona Pandemie im Jahr 2020 kennengelernt."
         },
         "02": {
             "title": "(Musikalischer) Hintergrund",
@@ -15,7 +15,7 @@
             "text": "Hier ist unser neustes Video auf YouTube verlinkt, wenn ihr uns bei den nächsten Projekten helfen und unterstützen wollt, seid ihr auf unserem Discord Server willkommen."
         },
         "04": {
-            "title": "In Kontakt kommen",
+            "title": "In Kontakt treten",
             "text": "Wenn du mit uns in Kontakt treten willst, besuche doch bitte unsere \"Social Media Seite\" und wähle eine Plattform, die dir eine einfache Kommunikation ermöglicht. Bitte beachte, dass wenn du uns eine Mail schreibst, möglicherweiße die Spamfilter reagieren und können dadurch nicht garantieren, dass wir die Mail lesen. | In der Regel beantworten wir Anfragen innerhalb einer Woche. | Wenn wir Hilfe bei unseren Projekten benötigen, werden wir über Discord fragen. Wenn du Programme wie \"Unreal Engine 5\", \"Blender\", \"Krita\" oder ähnliche verwenden kannst, zögere nicht, uns zu schreiben. Das ist der beste Weg, uns bei der Arbeit zu unterstützen und unsere Inhalte zu verbessern, abgesehen davon ein Patreon zu werden."
         }
     }, 
@@ -119,7 +119,7 @@
             "title": "Audio Interfaces",
             "presonus1602usb": {
                 "name": "Presonus 16.0.2 USB",
-                "text": "Haupt Interface mit dem wir arbeiten",
+                "text": "Haupt-Interface, mit dem wir arbeiten",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergur12": {
@@ -156,7 +156,7 @@
             "subtitle": "(immer neuste Version)",
             "cubase": {
                 "name": "Cubase Pro",
-                "text": "Hier mit entstehen unsere Instrumentals.",
+                "text": "Hiermit entstehen unsere Instrumentals.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "audacity": {
@@ -166,7 +166,7 @@
             },
             "davinciresolve": {
                 "name": "DaVinci Resolve",
-                "text": "Auch Videoschnitt ist für uns wichtig, und dazu ist die Software kostenlos.",
+                "text": "Auch Videoschnitt ist für uns wichtig und dazu ist die Software kostenlos.",
                 "url": "https://www.blackmagicdesign.com/de/products/davinciresolve/"
             },
             "blender": {
@@ -176,12 +176,12 @@
             },
             "unrealengine5": {
                 "name": "Unreal Engine 5",
-                "text": "Wenn du gedacht hast, wir bauen Spiele, da muss ich dich leider enttäuschen, wir nutzen es für realistische Videos und Umgebungen.",
+                "text": "Wenn du gedacht hast, wir bauen Spiele, muss ich dich leider enttäuschen, wir nutzen es für realistische Videos und Umgebungen.",
                 "url": "https://www.unrealengine.com/en-US/unreal-engine-5"
             }
         },
         "computers": {
-            "title": "Computers",
+            "title": "Computer",
             "soundpc": {
                 "name": "Sound Computer",
                 "text": "Der Computer für die Musikproduktion.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 16GB RAM,, NVIDIA RTX 3060TI]"
@@ -192,7 +192,7 @@
             }
         }, 
         "instruments": {
-            "title": "Instruments",
+            "title": "Instrumente",
             "epiano": {
                 "name": "E-Piano",
                 "text": "Grundsätzlich für alles.",
@@ -200,17 +200,17 @@
             },
             "ukulele": {
                 "name": "Ukulele",
-                "text": "Nein, wir haben nicht vor einen Hawaii Song zu machen, aber die Zukunft ist unbekannt.",
+                "text": "Nein, wir haben nicht vor, einen Hawaii Song zu machen, aber die Zukunft ist unbekannt.",
                 "experience": "Seit 2019"
             },
             "aguitar": {
                 "name": "A-Gitarre",
-                "text": "Saubere Klänge bekommt man nur mit akkustischen Instrumenten.",
+                "text": "Saubere Klänge bekommt man nur mit akustischen Instrumenten.",
                 "experience": "Seit 2020"
             },
             "eguitar": {
                 "name": "E-Gitarre",
-                "text": "Das Äquvalent zu akkustisch, nur etwas mehr elektrisch.",
+                "text": "Das Äquvalent zu akustisch, nur etwas mehr elektrisch.",
                 "experience": "Seit 2020"
             },
             "ebass": {
@@ -225,12 +225,12 @@
             },
             "violin": {
                 "name": "Violine",
-                "text": "Schwer zu lernen, aber den aufwand ists Wert.",
+                "text": "Schwer zu lernen, aber den Aufwand ists Wert.",
                 "experience": "Seit 2007"
             },
             "eviolin": {
                 "name": "E-Violine",
-                "text": "Das Äquvalent zu Akustisch, nur etwas mehr Elektrisch.",
+                "text": "Das Äquvalent zu akustisch, nur etwas mehr elektrisch.",
                 "experience": "Since 2013"
             }
         }
