@@ -2,7 +2,7 @@ import { Box, styled, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const StyledUl = styled("ul")({
+const StyledLi = styled("li")({
     display: "inline-flex",
     margin: 0,
     padding: 0,
@@ -30,7 +30,7 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
     }, [ref])
   
     return (
-        <StyledUl>
+        <StyledLi>
             <Link to={url} className="headerLink">
                 <Box sx={{padding: "10px 0", display: "flex"}} onMouseEnter={(e)=>{onHover(e.currentTarget)}}>
                     <Box ref={ref} sx={[
@@ -66,7 +66,7 @@ function HeaderButton({url, children, onHover}:HeaderButtonType) {
                     </Box>
                 </Box>
             </Link>
-        </StyledUl>
+        </StyledLi>
     )
 }
 

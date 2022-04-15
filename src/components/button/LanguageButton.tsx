@@ -2,6 +2,7 @@ import { Language } from "@mui/icons-material"
 import { Box, Button, ClickAwayListener, Grow, MenuList, Paper, Popper } from "@mui/material"
 import { useState } from "react"
 import { languages, useLanguage, useLanguageSelected, useSetLanguage } from "../localization/Localization"
+import LanguageIcon from "./LanguageIcon"
 import LanguageMenuButton from "./LanguageMenuButton"
 import MobileButton from "./MobileButton"
 
@@ -43,8 +44,10 @@ function LanguageButton({mobile}:LanguageButtonType) {
                 textTransform: "none",
                 padding: "0",
                 fontWeight: "normal",
-            }}>
-                {mobile ? <MobileButton icon={<Language/>}>{lang("language.language")}</MobileButton> : <Language/>}
+                fontSize: "inherit",
+            }}
+            aria-label="Change language">
+                {mobile ? <MobileButton icon={<Language/>}>{lang("language.language")}</MobileButton> : <LanguageIcon/>}
             </Button>
 
             <Popper

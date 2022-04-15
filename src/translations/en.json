@@ -4,19 +4,19 @@
         "title": "Welcome",
         "01": {
             "title": "We are Nights of Sounds, who are you?",
-            "text": "We are two guys from the southwest of Germany, we can't live without music and it's everything for us, and because we have done random stuff together, and our most random idea was to start with Youtube. We met for the first time on a Minecraft Role Play server at the beginning of the corona pandemic in 2020."
+            "text": "We are two guys from the southwest of Germany, we can't live without music and it's everything for us. We have done random stuff together, and our most random idea was to start with Youtube. We met for the first time on a Minecraft roleplay server at the beginning of the corona pandemic in 2020."
         },
         "02": {
             "title": "(Musical) Background",
-            "text": "At the age of about 7 we came into contact with music by learning accordeon and violin, these instruments are our main instruments, later we taught ourselves instruments like piano, guitar or bass. We were also a member of the school choir for a while, later we also came into contact with video and music production and were allowed to try synchronization as Voice Actors for various school projects."
+            "text": "At the age of about 7 we came into contact with music by learning accordion and violin, these instruments are our main instruments, later we taught ourselves instruments like piano, guitar or bass. We were also a member of the school choir for a while, later we also came into contact with video and music production and were allowed to try synchronization as voice actors for various school projects."
         },
         "03": {
             "title": "Newest Upload",
-            "text": "Here you have our newest Upload on Youtube, if you want to help and support us for the next video, check out our Discord Server."
+            "text": "Here you have our newest upload on Youtube, if you want to help and support us for the next video, check out our Discord server."
         },
         "04": {
             "title": "Get in contact",
-            "text": "If you want to get in contact with us, please go to our \"Social Media Page\" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. | Typically we answer to contact requests in under one week. | If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like \"Unreal Engine 5\", \"Blender\", \"Krita\" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a patreon."
+            "text": "If you want to get in contact with us, please go to our \"Social Media Page\" and choose one plattform. Please note, if you will write us a mail, there are spam filters activated and we can't guarantee that we will read it. | Typically we answer to contact requests in under one week. | If we will need help on our projects, we will do an announcement on Discord. If you able to use programs like \"Unreal Engine 5\", \"Blender\", \"Krita\" or similar, do not hesitate to contact us. This is the best support to improve our content and to support us with our work other than becoming a Patreon."
         }
     }, 
     "about": {
@@ -44,7 +44,7 @@
         },
         "instagram": {
             "name": "Instagram",
-            "text": "We also do trash content here, sometimes YouTube is just not the perfect plattform for things like this."
+            "text": "We also do trash content here, sometimes YouTube is just not the perfect plattform for things like this. |#nightsofsounds"
         },
         "patreon": {
             "name": "Patreon",
@@ -188,7 +188,7 @@
             },
             "cuttingpc": {
                 "name": "Cutting Computer",
-                "text": "The computer used for making our Videos.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
+                "text": "The computer used for making our videos.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
             }
         }, 
         "instruments": {
@@ -200,7 +200,7 @@
             },
             "ukulele": {
                 "name": "Ukulele",
-                "text": "Will there be a Hawaii Song? We don't know.",
+                "text": "Will there be a Hawaii song? We don't know.",
                 "experience": "Since 2019"
             },
             "aguitar": {
@@ -215,7 +215,7 @@
             },
             "ebass": {
                 "name": "E-Bass",
-                "text": "A good baseline is everything for a good songs.",
+                "text": "A good bassline is everything for a good songs.",
                 "experience": "Since 2021"
             },
             "accordion": {
@@ -237,7 +237,7 @@
     },
     "imprint": {
         "title": "Imprint",
-        "text": "According to §5 TMG: | Nights Of Sounds | Bambusstraße 77 | Toasthausen 76476 | DE / Germany |"
+        "text": "According to §5 TMG: | Nights Of Sounds | Musterstraße 0 | Musterstadt 00000 | DE / Germany |"
     },
     "privacy": {
         "title": "Privacy",

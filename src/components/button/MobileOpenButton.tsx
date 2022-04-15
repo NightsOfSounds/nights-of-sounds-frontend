@@ -44,7 +44,8 @@ function MobileOpenButton({mobileDrawer, isMobile, onClick}:MobileOpenType) {
             cursor: "pointer",
           }} onClick={() => {
             onClick()
-          }} role="button">
+          }} role="button"
+          aria-label="open navigation">
           <Box sx={{height: "100%", width: "100%", position: "relative"}}>
             <Box sx={{
               ...outerSX,

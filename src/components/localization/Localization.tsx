@@ -42,7 +42,15 @@ export const useLanguageSelected = () => useContext(LanguageContext).lang
 
 export function LanguageProvider({children}:LanguageProviderType) {
     
-    const lang = getCookieOrDefault("lang", defaultLanguage)
+    const preferredLanguages = navigator.languages
+    let preferredLanguage = null
+    for(const iterateLang of preferredLanguages) {
+        if(isLanguagePresent(iterateLang)) {
+            preferredLanguage = iterateLang
+            break
+        }
+    }
+    const lang = getCookieOrDefault("lang", preferredLanguage || defaultLanguage)
     document.documentElement.setAttribute("lang", lang)
 
     const [language, setLang] = useState(lang)
@@ -88,4 +96,8 @@ function getCookieOrDefault(key:string, standard:string):string {
 
 function setCookie(key:string, value:string) {
     document.cookie = key + "=" + value + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+}
+
+function isLanguagePresent(lang:string) {
+    return languages.map(e => e.short).includes(lang)
 }

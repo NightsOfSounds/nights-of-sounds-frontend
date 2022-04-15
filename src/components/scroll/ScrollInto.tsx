@@ -9,11 +9,13 @@ export function ScrollInto({children}:ScrollIntoType) {
     let armed = false
 
     const ref = useRef<HTMLDivElement>()
-  
+    let scrollBefore = 0
+
     const handleScroll = () => {
-        if(window.scrollY <= 100) {
+        if(window.scrollY <= 100 || (window.scrollY > scrollBefore && scrollBefore > 0)) {
             armed = true;
         }
+        scrollBefore = window.scrollY
         if(!ref.current) return
         if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
 
