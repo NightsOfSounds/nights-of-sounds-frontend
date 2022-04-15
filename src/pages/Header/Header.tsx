@@ -44,7 +44,7 @@ function Header() {
 
     return (
       <header>
-        <ProgressBar/>
+        {isMobile && <ProgressBar/>}
         <TitleImage height={location.pathname === "/" ? 1 : 1/2}/>
         {isMobile && <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle}/>}
         {isMobile && <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => {set(false)}}/>}
