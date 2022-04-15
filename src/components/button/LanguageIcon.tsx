@@ -20,7 +20,7 @@ function LanguageIcon() {
             position: "relative",
         }}>
             <Language/>
-            <StyledImg src={languages.filter(e => e.short === language)[0].image}/>
+            <StyledImg src={languages.filter(e => e.short === language)[0].image} alt="Flag of selected language"/>
         </Box>
     )
 }

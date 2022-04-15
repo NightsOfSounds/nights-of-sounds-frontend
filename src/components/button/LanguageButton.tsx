@@ -45,7 +45,8 @@ function LanguageButton({mobile}:LanguageButtonType) {
                 padding: "0",
                 fontWeight: "normal",
                 fontSize: "inherit",
-            }}>
+            }}
+            aria-label="Change language">
                 {mobile ? <MobileButton icon={<Language/>}>{lang("language.language")}</MobileButton> : <LanguageIcon/>}
             </Button>
 

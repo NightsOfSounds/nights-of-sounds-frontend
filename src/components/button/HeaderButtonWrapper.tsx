@@ -7,6 +7,11 @@ const StyledNav = styled("nav")({
     position: "relative",
 })
 
+const StyledUl = styled("ul")({
+    margin: 0,
+    padding: 0,
+})
+
 type LinkType = {
     name: string,
     url: string
@@ -23,6 +28,12 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
     const ref = createRef<HTMLDivElement>()
 
     const onHover = (e:HTMLDivElement)=>{
+        console.log(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
+        console.log(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
+        console.log(e)
+        console.log("");
+        
+
         setPos(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
         setWidth(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
     }
@@ -37,7 +48,9 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
             setView(true)
             setTransition(true)
         }}>
-            {links.map((e, i) => <HeaderButton onHover={onHover} key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
+            <StyledUl>
+                {links.map((e, i) => <HeaderButton onHover={onHover} key={`header.button.${i}`} url={e.url}>{e.name}</HeaderButton>)}
+            </StyledUl>
             <Box sx={{
                 position: "absolute",
                 top: "10px",
