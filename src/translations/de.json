@@ -8,7 +8,7 @@
         },
         "02": {
             "title": "(Musikalischer) Hintergrund",
-            "text": "Im Alter von circa 7 Jahren, hatten wir unseren ersten Kontak mit der Musik und lernten Akkordeon und Geige/Violine, dies sind auch unsere Hauptinstrumente, später haben wir uns noch viele weitere Instrumente, wie Klavier, Gitarre oder Bass beigebracht. Wir waren auch für eine Weile Mitglieder im Schulchor, später kamen wir auch in Kontakt mit Video- und Musikproduktion und durften uns auch als Synchronsprecher für verschiedene Schulprojekte versuchen."
+            "text": "Im Alter von circa 7 Jahren, hatten wir unseren ersten Kontakt mit der Musik und lernten Akkordeon und Geige/Violine, dies sind auch unsere Hauptinstrumente, später haben wir uns noch viele weitere Instrumente, wie Klavier, Gitarre oder Bass beigebracht. Wir waren auch für eine Weile Mitglieder im Schulchor, später kamen wir auch in Kontakt mit Video- und Musikproduktion und durften uns auch als Synchronsprecher für verschiedene Schulprojekte versuchen."
         },
         "03": {
             "title": "Neuster Upload",
@@ -16,7 +16,7 @@
         },
         "04": {
             "title": "In Kontakt kommen",
-            "text": "Wenn du mit uns in Kontakt treten willst, besuche doch bitte unsere \"Social Media Page\" und wähle eine Plattform, die dir eine einfache Kommunikation ermöglicht. Bitte beachte, dass wenn du uns eine Mail schreibst, möglicherweiße die Spamfilter reagieren und können dadurch nicht garantieren, dass wir die Mail lesen. | In der Regel beantworten wir Anfragen innerhalb einer Woche. | Wenn wir Hilfe bei unseren Projekten benötigen, werden wir über Discord fragen. Wenn du Programme wie \"Unreal Engine 5\", \"Blender\", \"Krita\" oder ähnliche verwenden kannst, zögere nicht, uns zu schreiben. Das ist der beste Weg, uns bei der Arbeit zu unterstützen und unsere Inhalte zu verbessern, abgesehen davon ein Patreon zu werden."
+            "text": "Wenn du mit uns in Kontakt treten willst, besuche doch bitte unsere \"Social Media Seite\" und wähle eine Plattform, die dir eine einfache Kommunikation ermöglicht. Bitte beachte, dass wenn du uns eine Mail schreibst, möglicherweiße die Spamfilter reagieren und können dadurch nicht garantieren, dass wir die Mail lesen. | In der Regel beantworten wir Anfragen innerhalb einer Woche. | Wenn wir Hilfe bei unseren Projekten benötigen, werden wir über Discord fragen. Wenn du Programme wie \"Unreal Engine 5\", \"Blender\", \"Krita\" oder ähnliche verwenden kannst, zögere nicht, uns zu schreiben. Das ist der beste Weg, uns bei der Arbeit zu unterstützen und unsere Inhalte zu verbessern, abgesehen davon ein Patreon zu werden."
         }
     }, 
     "about": {
@@ -85,33 +85,33 @@
     },
     "equipment": {
         "button": "Equipment",
-        "title": "Our Equipment",
-        "experience": "Experience",
+        "title": "Unser Equipment",
+        "experience": "Erfahrung",
         "mics": {
-            "title": "Mics",
+            "title": "Mikros",
             "rodent1a": {
                 "name": "Rode NT1-A",
-                "text": "It has a very neutral sound.",
+                "text": "Es hat einen sehr natürlichen Klang.",
                 "url": "https://www.thomann.de/de/index.html"
             }, 
             "shuresm7b": {
                 "name": "Shure SM7B",
-                "text": "It has a very warm sound.",
+                "text": "Es hat einen sehr warmen Klang.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "tbonelucan": {
                 "name": "the t.bone Lucan System",
-                "text": "Without these, the instruments wouldn't sound very good.",
+                "text": "Ohne dieses, würden unsere Instrumente nicht gut klingen.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
-                "text": "Perfect for instruments, where the Lucan System doesn't fit.",
+                "text": "Perfekt für Instrumente, bei denen das Lucan System nicht passt.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "tbonemb7beta":{
                 "name": "the t.bone MB7 Beta",
-                "text":"Our old alternative for the Shure SM7B.",
+                "text":"Unsere alte Alternative für das Shure SM7B.",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
@@ -119,41 +119,41 @@
             "title": "Audio Interfaces",
             "presonus1602usb": {
                 "name": "Presonus 16.0.2 USB",
-                "text": "Main interface for the work.",
+                "text": "Haupt Interface mit dem wir arbeiten",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergur12": {
                 "name": "Steinberg UR12",
-                "text": "Small one for small things.",
+                "text": "Kleines Interface für kleine Dinge.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergur22c": {
                 "name": "Steinberg UR22C",
-                "text": "And if one mic is not enough, just use this.",
+                "text": "Und wenn ein Mikro nicht genug ist, benutze einfach das.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "yamahaag03": {
                 "name": "Yamaha AG03",
-                "text": "Some instruments require special equipment.",
+                "text": "Manche Instrumente benötigen spezielles Equipment.",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
         "speakers": {
-            "title": "Speakers",
+            "title": "Lautsprecher",
             "mackiemr524": {
                 "name": "Mackie MR524",
-                "text": "Good songs require good speakers.",
+                "text": "Gute Lieder brauchen gute Lautsprecher.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "presonustemblort10": {
                 "name": "Presonus Temblor T10",
-                "text": "What would be music without bass?",
+                "text": "Was wäre Musik ohne Bass?",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
         "software": {
             "title": "Software",
-            "subtitle": "(always newest version)",
+            "subtitle": "(immer neuste Version)",
             "cubase": {
                 "name": "Cubase Pro",
                 "text": "Hier mit entstehen unsere Instrumentals.",
@@ -187,7 +187,7 @@
                 "text": "Der Computer für die Musikproduktion.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 16GB RAM,, NVIDIA RTX 3060TI]"
             },
             "cuttingpc": {
-                "name": "Cutting Computer",
+                "name": "Schnitt Computer",
                 "text": "Der Computer für Videoschnitt und Produktion.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
             }
         }, 
@@ -200,36 +200,36 @@
             },
             "ukulele": {
                 "name": "Ukulele",
-                "text": "Nein, wir haben nicht vor einen Hawaii song zu machen, aber die zukunft ist unbekannt.",
+                "text": "Nein, wir haben nicht vor einen Hawaii Song zu machen, aber die Zukunft ist unbekannt.",
                 "experience": "Seit 2019"
             },
             "aguitar": {
-                "name": "A-Guitar",
-                "text": "Saubere klänge bekommt man nur mit akutischen Instrumenten.",
+                "name": "A-Gitarre",
+                "text": "Saubere Klänge bekommt man nur mit akkustischen Instrumenten.",
                 "experience": "Seit 2020"
             },
             "eguitar": {
-                "name": "E-Guitar",
-                "text": "Das Äquvalent zu Akustisch, nur etwas mehr Elektrisch.",
+                "name": "E-Gitarre",
+                "text": "Das Äquvalent zu akkustisch, nur etwas mehr elektrisch.",
                 "experience": "Seit 2020"
             },
             "ebass": {
                 "name": "E-Bass",
-                "text": "Eine gute Baseline ist essenziel für ein gutes Lied.",
+                "text": "Eine gute Bassline ist essenziel für ein gutes Lied.",
                 "experience": "Seit 2021"
             },
             "accordion": {
-                "name": "Accordion",
+                "name": "Akkordeon",
                 "text": "Das etwas besondere Instrument.",
                 "experience": "Seit 2008"
             },
             "violin": {
-                "name": "Violin",
+                "name": "Violine",
                 "text": "Schwer zu lernen, aber den aufwand ists Wert.",
                 "experience": "Seit 2007"
             },
             "eviolin": {
-                "name": "E-Violin",
+                "name": "E-Violine",
                 "text": "Das Äquvalent zu Akustisch, nur etwas mehr Elektrisch.",
                 "experience": "Since 2013"
             }

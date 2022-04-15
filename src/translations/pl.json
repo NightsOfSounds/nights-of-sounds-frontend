@@ -85,75 +85,75 @@
     },
     "equipment": {
         "button": "Equipment",
-        "title": "Our Equipment",
-        "experience": "Experience",
+        "title": "Nasz sprzęt",
+        "experience": "Doświadczenie",
         "mics": {
-            "title": "Mics",
+            "title": "Mikrofony",
             "rodent1a": {
                 "name": "Rode NT1-A",
-                "text": "It has a very neutral sound.",
+                "text": "Ma bardzo neutralny dźwięk.",
                 "url": "https://www.thomann.de/de/index.html"
             }, 
             "shuresm7b": {
                 "name": "Shure SM7B",
-                "text": "It has a very warm sound.",
+                "text": "Ma bardzo ciepły dźwięk.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "tbonelucan": {
                 "name": "the t.bone Lucan System",
-                "text": "Without these, the instruments wouldn't sound very good.",
+                "text": "Bez nich instrumenty nie brzmiałyby zbyt dobrze.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
-                "text": "Perfect for instruments, where the Lucan System doesn't fit.",
+                "text": "Idealny do instrumentów, w których system Lucan nie pasuje.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "tbonemb7beta":{
                 "name": "the t.bone MB7 Beta",
-                "text":"Our old alternative for the Shure SM7B.",
+                "text":"Nasza stara alternatywa dla Shure SM7B.",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
         "audiointerfaces": {
-            "title": "Audio Interfaces",
+            "title": "Interfejsy audio",
             "presonus1602usb": {
                 "name": "Presonus 16.0.2 USB",
-                "text": "Main interface for the work.",
+                "text": "Główny interfejs do pracy.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergur12": {
                 "name": "Steinberg UR12",
-                "text": "Small one for small things.",
+                "text": "Mały do drobiazgów.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "steinbergur22c": {
                 "name": "Steinberg UR22C",
-                "text": "And if one mic is not enough, just use this.",
+                "text": "A jeśli jeden mikrofon to za mało, po prostu użyj tego.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "yamahaag03": {
                 "name": "Yamaha AG03",
-                "text": "Some instruments require special equipment.",
+                "text": "Niektóre instrumenty wymagają specjalnego wyposażenia.",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
         "speakers": {
-            "title": "Speakers",
+            "title": "Głośniki",
             "mackiemr524": {
                 "name": "Mackie MR524",
-                "text": "Good songs require good speakers.",
+                "text": "Dobre piosenki wymagają dobrych głośników.",
                 "url": "https://www.thomann.de/de/index.html"
             },
             "presonustemblort10": {
                 "name": "Presonus Temblor T10",
-                "text": "What would be music without bass?",
+                "text": "Czym byłaby muzyka bez basu?",
                 "url": "https://www.thomann.de/de/index.html"
             }
         },
         "software": {
-            "title": "Software",
-            "subtitle": "(always newest version)",
+            "title": "Oprogramowanie",
+            "subtitle": "(zawsze najnowsza wersja)",
             "cubase": {
                 "name": "Cubase Pro",
                 "text": "Budowanie instrumentów jest wszystkim.",
@@ -192,7 +192,7 @@
             }
         }, 
         "instruments": {
-            "title": "Instruments",
+            "title": "Instrumenty",
             "epiano": {
                 "name": "E-Piano",
                 "text": "W zasadzie do wszystkiego.",
