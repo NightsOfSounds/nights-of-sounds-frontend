@@ -12,7 +12,7 @@ export function ScrollInto({children}:ScrollIntoType) {
     let scrollBefore = 0
 
     const handleScroll = () => {
-        if(window.scrollY <= 100 || window.scrollY > scrollBefore && scrollBefore > 0) {
+        if(window.scrollY <= 100 || (window.scrollY > scrollBefore && scrollBefore > 0)) {
             armed = true;
         }
         scrollBefore = window.scrollY
