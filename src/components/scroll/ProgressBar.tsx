@@ -8,10 +8,8 @@ function ProgressBar() {
 
     const scroll = () => {
         if(!ref.current) return;
-        const windowHeight = window.innerHeight
         const clientHeight = document.body.clientHeight - window.innerHeight
-        const scrollPos = window.scrollY
-        ref.current.style.width = `${(scrollPos / clientHeight) * 100}%`
+        ref.current.style.width = `${(window.scrollY / clientHeight) * 100}%`
     }
 
     useScrollHandler(()=>{scroll()})
