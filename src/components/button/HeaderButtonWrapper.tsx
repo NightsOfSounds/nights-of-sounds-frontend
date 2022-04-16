@@ -28,12 +28,6 @@ function HeaderButtonWrapper({links}:HeaderButtonWrapperType) {
     const ref = createRef<HTMLDivElement>()
 
     const onHover = (e:HTMLDivElement)=>{
-        console.log(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
-        console.log(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
-        console.log(e)
-        console.log("");
-        
-
         setPos(e.getBoundingClientRect().left - (ref.current?.getBoundingClientRect().left || 0))
         setWidth(e.getBoundingClientRect().right - e.getBoundingClientRect().left)
     }
