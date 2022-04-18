@@ -3,9 +3,9 @@ import { Box } from "@mui/material"
 type MobileOpenType = {
     mobileDrawer: boolean,
     isMobile: boolean,
-    onClick: ()=>void
+    onClick: () => void
 }
-function MobileOpenButton({mobileDrawer, isMobile, onClick}:MobileOpenType) {
+function MobileOpenButton({ mobileDrawer, isMobile, onClick }: MobileOpenType) {
 
     const maxRotate = 45
 
@@ -42,28 +42,28 @@ function MobileOpenButton({mobileDrawer, isMobile, onClick}:MobileOpenType) {
             padding: "10px",
             paddingTop: "15px",
             cursor: "pointer",
-          }} onClick={() => {
+        }} onClick={() => {
             onClick()
-          }} role="button"
-          aria-label="open navigation">
-          <Box sx={{height: "100%", width: "100%", position: "relative"}}>
-            <Box sx={{
-              ...outerSX,
-              top: "0",
-            }}></Box>
-            <Box sx={{
-              ...innerSX,
-              transform: `rotate(${mobileDrawer ? `${maxRotate}deg` : "0"})`,
-            }}></Box>
-            <Box sx={{
-              ...innerSX,
-              transform: `rotate(${mobileDrawer ? `${-maxRotate}deg` : "0"})`,
-            }}></Box>
-            <Box sx={{
-              ...outerSX,
-              bottom: "0",
-            }}></Box>
-          </Box>
+        }} role="button"
+            aria-label="open navigation">
+            <Box sx={{ height: "100%", width: "100%", position: "relative" }}>
+                <Box sx={{
+                    ...outerSX,
+                    top: "0",
+                }}></Box>
+                <Box sx={{
+                    ...innerSX,
+                    transform: `rotate(${mobileDrawer ? `${maxRotate}deg` : "0"})`,
+                }}></Box>
+                <Box sx={{
+                    ...innerSX,
+                    transform: `rotate(${mobileDrawer ? `${-maxRotate}deg` : "0"})`,
+                }}></Box>
+                <Box sx={{
+                    ...outerSX,
+                    bottom: "0",
+                }}></Box>
+            </Box>
         </Box>
     )
 }

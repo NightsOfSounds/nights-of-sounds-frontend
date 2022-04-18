@@ -10,27 +10,27 @@ import { theme } from './utils/theme';
 import { sites } from './utils/sites';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <StyledEngineProvider injectFirst>
-          <CssBaseline/>
-            <LanguageProvider>
-              <ScrollTop/>
-              <Header/>
-              <main>
-                <Routes>
-                  {sites.map((e,i)=><Route key={`route.${i}`} path={e.path} element={e.element}/>)}
-                  <Route path='*' element={<NotFound/>} />
-                </Routes>
-              </main>
-              <Footer/>
-              <Fireflies/>
-            </LanguageProvider>
-        </StyledEngineProvider>
-      </ThemeProvider>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <StyledEngineProvider injectFirst>
+                    <CssBaseline />
+                    <LanguageProvider>
+                        <ScrollTop />
+                        <Header />
+                        <main>
+                            <Routes>
+                                {sites.map((e, i) => <Route key={`route.${i}`} path={e.path} element={e.element} />)}
+                                <Route path='*' element={<NotFound />} />
+                            </Routes>
+                        </main>
+                        <Footer />
+                        <Fireflies />
+                    </LanguageProvider>
+                </StyledEngineProvider>
+            </ThemeProvider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

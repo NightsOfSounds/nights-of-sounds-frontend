@@ -64,27 +64,29 @@ export default function Footer() {
         }])
     )
 
-    return <StyledFooter>
-        <StyledImage src={Moon} alt="Moon"/>
-        <Box sx={{textAlign: "center", width: "100%", margin: "auto"}}>
-            <Box>
-                <Typography>&copy; {new Date().getFullYear()}, Nights of Sounds</Typography>
+    return (
+        <StyledFooter>
+            <StyledImage src={Moon} alt="Moon"/>
+            <Box sx={{textAlign: "center", width: "100%", margin: "auto"}}>
+                <Box>
+                    <Typography>&copy; {new Date().getFullYear()}, Nights of Sounds</Typography>
+                </Box>
+                <Box>
+                    <Typography>
+                        {lang("footer.contact")}&nbsp;
+                        <LinkA href="mailto:nights.of.sounds@gmail.com">
+                            {lang("footer.email")}
+                        </LinkA>
+                    </Typography>
+                </Box>
+                <UnderlinedLink to="/imprint">
+                    {lang("imprint.title")}
+                </UnderlinedLink>
+                &nbsp;
+                <UnderlinedLink to="/privacy">
+                    {lang("privacy.title")}
+                </UnderlinedLink>
             </Box>
-            <Box>
-                <Typography>
-                    {lang("footer.contact")}&nbsp;
-                    <LinkA href="mailto:nights.of.sounds@gmail.com">
-                        {lang("footer.email")}
-                    </LinkA>
-                </Typography>
-            </Box>
-            <UnderlinedLink to="/imprint">
-                {lang("imprint.title")}
-            </UnderlinedLink>
-            &nbsp;
-            <UnderlinedLink to="/privacy">
-                {lang("privacy.title")}
-            </UnderlinedLink>
-        </Box>
-    </StyledFooter>
+        </StyledFooter>
+    )
 }

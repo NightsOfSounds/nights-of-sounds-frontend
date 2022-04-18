@@ -11,29 +11,31 @@ function About() {
 
     const lang = useLanguage();
 
-    return <ContentBox>
-      <SiteTitle>{lang("about.title")}</SiteTitle>
-      <Grid container spacing={4} columns={{xs: 6, md: 12}}>
-        <Grid item xs={6}>
-        <ScrollInto>
-          <ImageHorizontalBox 
-            name={lang("about.user01.name")} 
-            text={lang("about.user01.text")}
-            imgUrl={Profile01} 
-            alignment={1}/>
-        </ScrollInto>
-        </Grid>
-        <Grid item xs={6}>
-          <ScrollInto>
-          <ImageHorizontalBox 
-            name={lang("about.user02.name")} 
-            text={lang("about.user02.text")}
-            imgUrl={Profile02} 
-            alignment={0}/>
-          </ScrollInto>
-        </Grid>
-      </Grid>
-    </ContentBox>
+    return (
+        <ContentBox>
+            <SiteTitle>{lang("about.title")}</SiteTitle>
+            <Grid container spacing={4} columns={{ xs: 6, md: 12 }}>
+                <Grid item xs={6}>
+                    <ScrollInto>
+                        <ImageHorizontalBox
+                            name={lang("about.user01.name")}
+                            text={lang("about.user01.text")}
+                            imgUrl={Profile01}
+                            alignment={1} />
+                    </ScrollInto>
+                </Grid>
+                <Grid item xs={6}>
+                    <ScrollInto>
+                        <ImageHorizontalBox
+                            name={lang("about.user02.name")}
+                            text={lang("about.user02.text")}
+                            imgUrl={Profile02}
+                            alignment={0} />
+                    </ScrollInto>
+                </Grid>
+            </Grid>
+        </ContentBox>
+    )
 }
 
 export default About

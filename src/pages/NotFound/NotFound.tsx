@@ -15,13 +15,15 @@ export default function NotFound() {
 
     const lang = useLanguage()
 
-    return <ContentBox>
-        <SiteTitle>{lang("404.title")}</SiteTitle>
-        <Box sx={{paddingBottom: 4}}>
-            <TextProcessor>
-                {lang("404.text")}
-            </TextProcessor>
-        </Box>
-        <StyledImage src={SORRY_CAT}/>
-    </ContentBox>
+    return (
+        <ContentBox>
+            <SiteTitle>{lang("404.title")}</SiteTitle>
+            <Box sx={{paddingBottom: 4}}>
+                <TextProcessor>
+                    {lang("404.text")}
+                </TextProcessor>
+            </Box>
+            <StyledImage src={SORRY_CAT}/>
+        </ContentBox>
+    )
 }

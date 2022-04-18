@@ -59,20 +59,24 @@ function Fireflies() {
     for(let i = 0; i<amount; i++) {
         lights.push(<Firefly key={`animated.${i}`}/>)
     }
-    return <Box sx={{
-        position: "absolute", 
-        top: 0, 
-        left: 0, 
-        height: "100%", 
-        width: "100%",
-        zIndex: 1,
-        pointerEvents: "none",
-        overflow: "hidden",
-        filter: "blur(2px)",
-    }} style={{
-        opacity: opacity,
-        transition: `${transition}s`,
-    }}>{lights}</Box>
+    return (
+        <Box sx={{
+            position: "absolute", 
+            top: 0, 
+            left: 0, 
+            height: "100%", 
+            width: "100%",
+            zIndex: 1,
+            pointerEvents: "none",
+            overflow: "hidden",
+            filter: "blur(2px)",
+        }} style={{
+            opacity: opacity,
+            transition: `${transition}s`,
+        }}>
+            {lights}
+        </Box>
+    )
 }
 
 export default Fireflies
