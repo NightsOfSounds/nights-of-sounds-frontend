@@ -9,22 +9,32 @@ type SizeStateType = {
 }
 
 function useWindowSize() {
-  const [windowSize, setWindowSize] = useState<SizeStateType>({
-    width: undefined,
-    height: undefined,
-  });
-  useEffect(() => {
+    const [windowSize, setWindowSize] = useState<SizeStateType>({
+        width: undefined,
+        height: undefined,
+    });
+
     function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+
+        const width = document.body.clientWidth
+        const height = document.body.clientHeight
+
+        if(width === windowSize.width && height === windowSize.height) return
+
+        setWindowSize({
+            width,
+            height,
+        });
     }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return windowSize;
+
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    return windowSize;
 }
 
 function Fireflies() {
