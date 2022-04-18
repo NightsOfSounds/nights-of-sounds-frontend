@@ -71,9 +71,11 @@ export function LanguageProvider({children}:LanguageProviderType) {
         return pathFromObject(q, translation) || pathFromObject(q, defaultTranslation)
     }
     
-    return <LanguageContext.Provider value={{getData: search, setLang: setLanguage, lang: language}}>
-        {children}
-    </LanguageContext.Provider>
+    return (
+        <LanguageContext.Provider value={{getData: search, setLang: setLanguage, lang: language}}>
+            {children}
+        </LanguageContext.Provider>
+    )
 }
 
 function pathFromObject(path: string, source:any):string {

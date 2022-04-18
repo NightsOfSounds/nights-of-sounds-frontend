@@ -24,12 +24,14 @@ function Partner() {
         }
     ]
 
-    return <ContentBox>
+    return (
+        <ContentBox>
             <SiteTitle>{lang("partner.title")}</SiteTitle>
             <Stack>
                 <ImageTextBannerWrapper data={partnerData}/>
             </Stack>
-    </ContentBox>
+        </ContentBox>
+    )
 }
 
 export default Partner

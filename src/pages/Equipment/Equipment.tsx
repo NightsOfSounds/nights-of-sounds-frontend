@@ -144,10 +144,12 @@ export default function Equipment() {
         }
     ]
 
-    return <ContentBox>
+    return (
+        <ContentBox>
             <SiteTitle>{lang("equipment.title")}</SiteTitle>
             <>
                 {content.map((e,i)=> <Category key={`category.${i}`} {...e}/>)}
             </>
         </ContentBox>
+    )
 }

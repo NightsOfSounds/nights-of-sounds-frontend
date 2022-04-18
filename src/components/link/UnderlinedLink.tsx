@@ -6,13 +6,17 @@ type UnderlinedLinkType = {
     to: string
 }
 function UnderlinedLink({children, to}:UnderlinedLinkType) {
-     return <Link to={to}>
-        <Typography sx={{
-            textDecoration: "underline", 
-            color: "text.primary",
-            display: "inline-block",
-        }}>{children}</Typography>
-    </Link>
+     return (
+        <Link to={to}>
+            <Typography sx={{
+                textDecoration: "underline", 
+                color: "text.primary",
+                display: "inline-block",
+            }}>
+                {children}
+            </Typography>
+        </Link>
+    )
 }
 
 export default UnderlinedLink

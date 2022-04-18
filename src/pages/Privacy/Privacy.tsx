@@ -8,12 +8,14 @@ export default function Privacy() {
 
     const lang = useLanguage()
 
-    return <ContentBox>
-        <SiteTitle>{lang("privacy.title")}</SiteTitle>
-        <Paper sx={{textAlign: "left", p:2}}>
-            <TextProcessor>
-                {lang("privacy.text")}
-            </TextProcessor>
-        </Paper>
-    </ContentBox>
+    return (
+        <ContentBox>
+            <SiteTitle>{lang("privacy.title")}</SiteTitle>
+            <Paper sx={{textAlign: "left", p:2}}>
+                <TextProcessor>
+                    {lang("privacy.text")}
+                </TextProcessor>
+            </Paper>
+        </ContentBox>
+    )
 }

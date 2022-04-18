@@ -27,16 +27,18 @@ function Firefly() {
   
   
   
-    return <Box sx={{
-        position: "absolute",
-        width: "5px",
-        height: "5px",
-        borderRadius: "100%",
-        backgroundColor: "#8fa8eb",
-        boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
-        transition: "5s linear",
-        willChange: "top, left"
-    }} ref={ref}></Box>
+    return (
+        <Box sx={{
+            position: "absolute",
+            width: "5px",
+            height: "5px",
+            borderRadius: "100%",
+            backgroundColor: "#8fa8eb",
+            boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
+            transition: "5s linear",
+            willChange: "top, left"
+        }} ref={ref}/>
+    )
 }
 
 export default Firefly

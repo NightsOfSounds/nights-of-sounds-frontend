@@ -8,12 +8,14 @@ export default function Imprint() {
 
     const lang = useLanguage()
 
-    return <ContentBox>
-        <SiteTitle>{lang("imprint.title")}</SiteTitle>
-        <Paper sx={{textAlign: "left", p:2}}>
-            <TextProcessor>
-                {lang("imprint.text")}
-            </TextProcessor>
-        </Paper>
-    </ContentBox>
+    return (
+        <ContentBox>
+            <SiteTitle>{lang("imprint.title")}</SiteTitle>
+            <Paper sx={{textAlign: "left", p:2}}>
+                <TextProcessor>
+                    {lang("imprint.text")}
+                </TextProcessor>
+            </Paper>
+        </ContentBox>
+    )
 }
