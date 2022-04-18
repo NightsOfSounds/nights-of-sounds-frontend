@@ -14,25 +14,25 @@ function useWindowSize() {
         height: undefined,
     });
 
-    function handleResize() {
-
-        const width = document.body.clientWidth
-        const height = document.body.clientHeight
-
-        if(width === windowSize.width && height === windowSize.height) return
-
-        setWindowSize({
-            width,
-            height,
-        });
-    }
-
     useEffect(() => {
+
+        function handleResize() {
+
+            const width = document.body.clientWidth
+            const height = document.body.clientHeight
+    
+            if(width === windowSize.width && height === windowSize.height) return
+    
+            setWindowSize({
+                width,
+                height,
+            });
+        }
+
         window.addEventListener("resize", handleResize);
         handleResize();
         return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [windowSize]);
 
     return windowSize;
 }
