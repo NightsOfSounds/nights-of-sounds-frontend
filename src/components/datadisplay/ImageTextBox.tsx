@@ -21,7 +21,7 @@ function ImageTextBox({name, text, imgUrl, url, experience}:ImageTextBoxType) {
     return (
         <ConditionalWrapper
             condition={!!url}
-            wrapper={(children) => <LinkEl href={url}>{children}</LinkEl>}>
+            wrapper={(children) => <LinkEl href={url} target="_blank">{children}</LinkEl>}>
             <Paper sx={{
                 p: 2,
                 width: "300px",
