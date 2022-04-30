@@ -1,5 +1,7 @@
+import { KeyboardArrowDown } from '@mui/icons-material';
 import { Box, ThemeProvider, Typography } from '@mui/material'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import { headerTheme } from '../../utils/theme';
 import { useScrollHandler } from '../scroll/scrollHandler';
 
@@ -27,6 +29,10 @@ function TitleImage({ height = 1 }: TitleImageType) {
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
 
+    const line1Ref = useRef<HTMLDivElement>();
+    const circleRef = useRef<any>();
+    const line2Ref = useRef<HTMLDivElement>();
+
     const imageWidth = window.innerWidth
     const imageVersion = sizes.filter(e => e.width >= imageWidth)[0]
     const url = `/img/banner/banner-${imageVersion.width}-${imageVersion.height}.webp`
@@ -40,9 +46,33 @@ function TitleImage({ height = 1 }: TitleImageType) {
         if (textRef.current) {
             textRef.current.style.top = `calc( 50% + ${window.scrollY / 2}px )`
         }
+        if(line1Ref.current && line2Ref.current && circleRef.current) {
+            if(window.scrollY >= window.innerHeight / 3) {
+                setWidth(100)
+
+                line1Ref.current.style.opacity = "10%"
+                circleRef.current.style.opacity = "20%"
+                line2Ref.current.style.opacity = "10%"
+            } else {
+                if(width === 100) setWidth(0)
+
+                line1Ref.current.style.opacity = "100%"
+                circleRef.current.style.opacity = "100%"
+                line2Ref.current.style.opacity = "100%"
+            }
+        }
     }
 
+    const [hover, setHover] = useState(false)
+    const [width, setWidth] = useState(0)
+
     useScrollHandler(handler)
+
+    const location = useLocation()
+
+    useEffect(()=>{
+        setWidth(0)
+    }, [location])
 
     return (
         <ThemeProvider theme={headerTheme}>
@@ -78,6 +108,78 @@ function TitleImage({ height = 1 }: TitleImageType) {
                     willChange: "top",
                     fontSize: "3rem",
                 }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
+                {height === 1 && <Box sx={{
+                    bottom: "20px",
+                    left: "0",
+                    position: "absolute",
+                    width: "100%",
+                    textAlign: "center",
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto 1fr",
+                }}>
+                    <Box sx={{position: "relative"}}>
+                        <Box sx={{
+                            position: "absolute",
+                            width: `${width}%`,
+                            borderTop: "1.5px solid white",
+                            top: "calc( 50% - 1px )",
+                            right: "0",
+                            transition: ".5s",
+                        }} ref={line1Ref}></Box>
+                    </Box>
+                    <Box 
+                        sx={{
+                            border: "1.5px solid white",
+                            borderRadius: "50%",
+                            display: "flex",
+                            margin: "0",
+                            padding: "0",
+                            minWidth: "0",
+                            color: "white",
+                            transition: ".5s",
+                            cursor: "pointer",
+                            zIndex: "3",
+                            overflow: "hidden",
+                            position: "relative",
+                        }} 
+                        ref={circleRef} 
+                        role="button"
+                        onClick={()=>{
+                            if(window.scrollY > window.innerHeight / 3) return
+                            window.scrollTo({
+                                behavior: "smooth",
+                                top: window.scrollY + window.innerHeight / 1.5
+                            })
+                        }}
+                        onMouseEnter={()=>{
+                            setHover(true)
+                            if(width === 0) setWidth(50)
+                        }}
+                        onMouseLeave={()=>{
+                            setHover(false)
+                            if(width === 50) setWidth(0)
+                        }}
+                    >
+                        <KeyboardArrowDown fontSize="large" sx={{
+                            transition: ".3s",
+                            transform: hover ? "translateY(100%)" : "",
+                        }}/>
+                        <KeyboardArrowDown fontSize="large" sx={{
+                            transition: ".3s",
+                            position: "absolute",
+                            transform: hover ? "" : "translateY(-100%)",
+                        }}/>
+                    </Box>
+                    <Box sx={{position: "relative"}}>
+                        <Box sx={{
+                            position: "absolute",
+                            width: `${width}%`,
+                            borderTop: "1.5px solid white",
+                            top: "calc( 50% - 1px )",
+                            transition: ".5s",
+                        }} ref={line2Ref}></Box>
+                    </Box>
+                </Box>}
             </Box>
         </ThemeProvider>
     )
