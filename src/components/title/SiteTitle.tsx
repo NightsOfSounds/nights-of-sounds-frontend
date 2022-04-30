@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { headerTheme } from "../../utils/theme"
 
 type SiteTitleType = {
@@ -14,6 +14,7 @@ function SiteTitle({children}:SiteTitleType) {
                     marginBottom: 4,
                     fontWeight: "bold",
                     textTransform: "uppercase",
+                    letterSpacing: 2,
                 }}
             >
                 {children}
