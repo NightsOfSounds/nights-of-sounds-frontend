@@ -13,12 +13,14 @@ function Home() {
     const lang = useLanguage()
     const StyledImg = styled("img")(
         sx([{
-            width: "200px",
-            maxWidth: {
-                xs: "100%",
-                md: "200px",
-            },
-            borderRadius: 1,
+            width: "100%",
+            transition: ".3s",
+            "&:hover": {
+                transform: {
+                    "md": "scale(1.1)",
+                    "xs": "",
+                },
+            }
         }])
     )
 
@@ -39,8 +41,20 @@ function Home() {
                 <Paper sx={{ textAlign: "center", marginBottom: 4, p: 2 }}>
                     <Typography variant="h5" sx={{ marginBottom: 2 }}>{lang("home.01.title")}</Typography>
                     <Stack direction={{ xs: "column", md: "row" }} gap={2}>
-                        <Box>
-                            <StyledImg alt="Profile image" src={NOS} />
+                        <Box sx={{
+                            margin: "auto",
+                        }}>
+                            <Box sx={{
+                                overflow: "hidden",
+                                borderRadius: 1,
+                                width: "200px",
+                                maxWidth: {
+                                    xs: "100%",
+                                    md: "200px",
+                                },
+                            }}>
+                                <StyledImg alt="Profile image" src={NOS} />
+                            </Box>
                         </Box>
                         <Box>
                             <TextProcessor>
