@@ -176,6 +176,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                                     behavior: "smooth",
                                     top: window.scrollY + window.innerHeight / 1.5
                                 })
+                                setTooltip(false)
                             }}
                             onMouseEnter={()=>{
                                 setHover(true)
