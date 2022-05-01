@@ -147,52 +147,58 @@ function TitleImage({ height = 1 }: TitleImageType) {
                             transition: ".5s",
                         }} ref={line1Ref}></Box>
                     </Box>
-                    <Tooltip title={language("header.scroll")} TransitionComponent={Zoom} open={tooltip}>
-                    <Box 
-                        sx={{
-                            border: "1.5px solid white",
-                            borderRadius: "50%",
-                            display: "flex",
-                            margin: "0",
-                            padding: "0",
-                            minWidth: "0",
-                            color: "white",
-                            transition: ".5s",
-                            cursor: "pointer",
-                            zIndex: "3",
-                            overflow: "hidden",
-                            position: "relative",
-                        }} 
-                        ref={circleRef} 
-                        role="button"
-                        onClick={()=>{
-                            if(window.scrollY > window.innerHeight / 3) return
-                            window.scrollTo({
-                                behavior: "smooth",
-                                top: window.scrollY + window.innerHeight / 1.5
-                            })
-                        }}
-                        onMouseEnter={()=>{
-                            setHover(true)
-                            setTooltip(true)
-                            setWidth(50)
-                        }}
-                        onMouseLeave={()=>{
-                            setHover(false)
-                            setTooltip(false)
-                            if(width === 50) setWidth(0)
-                        }}
+                    <Tooltip 
+                        title={language("header.scroll")} 
+                        TransitionComponent={Zoom} 
+                        open={tooltip} 
+                        placement="top"
                     >
-                        <KeyboardArrowDown fontSize="large" sx={{
-                            transition: ".3s",
-                            transform: hover ? "translateY(100%)" : (isNodge ? "translateY(20%)" : ""),
-                        }}/>
-                        <KeyboardArrowDown fontSize="large" sx={{
-                            transition: ".3s",
-                            position: "absolute",
-                            transform: hover ? "" : "translateY(-100%)",
-                        }}/>
-                    </Box>
+                        <Box 
+                            sx={{
+                                border: "1.5px solid white",
+                                borderRadius: "50%",
+                                display: "flex",
+                                margin: "0",
+                                padding: "0",
+                                minWidth: "0",
+                                color: "white",
+                                transition: ".5s",
+                                cursor: "pointer",
+                                zIndex: "3",
+                                overflow: "hidden",
+                                position: "relative",
+                            }} 
+                            ref={circleRef} 
+                            role="button"
+                            onClick={()=>{
+                                if(window.scrollY > window.innerHeight / 3) return
+                                window.scrollTo({
+                                    behavior: "smooth",
+                                    top: window.scrollY + window.innerHeight / 1.5
+                                })
+                            }}
+                            onMouseEnter={()=>{
+                                setHover(true)
+                                if(width === 100) return
+                                setTooltip(true)
+                                setWidth(50)
+                            }}
+                            onMouseLeave={()=>{
+                                setHover(false)
+                                setTooltip(false)
+                                if(width === 50) setWidth(0)
+                            }}
+                        >
+                            <KeyboardArrowDown fontSize="large" sx={{
+                                transition: ".3s",
+                                transform: hover ? "translateY(100%)" : (isNodge ? "translateY(20%)" : ""),
+                            }}/>
+                            <KeyboardArrowDown fontSize="large" sx={{
+                                transition: ".3s",
+                                position: "absolute",
+                                transform: hover ? "" : "translateY(-100%)",
+                            }}/>
+                        </Box>
                     </Tooltip>
                     <Box sx={{position: "relative"}}>
                         <Box sx={{
