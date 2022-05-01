@@ -1,5 +1,5 @@
 import { KeyboardArrowDown } from '@mui/icons-material';
-import { Box, ThemeProvider, Typography } from '@mui/material'
+import { Box, ThemeProvider, Tooltip, Typography, Zoom } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { headerTheme } from '../../utils/theme';
@@ -37,7 +37,6 @@ function TitleImage({ height = 1 }: TitleImageType) {
     const imageVersion = sizes.filter(e => e.width >= imageWidth)[0]
     const url = `/img/banner/banner-${imageVersion.width}-${imageVersion.height}.webp`
 
-
     const handler = () => {
         if (imgRef.current) {
             imgRef.current.style.objectPosition = `50% calc( 50% + ${window.scrollY * 0.3}px )`
@@ -49,6 +48,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
         if(line1Ref.current && line2Ref.current && circleRef.current) {
             if(window.scrollY >= window.innerHeight / 3) {
                 setWidth(100)
+                setScrolled(true)
 
                 line1Ref.current.style.opacity = "10%"
                 circleRef.current.style.opacity = "20%"
@@ -63,8 +63,11 @@ function TitleImage({ height = 1 }: TitleImageType) {
         }
     }
 
+    const [isScrolled, setScrolled] = useState(false);
+    const [isNodge, setNodge] = useState(false)
     const [hover, setHover] = useState(false)
     const [width, setWidth] = useState(0)
+    const [tooltip, setTooltip] = useState(false)
 
     useScrollHandler(handler)
 
@@ -73,6 +76,21 @@ function TitleImage({ height = 1 }: TitleImageType) {
     useEffect(()=>{
         setWidth(0)
     }, [location])
+
+    useEffect(() => {
+        const i = setInterval(() => {
+            if(hover || isScrolled) return
+            setNodge(true)
+            setWidth(1)
+            setTimeout(()=>{
+                setNodge(false)
+                setWidth(0)
+            }, 300)
+        }, 3000)
+        return () => {
+            clearInterval(i)
+        }
+    }, [hover, isScrolled])
 
     return (
         <ThemeProvider theme={headerTheme}>
@@ -127,6 +145,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                             transition: ".5s",
                         }} ref={line1Ref}></Box>
                     </Box>
+                    <Tooltip title="Scroll down" TransitionComponent={Zoom} open={tooltip}>
                     <Box 
                         sx={{
                             border: "1.5px solid white",
@@ -153,16 +172,18 @@ function TitleImage({ height = 1 }: TitleImageType) {
                         }}
                         onMouseEnter={()=>{
                             setHover(true)
+                            setTooltip(true)
                             if(width === 0) setWidth(50)
                         }}
                         onMouseLeave={()=>{
                             setHover(false)
+                            setTooltip(false)
                             if(width === 50) setWidth(0)
                         }}
                     >
                         <KeyboardArrowDown fontSize="large" sx={{
                             transition: ".3s",
-                            transform: hover ? "translateY(100%)" : "",
+                            transform: hover ? "translateY(100%)" : (isNodge ? "translateY(20%)" : ""),
                         }}/>
                         <KeyboardArrowDown fontSize="large" sx={{
                             transition: ".3s",
@@ -170,6 +191,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                             transform: hover ? "" : "translateY(-100%)",
                         }}/>
                     </Box>
+                    </Tooltip>
                     <Box sx={{position: "relative"}}>
                         <Box sx={{
                             position: "absolute",
