@@ -243,6 +243,9 @@
         "title": "Prywatność",
         "text": "Nie gromadzimy żadnych danych osobowych, wszystkie linki używane na stronie są linkami partnerskimi, prowadzą do dostawców zewnętrznych, nie otrzymujemy od nich również żadnych danych osobowych i nie ponosimy odpowiedzialności za niewłaściwe wykorzystanie danych.| Ta strona służy wyłącznie do przekazywania informacji o nas i naszej pracy.|Nasze strony internetowe i ich zawartość podlegają niemieckiemu prawu autorskiemu. O ile nie jest to wyraźnie dozwolone przez prawo, każda forma wykorzystywania, powielania lub przetwarzania utworów objętych ochroną praw autorskich na naszych stronach internetowych wymaga uprzedniej zgody odpowiedniego właściciela praw. Poszczególne reprodukcje dzieła są dozwolone wyłącznie do użytku prywatnego. Materiały z tych stron są chronione prawem autorskim, a każde nieautoryzowane użycie może naruszać prawa autorskie."
     },
+    "header": {
+        "scroll": "przewiń w dół"
+    },
     "footer": {
         "contact": "Kontakt",
         "email": "Email"

@@ -3,6 +3,7 @@ import { Box, ThemeProvider, Tooltip, Typography, Zoom } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { headerTheme } from '../../utils/theme';
+import { useLanguage } from '../localization/Localization';
 import { useScrollHandler } from '../scroll/scrollHandler';
 
 const sizes = [
@@ -72,6 +73,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
     useScrollHandler(handler)
 
     const location = useLocation()
+    const language = useLanguage()
 
     useEffect(()=>{
         setWidth(0)
@@ -145,7 +147,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                             transition: ".5s",
                         }} ref={line1Ref}></Box>
                     </Box>
-                    <Tooltip title="Scroll down" TransitionComponent={Zoom} open={tooltip}>
+                    <Tooltip title={language("header.scroll")} TransitionComponent={Zoom} open={tooltip}>
                     <Box 
                         sx={{
                             border: "1.5px solid white",
@@ -173,7 +175,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                         onMouseEnter={()=>{
                             setHover(true)
                             setTooltip(true)
-                            if(width === 0) setWidth(50)
+                            setWidth(50)
                         }}
                         onMouseLeave={()=>{
                             setHover(false)
