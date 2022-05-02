@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
-import { Box, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import { headerTheme } from "../../utils/theme"
 
 type SiteTitleType = {
