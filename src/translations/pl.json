@@ -136,6 +136,11 @@
                 "name": "Yamaha AG03",
                 "text": "Niektóre instrumenty wymagają specjalnego wyposażenia.",
                 "url": "https://www.thomann.de/de/index.html"
+            },
+            "presonusstudiolive32r": {
+                "name": "Presonus StudioLive 32r",
+                "text": "Jeśli 16 kanałów już nie wystarcza, potrzebujesz nieco większych kalibrów",
+                "url": "https://www.thomann.de/de/presonus_studiolive_series_iii_32r.htm"
             }
         },
         "speakers": {
@@ -189,6 +194,10 @@
             "cuttingpc": {
                 "name": "Cutting Computer",
                 "text": "Komputer używany do tworzenia naszych filmów.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
+            },
+            "mac": {
+                "name": "Mobile Workstation",
+                "text": "Komputer do szybkiej pracy w podróży. [MacBook Pro (13', M2, 2022)]"
             }
         }, 
         "instruments": {
