@@ -1,10 +1,11 @@
 import { render, screen } from "@testing-library/react"
+import { BrowserRouter } from "react-router-dom"
 import TitleImage from "./TitleImage"
 
 describe("renders TitleImage", () => {
 
     test("renders correct image", () => {
-        render(<TitleImage/>)
+        render(<BrowserRouter><TitleImage/></BrowserRouter>)
         
         const img = screen.getByRole("img")
         expect(img).toBeInTheDocument()
@@ -13,7 +14,7 @@ describe("renders TitleImage", () => {
     })
 
     test("renders correct title", () => {
-        render(<TitleImage/>)
+        render(<BrowserRouter><TitleImage/></BrowserRouter>)
     
         const headerTitle = screen.getByText("NIGHTS OF SOUNDS")
         expect(headerTitle).toBeInTheDocument()

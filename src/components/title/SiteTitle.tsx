@@ -14,6 +14,7 @@ function SiteTitle({children}:SiteTitleType) {
                     marginBottom: 4,
                     fontWeight: "bold",
                     textTransform: "uppercase",
+                    letterSpacing: 2,
                 }}
             >
                 {children}

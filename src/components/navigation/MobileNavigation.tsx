@@ -21,7 +21,7 @@ function MobileNavigation({ links, isMobile, mobileDrawer, close }: MobileNaviga
                     position: "fixed",
                     top: 0,
                     left: 0,
-                    zIndex: 2,
+                    zIndex: "16",
                 }} aria-expanded={mobileDrawer} onClick={() => { close() }}>
 
                 </Box>
@@ -36,7 +36,7 @@ function MobileNavigation({ links, isMobile, mobileDrawer, close }: MobileNaviga
                     position: "fixed",
                     backgroundColor: "#1E1E1E",
                     display: "block",
-                    zIndex: "2",
+                    zIndex: "17",
                     overflow: "auto",
                 }} aria-expanded={mobileDrawer}>
                     {links.map((e, i) => <MobileButton underline={i === 0} icon={e.icon} onClick={() => { close() }} key={`header.button.${i}`} url={e.url}>{e.name}</MobileButton>)}

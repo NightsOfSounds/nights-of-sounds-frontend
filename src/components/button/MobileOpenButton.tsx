@@ -36,7 +36,7 @@ function MobileOpenButton({ mobileDrawer, isMobile, onClick }: MobileOpenType) {
             position: "fixed",
             top: "0",
             right: "0",
-            zIndex: "4",
+            zIndex: "17",
             display: isMobile ? "block" : "none",
             pointerEvents: "all",
             padding: "10px",

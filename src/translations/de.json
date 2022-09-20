@@ -243,6 +243,9 @@
         "title": "Datenschutz",
         "text": "Wir erheben keine personenbezogenen Daten, alle auf der Seite verwendeten Links sind Affiliate-Links, diese führen zu Drittanbietern, wir erhalten auch von diesen keine personenbezogenen Daten und übernehmen keine Haftung für Datenmissbrauch.| Diese Seite dient ausschließlich der Information über uns und unsere Arbeit.| Unsere Webseiten und ihre Inhalte unterliegen dem deutschen Urheberrecht. Soweit nicht ausdrücklich gesetzlich erlaubt, bedarf jede Form der Verwertung, Vervielfältigung oder Bearbeitung urheberrechtlich geschützter Werke auf unseren Webseiten der vorherigen Zustimmung des jeweiligen Rechteinhabers. Einzelne Vervielfältigungen eines Werkes sind nur für den privaten Gebrauch gestattet. Die Materialien auf diesen Seiten sind urheberrechtlich geschützt und jede unbefugte Nutzung kann gegen Urheberrechtsgesetze verstoßen."
     },
+    "header": {
+        "scroll": "Herunterscrollen"
+    },
     "footer": {
         "contact": "Kontakt",
         "email": "Email"
