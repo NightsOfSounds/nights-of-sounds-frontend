@@ -31,6 +31,10 @@ export default function Equipment() {
                     "name": lang("equipment.mics.tbonemb7beta.name"),
                     "text": lang("equipment.mics.tbonemb7beta.text"),
                     "url": lang("equipment.mics.tbonemb7beta.url"),
+                },{
+                    "name": lang("equipment.mics.dpa4099.name"),
+                    "text": lang("equipment.mics.dpa4099.text"),
+                    "url": lang("equipment.mics.dpa4099.url"),
                 },
             ],
         }, {
