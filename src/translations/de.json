@@ -92,27 +92,32 @@
             "rodent1a": {
                 "name": "Rode NT1-A",
                 "text": "Es hat einen sehr natürlichen Klang.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/rode_nt1a_complete_vocal_recording.htm"
             }, 
             "shuresm7b": {
                 "name": "Shure SM7B",
                 "text": "Es hat einen sehr warmen Klang.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/shure_sm_7b_studiomikro.htm"
             },
             "tbonelucan": {
                 "name": "the t.bone Lucan System",
                 "text": "Ohne dieses, würden unsere Instrumente nicht gut klingen.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/the_t.bone_lucan_system_complete_bundle.htm"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
                 "text": "Perfekt für Instrumente, bei denen das Lucan System nicht passt.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/rode_m5_mp.htm"
             },
             "tbonemb7beta":{
                 "name": "the t.bone MB7 Beta",
                 "text":"Unsere alte Alternative für das Shure SM7B.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/the_t.bone_mb_7_beta.htm"
+            },
+            "dpa4099":{
+                "name": "DPA d.vote Core 4099",
+                "text":"Extrem hochwertiges Instrumentenmikrofon",
+                "url": "https://www.thomann.de/de/dpa_d_vote_core_4099_sm.htm"
             }
         },
         "audiointerfaces": {
@@ -120,22 +125,27 @@
             "presonus1602usb": {
                 "name": "Presonus 16.0.2 USB",
                 "text": "Haupt-Interface, mit dem wir arbeiten",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/presonus_studiolive_16_0.2_usb.htm"
             },
             "steinbergur12": {
                 "name": "Steinberg UR12",
                 "text": "Kleines Interface für kleine Dinge.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/steinberg_ur12.htm"
             },
             "steinbergur22c": {
                 "name": "Steinberg UR22C",
                 "text": "Und wenn ein Mikro nicht genug ist, benutze einfach das.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/steinberg_ur22c.htm"
             },
             "yamahaag03": {
                 "name": "Yamaha AG03",
                 "text": "Manche Instrumente benötigen spezielles Equipment.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/yamaha_ag03_mk2_wh.htm"
+            }, 
+            "presonusstudiolive32r": {
+                "name": "Presonus StudioLive 32R",
+                "text": "Wenn 16 Kanäle nicht mehr reichen, braucht man etwas größere Kaliber",
+                "url": "https://www.thomann.de/de/presonus_studiolive_series_iii_32r.htm"
             }
         },
         "speakers": {
@@ -143,12 +153,12 @@
             "mackiemr524": {
                 "name": "Mackie MR524",
                 "text": "Gute Lieder brauchen gute Lautsprecher.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/mackie_mr524.htm"
             },
             "presonustemblort10": {
                 "name": "Presonus Temblor T10",
                 "text": "Was wäre Musik ohne Bass?",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/presonus_temblor_t10.htm"
             }
         },
         "software": {
@@ -157,7 +167,7 @@
             "cubase": {
                 "name": "Cubase Pro",
                 "text": "Hiermit entstehen unsere Instrumentals.",
-                "url": "https://www.thomann.de/de/index.html"
+                "url": "https://www.thomann.de/de/steinberg_cubase_pro_12.htm"
             },
             "audacity": {
                 "name": "Audacity",
@@ -189,6 +199,10 @@
             "cuttingpc": {
                 "name": "Schnitt Computer",
                 "text": "Der Computer für Videoschnitt und Produktion.[MSI B550 Gaming Plus,, AMD Ryzen 7 3700x,, 32GB RAM,, AMD RX 5500xt]"
+            },
+            "mac": {
+                "name": "Mobile Workstation",
+                "text": "Der Computer für schnelle arbeit von unterwegs. [MacBook Pro (13', M2, 2022)]"
             }
         }, 
         "instruments": {
