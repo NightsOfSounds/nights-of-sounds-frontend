@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from "@mui/material";
+import { styled, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import { sites } from "../../utils/sites";
 import { useLanguage } from "../../components/localization/Localization";
@@ -42,14 +42,21 @@ function Header() {
         return b
     }
 
+    const headerHeight = location.pathname === "/" ? 1 : 1 / 2
+
+    const Header = styled("header")({
+        height: (headerHeight * 100) + "%",
+        marginBottom: "64px",
+    })
+
     return (
-        <header>
+        <Header>
             {isMobile && <ProgressBar />}
-            <TitleImage height={location.pathname === "/" ? 1 : 1 / 2} />
+            <TitleImage height={headerHeight} />
             {isMobile && <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle} />}
             {isMobile && <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => { set(false) }} />}
             {!isMobile && <DesktopNavigation links={links} isMobile={isMobile} />}
-        </header>
+        </Header>
     )
 }
 
