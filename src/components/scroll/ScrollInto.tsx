@@ -17,7 +17,7 @@ export function ScrollInto({children}:ScrollIntoType) {
         }
         scrollBefore = window.scrollY
         if(!ref.current) return
-        if((window.innerHeight+30 >= ref.current.getBoundingClientRect().top) && armed===true) {
+        if((window.innerHeight - 30 >= ref.current.getBoundingClientRect().top) && armed===true) {
 
             ref.current.style.opacity = "1"
             ref.current.style.transform = "translateY(0)"
