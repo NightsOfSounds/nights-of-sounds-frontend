@@ -68,6 +68,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
     const [isNodge, setNodge] = useState(false)
     const [hover, setHover] = useState(false)
     const [width, setWidth] = useState(0)
+    const [widthUnit, setWidthUnit] =  useState("%")
     const [tooltip, setTooltip] = useState(false)
 
     useScrollHandler(handler)
@@ -83,10 +84,12 @@ function TitleImage({ height = 1 }: TitleImageType) {
         const i = setInterval(() => {
             if(hover || isScrolled) return
             setNodge(true)
-            setWidth(1)
+            setWidthUnit("px")
+            setWidth(150)
             setTimeout(()=>{
                 setNodge(false)
                 setWidth(0)
+                setWidthUnit("%")
             }, 300)
         }, 3000)
         return () => {
@@ -98,10 +101,10 @@ function TitleImage({ height = 1 }: TitleImageType) {
         <ThemeProvider theme={headerTheme}>
             <Box sx={{
                 position: "relative",
-                marginBottom: 8,
                 overflow: "hidden",
                 display: "flex",
                 zIndex: 2,
+                height: `100%`,
                 "&:after": {
                     position: "absolute",
                     content: '""',
@@ -114,7 +117,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
             }}>
                 <img src={url} alt="" style={{
                     width: "100%",
-                    height: `${height * 100}vh`,
+                    height: `100%`,
                     objectFit: "cover",
                     position: "relative",
                 }} ref={imgRef} />
@@ -140,7 +143,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                     <Box sx={{position: "relative"}}>
                         <Box sx={{
                             position: "absolute",
-                            width: `${width}%`,
+                            width: `${width}${widthUnit}`,
                             borderTop: "1.5px solid white",
                             top: "calc( 50% - 1px )",
                             right: "0",
@@ -204,7 +207,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                     <Box sx={{position: "relative"}}>
                         <Box sx={{
                             position: "absolute",
-                            width: `${width}%`,
+                            width: `${width}${widthUnit}`,
                             borderTop: "1.5px solid white",
                             top: "calc( 50% - 1px )",
                             transition: ".5s",
