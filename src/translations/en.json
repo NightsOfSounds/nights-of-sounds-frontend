@@ -94,25 +94,35 @@
                 "text": "It has a very neutral sound.",
                 "url": "https://www.thomann.de/de/rode_nt1a_complete_vocal_recording.htm"
             }, 
+            "tlm103": {
+                "name": "Neumann TLM 103 mt",
+                "text": "Incredibly clear and detailed studio vocal microphone.",
+                "url": "https://www.thomann.de/de/neumann_tlm_103_studio_set_mt.htm"
+            },
             "shuresm7b": {
                 "name": "Shure SM7B",
                 "text": "It has a very warm sound.",
                 "url": "https://www.thomann.de/de/shure_sm_7b_studiomikro.htm"
             },
-            "tbonelucan": {
-                "name": "the t.bone Lucan System",
-                "text": "Without these, the instruments wouldn't sound very good.",
-                "url": "https://www.thomann.de/de/the_t.bone_lucan_system_complete_bundle.htm"
+            "tbonemb7beta":{
+                "name": "the t.bone MB7 Beta",
+                "text":"Our old alternative for the Shure SM7B.",
+                "url": "https://www.thomann.de/de/the_t.bone_mb_7_beta.htm"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
                 "text": "Perfect for instruments, where the Lucan System doesn't fit.",
                 "url": "https://www.thomann.de/de/rode_m5_mp.htm"
             },
-            "tbonemb7beta":{
-                "name": "the t.bone MB7 Beta",
-                "text":"Our old alternative for the Shure SM7B.",
-                "url": "https://www.thomann.de/de/the_t.bone_mb_7_beta.htm"
+            "sm57": {
+                "name": "Shure SM57 LC",
+                "text": "Extremely high SPL instrument or AMP mic.",
+                "url": "https://www.thomann.de/de/shure_sm57_lc.htm"
+            },
+            "tbonelucan": {
+                "name": "the t.bone Lucan System",
+                "text": "Without these, the instruments wouldn't sound very good.",
+                "url": "https://www.thomann.de/de/the_t.bone_lucan_system_complete_bundle.htm"
             },
             "dpa4099":{
                 "name": "DPA d.vote Core 4099",
@@ -246,6 +256,11 @@
                 "name": "E-Violin",
                 "text": "The equivalent to acoustic, but more electric.",
                 "experience": "Since 2013"
+            },
+            "cajon": {
+                "name": "Cajon",
+                "text": "Percussion on a budget.",
+                "experience": "Since 2015"
             }
         }
     },

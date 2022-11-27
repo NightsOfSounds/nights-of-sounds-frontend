@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react"
+import { merge } from "lodash";
+import { createContext, useContext, useState } from "react";
 import EN from '../../img/british-flag.png';
 import DE from '../../img/german-flag.png';
 import PL from '../../img/polish-flag.png';
@@ -28,13 +29,15 @@ type LanguageProviderType = {
 
 type LanguageContextType = {
     getData: (q:string) => string,
+    getTree: (q: string) => any,
     setLang: (lang:string) => void,
     lang: string,
 }
-const LanguageContext = createContext<LanguageContextType>({getData: () => "Loading language...", setLang: () => {}, lang: "en"})
+const LanguageContext = createContext<LanguageContextType>({getData: () => "Loading language...", getTree: () => {}, setLang: () => {}, lang: "en"})
 const defaultTranslation = importLanguage(defaultLanguage)
 
 export const useLanguage = () => useContext(LanguageContext).getData
+export const useLanguageTree = () => useContext(LanguageContext).getTree
 
 export const useSetLanguage = () => useContext(LanguageContext).setLang
 
@@ -68,22 +71,33 @@ export function LanguageProvider({children}:LanguageProviderType) {
     }
 
     const search = (q:string) => {
-        return pathFromObject(q, translation) || pathFromObject(q, defaultTranslation)
+        return stringFromPath(q, defaultTranslation) || stringFromPath(q, translation)
     }
+
+    const tree = (q: string) => {
+        const all = merge(defaultTranslation, translation)
+        return objectFromPath(q, all)
+    }
+
     
     return (
-        <LanguageContext.Provider value={{getData: search, setLang: setLanguage, lang: language}}>
+        <LanguageContext.Provider value={{getData: search, getTree: tree, setLang: setLanguage, lang: language}}>
             {children}
         </LanguageContext.Provider>
     )
 }
 
-function pathFromObject(path: string, source:any):string {
+function objectFromPath(path: string, source:any): any {
     const splitPath = path.split(".")
     let o = source;
     for(var i = 0; i < splitPath.length; i++) {
         o = o[splitPath[i]] || {}
     }
+    return o
+}
+
+function stringFromPath(path: string, source: any): string {
+    const o = objectFromPath(path, source);
     if (typeof o === "string") {
         return o
     }

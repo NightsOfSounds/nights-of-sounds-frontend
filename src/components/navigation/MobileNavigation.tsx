@@ -5,14 +5,13 @@ import { LinkType } from "../../pages/Header/Header"
 
 type MobileNavigationType = {
     links: LinkType[],
-    isMobile: boolean,
     mobileDrawer: boolean,
     close: () => void
 }
-function MobileNavigation({ links, isMobile, mobileDrawer, close }: MobileNavigationType) {
+function MobileNavigation({ links, mobileDrawer, close }: MobileNavigationType) {
     return (
         <>
-            <Fade in={mobileDrawer && isMobile}>
+            <Fade in={mobileDrawer}>
                 <Box sx={{
                     width: "100%",
                     height: "100%",
@@ -27,7 +26,7 @@ function MobileNavigation({ links, isMobile, mobileDrawer, close }: MobileNaviga
                 </Box>
             </Fade>
 
-            <Slide in={mobileDrawer && isMobile} direction="right">
+            <Slide in={mobileDrawer} direction="right">
                 <Box sx={{
                     width: "75%",
                     height: "100%",

@@ -2,10 +2,9 @@ import { Box } from "@mui/material"
 
 type MobileOpenType = {
     mobileDrawer: boolean,
-    isMobile: boolean,
     onClick: () => void
 }
-function MobileOpenButton({ mobileDrawer, isMobile, onClick }: MobileOpenType) {
+function MobileOpenButton({ mobileDrawer, onClick }: MobileOpenType) {
 
     const maxRotate = 45
 
@@ -37,7 +36,7 @@ function MobileOpenButton({ mobileDrawer, isMobile, onClick }: MobileOpenType) {
             top: "0",
             right: "0",
             zIndex: "17",
-            display: isMobile ? "block" : "none",
+            display: "block",
             pointerEvents: "all",
             padding: "10px",
             paddingTop: "15px",

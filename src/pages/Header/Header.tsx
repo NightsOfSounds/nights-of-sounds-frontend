@@ -1,13 +1,11 @@
 import { styled, useMediaQuery, useTheme } from "@mui/material";
-import { useEffect, useState } from "react";
 import { sites } from "../../utils/sites";
 import { useLanguage } from "../../components/localization/Localization";
-import MobileOpenButton from "../../components/button/MobileOpenButton";
 import TitleImage from "../../components/title/TitleImage";
-import DesktopNavigation from "../../components/navigation/DesktopNavigation";
-import MobileNavigation from "../../components/navigation/MobileNavigation";
 import { useLocation } from "react-router-dom";
 import ProgressBar from "../../components/scroll/ProgressBar"
+import MobileNavigationWrapper from "../../components/navigation/MobileNavigationWrapper"
+import DesktopNavigation from "../../components/navigation/DesktopNavigation";
 
 export type LinkType = {
     name: string,
@@ -23,24 +21,7 @@ function Header() {
 
     const theme = useTheme()
     const isMobile = useMediaQuery(theme.breakpoints.down("md"))
-    const [mobileDrawer, setMobileDrawer] = useState(false)
     const location = useLocation()
-
-    useEffect(() => {
-        if (!isMobile) {
-            set(false)
-        }
-    }, [isMobile])
-
-    const toggle = () => {
-        set(!mobileDrawer)
-    }
-
-    const set = (b: boolean) => {
-        document.body.style.overflow = b ? "hidden" : "auto"
-        setMobileDrawer(b)
-        return b
-    }
 
     const headerHeight = location.pathname === "/" ? 1 : 1 / 2
 
@@ -52,10 +33,9 @@ function Header() {
     return (
         <Header>
             {isMobile && <ProgressBar />}
-            <TitleImage height={headerHeight} />
-            {isMobile && <MobileOpenButton isMobile={isMobile} mobileDrawer={mobileDrawer} onClick={toggle} />}
-            {isMobile && <MobileNavigation links={links} isMobile={isMobile} mobileDrawer={mobileDrawer} close={() => { set(false) }} />}
-            {!isMobile && <DesktopNavigation links={links} isMobile={isMobile} />}
+            <TitleImage showScrollDownNotice={headerHeight === 1} />
+            {isMobile && <MobileNavigationWrapper links={links} />}
+            {!isMobile && <DesktopNavigation links={links} />}
         </Header>
     )
 }

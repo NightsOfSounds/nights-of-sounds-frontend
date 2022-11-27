@@ -1,10 +1,8 @@
-import { KeyboardArrowDown } from '@mui/icons-material';
-import { Box, ThemeProvider, Tooltip, Typography, Zoom } from '@mui/material'
-import { useEffect, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Box, ThemeProvider, Typography } from '@mui/material'
+import { useRef } from 'react'
 import { headerTheme } from '../../utils/theme';
-import { useLanguage } from '../localization/Localization';
 import { useScrollHandler } from '../scroll/scrollHandler';
+import ScrollDownNotice from './ScrollDownNotice';
 
 const sizes = [
     {
@@ -22,17 +20,13 @@ const sizes = [
     },
 ]
 
-type TitleImageType = {
-    height?: number
+type Props = {
+    showScrollDownNotice: boolean
 }
-function TitleImage({ height = 1 }: TitleImageType) {
+function TitleImage({showScrollDownNotice}: Props) {
 
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
-
-    const line1Ref = useRef<HTMLDivElement>();
-    const circleRef = useRef<any>();
-    const line2Ref = useRef<HTMLDivElement>();
 
     const imageWidth = window.innerWidth
     const imageVersion = sizes.filter(e => e.width >= imageWidth)[0]
@@ -41,61 +35,14 @@ function TitleImage({ height = 1 }: TitleImageType) {
     const handler = () => {
         if (imgRef.current) {
             imgRef.current.style.objectPosition = `50% calc( 50% + ${window.scrollY * 0.3}px )`
-            imgRef.current.style.filter = `brightness(${1 - (window.scrollY / (window.innerHeight * height))})`
+            imgRef.current.style.filter = `brightness(${1 - (window.scrollY / imgRef.current.scrollHeight)})`
         }
         if (textRef.current) {
             textRef.current.style.top = `calc( 50% + ${window.scrollY / 2}px )`
         }
-        if(line1Ref.current && line2Ref.current && circleRef.current) {
-            if(window.scrollY >= window.innerHeight / 3) {
-                setWidth(100)
-                setScrolled(true)
-
-                line1Ref.current.style.opacity = "10%"
-                circleRef.current.style.opacity = "20%"
-                line2Ref.current.style.opacity = "10%"
-            } else {
-                if(width === 100) setWidth(0)
-
-                line1Ref.current.style.opacity = "100%"
-                circleRef.current.style.opacity = "100%"
-                line2Ref.current.style.opacity = "100%"
-            }
-        }
     }
 
-    const [isScrolled, setScrolled] = useState(false);
-    const [isNodge, setNodge] = useState(false)
-    const [hover, setHover] = useState(false)
-    const [width, setWidth] = useState(0)
-    const [widthUnit, setWidthUnit] =  useState("%")
-    const [tooltip, setTooltip] = useState(false)
-
-    useScrollHandler(handler)
-
-    const location = useLocation()
-    const language = useLanguage()
-
-    useEffect(()=>{
-        setWidth(0)
-    }, [location])
-
-    useEffect(() => {
-        const i = setInterval(() => {
-            if(hover || isScrolled) return
-            setNodge(true)
-            setWidthUnit("px")
-            setWidth(150)
-            setTimeout(()=>{
-                setNodge(false)
-                setWidth(0)
-                setWidthUnit("%")
-            }, 300)
-        }, 3000)
-        return () => {
-            clearInterval(i)
-        }
-    }, [hover, isScrolled])
+    useScrollHandler(handler) 
 
     return (
         <ThemeProvider theme={headerTheme}>
@@ -117,7 +64,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
             }}>
                 <img src={url} alt="" style={{
                     width: "100%",
-                    height: `100%`,
+                    height: "100%",
                     objectFit: "cover",
                     position: "relative",
                 }} ref={imgRef} />
@@ -131,89 +78,7 @@ function TitleImage({ height = 1 }: TitleImageType) {
                     willChange: "top",
                     fontSize: "3rem",
                 }} ref={textRef}>NIGHTS OF SOUNDS</Typography>
-                {height === 1 && <Box sx={{
-                    bottom: "20px",
-                    left: "0",
-                    position: "absolute",
-                    width: "100%",
-                    textAlign: "center",
-                    display: "grid",
-                    gridTemplateColumns: "1fr auto 1fr",
-                }}>
-                    <Box sx={{position: "relative"}}>
-                        <Box sx={{
-                            position: "absolute",
-                            width: `${width}${widthUnit}`,
-                            borderTop: "1.5px solid white",
-                            top: "calc( 50% - 1px )",
-                            right: "0",
-                            transition: ".5s",
-                        }} ref={line1Ref}></Box>
-                    </Box>
-                    <Tooltip 
-                        title={language("header.scroll")} 
-                        TransitionComponent={Zoom} 
-                        open={tooltip} 
-                        placement="top"
-                    >
-                        <Box 
-                            sx={{
-                                border: "1.5px solid white",
-                                borderRadius: "50%",
-                                display: "flex",
-                                margin: "0",
-                                padding: "0",
-                                minWidth: "0",
-                                color: "white",
-                                transition: ".5s",
-                                cursor: "pointer",
-                                zIndex: "3",
-                                overflow: "hidden",
-                                position: "relative",
-                            }} 
-                            ref={circleRef} 
-                            role="button"
-                            onClick={()=>{
-                                if(window.scrollY > window.innerHeight / 3) return
-                                window.scrollTo({
-                                    behavior: "smooth",
-                                    top: window.scrollY + window.innerHeight / 1.5
-                                })
-                                setTooltip(false)
-                            }}
-                            onMouseEnter={()=>{
-                                setHover(true)
-                                if(width === 100) return
-                                setTooltip(true)
-                                setWidth(50)
-                            }}
-                            onMouseLeave={()=>{
-                                setHover(false)
-                                setTooltip(false)
-                                if(width === 50) setWidth(0)
-                            }}
-                        >
-                            <KeyboardArrowDown fontSize="large" sx={{
-                                transition: ".3s",
-                                transform: hover ? "translateY(100%)" : (isNodge ? "translateY(20%)" : ""),
-                            }}/>
-                            <KeyboardArrowDown fontSize="large" sx={{
-                                transition: ".3s",
-                                position: "absolute",
-                                transform: hover ? "" : "translateY(-100%)",
-                            }}/>
-                        </Box>
-                    </Tooltip>
-                    <Box sx={{position: "relative"}}>
-                        <Box sx={{
-                            position: "absolute",
-                            width: `${width}${widthUnit}`,
-                            borderTop: "1.5px solid white",
-                            top: "calc( 50% - 1px )",
-                            transition: ".5s",
-                        }} ref={line2Ref}></Box>
-                    </Box>
-                </Box>}
+                {showScrollDownNotice && <ScrollDownNotice/>}
             </Box>
         </ThemeProvider>
     )
