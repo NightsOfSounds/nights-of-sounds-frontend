@@ -12,7 +12,7 @@ function MobileOpenButton({ mobileDrawer, onClick }: MobileOpenType) {
         backgroundColor: "white",
         left: "0",
         width: "100%",
-        height: "5px",
+        height: "2px",
         position: "absolute",
         transition: ".3s",
         opacity: mobileDrawer ? "0" : "1"
@@ -20,18 +20,18 @@ function MobileOpenButton({ mobileDrawer, onClick }: MobileOpenType) {
 
     const innerSX = {
         backgroundColor: "white",
-        top: "calc( 50% - 2px )",
+        top: "calc( 50% - 0px )",
         left: "0",
         width: "100%",
-        height: "5px",
+        height: "1px",
         position: "absolute",
         transition: ".3s",
     }
 
     return (
         <Box sx={{
-            width: "75px",
-            height: "55px",
+            width: "50px",
+            height: "45px",
             position: "fixed",
             top: "0",
             right: "0",

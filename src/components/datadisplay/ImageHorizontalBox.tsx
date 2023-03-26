@@ -1,6 +1,7 @@
 import { Box, Paper, Stack, Typography } from "@mui/material"
 import HoverImage from "../image/HoverImage"
 import TextProcessor from "../text/TextProcessor"
+import { hoverPaperStyle } from "./ImageTextBanner"
 import { ImageTextBoxType } from "./ImageTextBox"
 
 interface ImageHorizontalBoxType extends ImageTextBoxType {

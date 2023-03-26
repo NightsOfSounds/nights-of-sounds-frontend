@@ -7,7 +7,7 @@ const HoverImage = styled("img")(
     }, {
         "&:hover": {
             transform: {
-                md: "scale(1.2)",
+                md: "scale(1.1)",
                 xs: "scale(1)",
             },
         }

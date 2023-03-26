@@ -1,6 +1,7 @@
 import { Paper, Stack, Typography, experimental_sx as sx } from '@mui/material';
 import { Box, styled } from '@mui/system';
 import ContentBox from '../../components/content/ContentBox';
+import { hoverPaperStyle } from '../../components/datadisplay/ImageTextBanner';
 import { useLanguage } from '../../components/localization/Localization';
 import ScrollInto from '../../components/scroll/ScrollInto';
 import YoutubEmbed from '../../components/social/YoutubeEmbed';
@@ -14,13 +15,6 @@ function Home() {
     const StyledImg = styled("img")(
         sx([{
             width: "100%",
-            transition: ".3s",
-            "&:hover": {
-                transform: {
-                    "md": "scale(1.1)",
-                    "xs": "",
-                },
-            }
         }])
     )
 
@@ -34,11 +28,18 @@ function Home() {
         }])
     )
 
+    const paperStyle = {
+        textAlign: "center", 
+        marginBottom: 4, 
+        p: 2,
+        ...hoverPaperStyle
+    }
+
     return (
         <ContentBox>
             <SiteTitle>{lang("home.title")}</SiteTitle>
             <ScrollInto>
-                <Paper sx={{ textAlign: "center", marginBottom: 4, p: 2 }}>
+                <Paper sx={ paperStyle }>
                     <Typography variant="h5" sx={{ marginBottom: 2 }}>{lang("home.01.title")}</Typography>
                     <Stack direction={{ xs: "column", md: "row" }} gap={2}>
                         <Box sx={{
@@ -65,7 +66,7 @@ function Home() {
                 </Paper>
             </ScrollInto>
             <ScrollInto>
-                <Paper sx={{ textAlign: "center", marginBottom: 4, p: 2 }}>
+                <Paper sx={ paperStyle }>
                     <Typography variant="h5" sx={{ marginBottom: 2 }}>{lang("home.02.title")}</Typography>
                     <Stack direction={{ xs: "column", md: "row" }} gap={2}>
                         <Box>
@@ -77,14 +78,14 @@ function Home() {
                 </Paper>
             </ScrollInto>
             <ScrollInto>
-                <Paper sx={{ textAlign: "center", marginBottom: 4, p: 2 }}>
+                <Paper sx={ paperStyle }>
                     <Typography variant="h5" sx={{ marginBottom: 2 }}>{lang("home.03.title")}</Typography>
                     <TextProcessor>{lang("home.03.text")}</TextProcessor>
                     <YoutubEmbed controls />
                 </Paper>
             </ScrollInto>
             <ScrollInto>
-                <Paper sx={{ textAlign: "center", marginBottom: 4, p: 2 }}>
+                <Paper sx={ paperStyle }>
                     <Typography variant="h5" sx={{ marginBottom: 2 }}>{lang("home.04.title")}</Typography>
                     <Stack direction={{ xs: "column", md: "row" }} gap={2}>
                         <Box>
