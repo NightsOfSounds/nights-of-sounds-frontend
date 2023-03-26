@@ -71,14 +71,14 @@ export function LanguageProvider({children}:LanguageProviderType) {
     }
 
     const search = (q:string) => {
-        return stringFromPath(q, defaultTranslation) || stringFromPath(q, translation)
+        return stringFromPath(q, translation) || stringFromPath(q, defaultTranslation)
     }
 
     const tree = (q: string) => {
         const all = merge(defaultTranslation, translation)
         return objectFromPath(q, all)
     }
-
+    
     
     return (
         <LanguageContext.Provider value={{getData: search, getTree: tree, setLang: setLanguage, lang: language}}>
