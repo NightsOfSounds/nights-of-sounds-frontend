@@ -40,14 +40,6 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
                     xs: "grayscale(0)",
                     md: "grayscale(0.3)",
                 },
-            },{
-                "&:hover": {
-                    transform: {
-                        xs: "",
-                        md: "scale(1.1)",
-                    },
-                    filter: "grayscale(0)",
-                }
             }
         ])
     )
