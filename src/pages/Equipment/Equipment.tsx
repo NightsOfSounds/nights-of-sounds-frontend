@@ -14,6 +14,7 @@ export default function Equipment() {
         .map(v => v as any)
         .map(v => ({
             "name": v.title,
+            "subtitle": v.subtitle,
             "content": Object.values(v)
                 .filter(v => typeof(v)=="object")
                 .map(v => v as any)
