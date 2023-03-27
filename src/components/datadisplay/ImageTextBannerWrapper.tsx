@@ -1,4 +1,4 @@
-import { styled, experimental_sx as sx, Box, Typography } from "@mui/material"
+import { styled, Box, Typography } from "@mui/material"
 import { useEffect, useState } from "react"
 import TextProcessor from "../text/TextProcessor"
 import ConditionalWrapper from "../wrapper/ConditionalWrapper"
@@ -30,8 +30,8 @@ function ImageTextBannerWrapper({data}:SocialWrapperType):JSX.Element {
         textDecoration: "none",
     })
 
-    const SocialImage = styled("img")(
-        sx([
+    const SocialImage = styled("img")(({theme}) => 
+        theme.unstable_sx([
             {
                 maxWidth: "100%",
                 height: "200px",

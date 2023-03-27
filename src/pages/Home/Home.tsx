@@ -1,5 +1,4 @@
-import { Paper, Stack, Typography, experimental_sx as sx } from '@mui/material';
-import { Box, styled } from '@mui/system';
+import { Box, Paper, Stack, styled, Typography } from '@mui/material';
 import ContentBox from '../../components/content/ContentBox';
 import { hoverPaperStyle } from '../../components/datadisplay/ImageTextBanner';
 import { useLanguage } from '../../components/localization/Localization';
@@ -12,14 +11,13 @@ import NOS from '../../img/nos-logo.webp'
 function Home() {
 
     const lang = useLanguage()
-    const StyledImg = styled("img")(
-        sx([{
+    const StyledImg = styled("img")({
             width: "100%",
-        }])
+        }
     )
 
-    const SyledIframe = styled("iframe")(
-        sx([{
+    const SyledIframe = styled("iframe")(({theme}) => 
+        theme.unstable_sx([{
             width: "350px",
             maxWidth: {
                 xs: "100%",

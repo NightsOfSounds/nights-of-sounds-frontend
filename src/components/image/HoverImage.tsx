@@ -1,7 +1,7 @@
-import { experimental_sx as sx, styled } from "@mui/material";
+import { styled } from "@mui/material";
 
-const HoverImage = styled("img")(
-    sx([{
+const HoverImage = styled("img")(({theme}) => 
+    theme.unstable_sx([{
         width: "100%",
         transition: ".3s",
     }, {
