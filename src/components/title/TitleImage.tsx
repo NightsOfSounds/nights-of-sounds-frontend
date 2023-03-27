@@ -3,22 +3,7 @@ import { useRef } from 'react'
 import { headerTheme } from '../../utils/theme';
 import { useScrollHandler } from '../scroll/scrollHandler';
 import ScrollDownNotice from './ScrollDownNotice';
-
-const sizes = [
-    {
-        height: 270,
-        width: 480,
-    }, {
-        height: 405,
-        width: 720,
-    }, {
-        height: 1080,
-        width: 1920,
-    }, {
-        height: 1440,
-        width: 2560,
-    },
-]
+import banner from "../../img/banner-1920-1080.webp";
 
 type Props = {
     showScrollDownNotice: boolean
@@ -27,10 +12,6 @@ function TitleImage({showScrollDownNotice}: Props) {
 
     const imgRef = useRef<any>();
     const textRef = useRef<any>();
-
-    const imageWidth = window.innerWidth
-    const imageVersion = sizes.filter(e => e.width >= imageWidth)[0]
-    const url = `/img/banner/banner-${imageVersion.width}-${imageVersion.height}.webp`
 
     const handler = () => {
         if (imgRef.current) {
@@ -62,7 +43,7 @@ function TitleImage({showScrollDownNotice}: Props) {
                     boxShadow: "inset 0px -14px 31px -16px #000000",
                 }
             }}>
-                <img src={url} alt="" style={{
+                <img src={banner} alt="" style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
