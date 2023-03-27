@@ -8,8 +8,8 @@ beforeEach(() => {
 })
 
 test('renders website', () => {
-  const app = render(<App />);
-  expect(app.baseElement.childNodes.length).toBeGreaterThan(0)
+  const view = render(<App />);
+  expect(view.baseElement.childNodes.length).toBeGreaterThan(0)
 });
 
 afterEach(() => {

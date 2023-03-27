@@ -12,6 +12,7 @@ body {
   background-color: rgb(18, 18, 18);
   color: white;
   height: 100%;
+  overflow-x: hidden;
 }
 
 code {

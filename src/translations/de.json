@@ -94,25 +94,40 @@
                 "text": "Es hat einen sehr natürlichen Klang.",
                 "url": "https://www.thomann.de/de/rode_nt1a_complete_vocal_recording.htm"
             }, 
+            "tlm103": {
+                "name": "Neumann TLM 103 mt",
+                "text": "Unglaublich klares und detailreiches Studio Gesangsmikrofon.",
+                "url": "https://www.thomann.de/de/neumann_tlm_103_studio_set_mt.htm"
+            },
             "shuresm7b": {
                 "name": "Shure SM7B",
                 "text": "Es hat einen sehr warmen Klang.",
                 "url": "https://www.thomann.de/de/shure_sm_7b_studiomikro.htm"
             },
-            "tbonelucan": {
-                "name": "the t.bone Lucan System",
-                "text": "Ohne dieses, würden unsere Instrumente nicht gut klingen.",
-                "url": "https://www.thomann.de/de/the_t.bone_lucan_system_complete_bundle.htm"
+            "tbonemb7beta":{
+                "name": "the t.bone MB7 Beta",
+                "text":"Unsere alte Alternative für das Shure SM7B.",
+                "url": "https://www.thomann.de/de/the_t.bone_mb_7_beta.htm"
             },
             "rodem5mp": {
                 "name": "Rode M5 MP",
                 "text": "Perfekt für Instrumente, bei denen das Lucan System nicht passt.",
                 "url": "https://www.thomann.de/de/rode_m5_mp.htm"
             },
-            "tbonemb7beta":{
-                "name": "the t.bone MB7 Beta",
-                "text":"Unsere alte Alternative für das Shure SM7B.",
-                "url": "https://www.thomann.de/de/the_t.bone_mb_7_beta.htm"
+            "se8": {
+                "name": "SE Electronics SE8 Stereo Set",
+                "text": "Qualitativ hochwertiges Instrumentenmikrofon",
+                "url": "https://www.thomann.de/de/se_electronics_se8_stereo_set.htm"
+            },
+            "sm57": {
+                "name": "Shure SM57 LC",
+                "text": "Mikrofon für extrem laute Instrumente oder AMPs.",
+                "url": "https://www.thomann.de/de/shure_sm57_lc.htm"
+            },
+            "tbonelucan": {
+                "name": "the t.bone Lucan System",
+                "text": "Ohne dieses, würden unsere Instrumente nicht gut klingen.",
+                "url": "https://www.thomann.de/de/the_t.bone_lucan_system_complete_bundle.htm"
             },
             "dpa4099":{
                 "name": "DPA d.vote Core 4099",
@@ -245,7 +260,12 @@
             "eviolin": {
                 "name": "E-Violine",
                 "text": "Das Äquvalent zu akustisch, nur etwas mehr elektrisch.",
-                "experience": "Since 2013"
+                "experience": "Seit 2013"
+            },
+            "cajon": {
+                "name": "Cajon",
+                "text": "Günstige Percussions.",
+                "experience": "Seit 2015"
             }
         }
     },

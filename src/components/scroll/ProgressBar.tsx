@@ -1,18 +1,19 @@
 import { Box } from "@mui/material"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useScrollHandler } from "./scrollHandler"
 
 function ProgressBar() {
 
     const ref = useRef<HTMLDivElement>()
+    const [width, setWidth] = useState(0);
 
     const scroll = () => {
         if(!ref.current) return;
-        const clientHeight = document.body.clientHeight - window.innerHeight
-        ref.current.style.width = `${(window.scrollY / clientHeight) * 100}%`
+        const clientHeight = document.body.scrollHeight - window.innerHeight
+        setWidth((window.scrollY / clientHeight) * 100)
     }
 
-    useScrollHandler(()=>{scroll()})
+    useScrollHandler(scroll)
 
     return (
         <Box 
@@ -20,7 +21,7 @@ function ProgressBar() {
             sx={{
                 position: "fixed",
                 height: "1px",
-                width: "0%",
+                width: `${width}%`,
                 backgroundColor: "white",
                 zIndex: 15,
                 pointerEvents: "none",

@@ -4,10 +4,9 @@ import LanguageButton from "../button/LanguageButton"
 import { LinkType } from "../../pages/Header/Header"
 
 type DesktopNavigationType = {
-    isMobile: boolean,
     links: LinkType[]
 }
-function DesktopNavigation({isMobile, links}:DesktopNavigationType) {
+function DesktopNavigation({links}:DesktopNavigationType) {
     return (
         <Box sx={{
             top: "0",
@@ -19,7 +18,7 @@ function DesktopNavigation({isMobile, links}:DesktopNavigationType) {
             padding: "0px 0",
             position: "fixed",
             zIndex: "10",
-            display: isMobile ? "none" : "block",
+            display: "block",
           }}>
             <HeaderButtonWrapper links={links}/>
             <LanguageButton/>
