@@ -8,5 +8,9 @@ languages.set("de", de);
 languages.set("pl", pl);
 
 export function importLanguage(language:string) {
-    return languages.get(language) ?? en;
+    const imported = languages.get(language);
+    if(!imported) {
+        throw new Error("language not found")
+    }
+    return imported
 }
