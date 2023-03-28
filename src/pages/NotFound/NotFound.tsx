@@ -1,5 +1,4 @@
-import { Box } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, styled } from "@mui/material";
 import SORRY_CAT from '../../img/sorry_cat.jpg'
 import { useLanguage } from "../../components/localization/Localization";
 import ContentBox from "../../components/content/ContentBox";

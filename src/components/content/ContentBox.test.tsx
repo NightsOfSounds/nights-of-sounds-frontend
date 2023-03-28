@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react"
+import { describe, expect, test } from "vitest"
 import ContentBox from "./ContentBox"
 
 describe("ckeck content box", () => {
@@ -16,7 +17,6 @@ describe("ckeck content box", () => {
 
         render(<ContentBox><div>test</div></ContentBox>)
 
-        expect(screen.getByText("test")).toBeInTheDocument()
         expect(screen.getByText("test").nodeName).toBe("DIV")
     })
 })

@@ -1,13 +1,12 @@
-import { Box, experimental_sx as sx, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, styled, Typography } from "@mui/material";
 import UnderlinedLink from "../../components/link/UnderlinedLink";
 import { useLanguage } from "../../components/localization/Localization";
 import Moon from "../../img/moon.webp"
 import MoonSmall from "../../img/moon-small.webp"
 import { useRef } from "react";
 
-const StyledFooter = styled("footer")(
-    sx({
+const StyledFooter = styled("footer")(({theme}) =>
+    theme.unstable_sx({
         backgroundColor: "black",
         p: 6,
         textAlign: "center",
@@ -22,8 +21,8 @@ export default function Footer() {
 
     const lang = useLanguage()
 
-    const StyledImage = styled("img")(
-        sx([{
+    const StyledImage = styled("img")(({theme}) =>
+        theme.unstable_sx([{
             objectFit: "contain",
             maxHeight: "100%",
             maxWidth: "100%",

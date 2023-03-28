@@ -1,4 +1,4 @@
-import { MenuItem, experimental_sx as sx, styled } from "@mui/material"
+import { MenuItem, styled } from "@mui/material"
 import { MouseEventHandler } from "react"
 
 type LanguageItemType = {
@@ -10,8 +10,8 @@ type LanguageItemType = {
 }
 function LanguageMenuButton({short, children, src, onClick, selected}:LanguageItemType) {
 
-    const StyledImage = styled("img")(
-        sx({
+    const StyledImage = styled("img")(({theme}) => 
+        theme.unstable_sx({
             height: "14px",
             width: "25px",
             marginRight: 1

@@ -1,11 +1,8 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { afterAll, afterEach, beforeEach, expect, test, vi } from 'vitest';
 import App from './App';
 
-window.scrollTo = jest.fn();
-
-beforeEach(() => {
-  fetchMock.mockReject(new Error("Not mocking for App"))
-})
+window.scrollTo = () => {};
 
 test('renders website', () => {
   const view = render(<App />);
@@ -13,9 +10,8 @@ test('renders website', () => {
 });
 
 afterEach(() => {
-  jest.resetAllMocks();
-  fetchMock.resetMocks()
+  vi.resetAllMocks();
 });
 afterAll(() => {
-  jest.clearAllMocks();
+    vi.clearAllMocks();
 });
