@@ -26,7 +26,7 @@ function Header() {
     const headerHeight = location.pathname === "/" ? 1 : 1 / 2
 
     const Header = styled("header")({
-        height: (headerHeight * 100) + "%",
+        height: (headerHeight * 100) + "vh",
         marginBottom: "64px",
     })
 
