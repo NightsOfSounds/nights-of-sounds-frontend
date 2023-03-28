@@ -17,6 +17,10 @@ function Firefly() {
             if(ref.current) {
                 ref.current.style.left = `${x}px`
                 ref.current.style.top = `${y}px`
+
+                setTimeout(() => {
+                    if(ref.current) ref.current.style.transition = "5s linear"
+                }, 10);
             }
         }
         interval()
@@ -35,7 +39,7 @@ function Firefly() {
             borderRadius: "100%",
             backgroundColor: "#8fa8eb",
             boxShadow: "0px 0px 7px 0px #FFFFFF, 0px 0px 10px 1px #4E53FF, 0px 0px 15px 2px #373AB3",
-            transition: "5s linear",
+            transition: "0s linear",
             willChange: "top, left"
         }} ref={ref}/>
     )
