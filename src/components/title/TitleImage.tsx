@@ -32,7 +32,7 @@ function TitleImage({showScrollDownNotice}: Props) {
                 overflow: "hidden",
                 display: "flex",
                 zIndex: 2,
-                height: `100%`,
+                height: `100vh`,
                 "&:after": {
                     position: "absolute",
                     content: '""',
