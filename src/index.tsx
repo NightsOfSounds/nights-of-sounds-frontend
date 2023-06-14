@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
+import * as ReactDOMClient from 'react-dom/client';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import * as ReactDOMClient from 'react-dom/client';
 
 function render() {
     const root = document.getElementById('root');
@@ -23,7 +23,25 @@ render()
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.unregister();
+
+if(window.navigator && navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations()
+        .then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister();
+            }
+        });
+}
+
+if ('caches' in window) {
+    caches.keys()
+        .then(function(keyList) {
+            return Promise.all(keyList.map(function(key) {
+                return caches.delete(key);
+            }));
+        })
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
