@@ -268,9 +268,12 @@
                 "experience": "Od 2015"
             }
         }
+    }, "stream": {
+        "button": "Streamy",
+        "title": "Nasze streamy na Twitchu"
     },
     "imprint": {
-        "title": "Odcisk",
+        "title": "Kontakt",
         "text": "Zgodnie z §5 TMG: | Nights Of Sounds | Musterstraße 0 | Musterstadt 00000 | DE / Germany |"
     },
     "privacy": {

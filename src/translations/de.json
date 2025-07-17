@@ -268,6 +268,10 @@
                 "experience": "Seit 2015"
             }
         }
+    }, "stream": {
+        "button": "Stream",
+        "title":  "Unsere Streams auf Twitch"
+
     },
     "imprint": {
         "title": "Impressum",
