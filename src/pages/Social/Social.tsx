@@ -8,6 +8,7 @@ import Twitch from "../../img/twitch-logo.png"
 //import Spotify from "../../img/spotify-logo.png"
 import GitHub from "../../img/github-logo.png"
 import Reddit from "../../img/reddit-logo.png"
+import Musescore from "../../img/musescore-logo.png"
 import { useLanguage } from "../../components/localization/Localization";
 import ContentBox from "../../components/content/ContentBox";
 import SiteTitle from "../../components/title/SiteTitle";
@@ -33,6 +34,11 @@ function Social() {
             text: lang("social.instagram.text"),
             url: "https://www.instagram.com/nightsofsounds/",
             imgUrl: Instagram,
+        },{
+            name: lang("social.musescore.name"),
+            text: lang("social.musescore.text"),
+            url: "https://musescore.com/user/85678789",
+            imgUrl: Musescore,
         },{
             name: lang("social.patreon.name"),
             text: lang("social.patreon.text"),
